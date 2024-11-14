@@ -1,0 +1,129 @@
+.btn-hover svg {
+  transition: 0.3s;
+}
+
+.btn-hover:hover svg {
+  transform: rotate(269deg) !important;
+}
+
+.btn-hover:hover {
+  color: black;
+}
+.sss{
+  color: white !important;
+  
+}
+.sss .active{
+  color: red !important;
+  
+}
+
+
+.button2:hover{
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+
+.img1{
+  width: 90%;
+  height: 90%;
+}
+.btn2{
+  color: white;
+  background-color: black;
+  transition: .2s;
+}
+
+.btn2:hover{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* CAREERS */
+.blur{
+  filter: blur(6px);
+}
+
+.apply-btn{
+  width: 150px;
+  height: 50px;
+}
+.div-cover{
+  height: 1200px;
+}
+.DropdownButton{
+  background: transparent;
+  border: 2px solid #277EC3;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.h50{
+  height: 50%;
+}
+
+.con {
+  margin-bottom: 48px;
+}
+
+@media (max-width: 1070px) {
+  .img1 {
+    width: 100%;
+    height: 100%;
+  }
+  .apply-btn{
+    width: 100%;
+  }
+  .blur{
+    filter: blur(4px);
+  }
+  .div-cover{
+    height: 1400px;
+  }
+  .apply-h3{
+    font-size: 15px;
+  }
+}
+@media (min-width:1342px) and (max-width:1965px){
+  .con{
+    margin-bottom: 24px;
+  }
+}
+@media (min-width:1444px) and (max-width:1658px){
+  .con{
+    margin-bottom: 48px;
+  }
+}
+@media (min-width:1185px) and (max-width:1196px){
+    .con{
+      word-spacing: 1px;
+    }
+}
+@media (min-width:1077px) and (max-width:1178px){
+  .con{
+    /* margin-bottom: 72px; */
+  }
+}
+@media (min-width:1031px) and (max-width:1077px){
+  .con{
+    margin-bottom: 72px;
+  }
+}
+/* @media (min-width:965px) and (max-width:998px){
+  .con{
+    margin-bottom: 75px;
+  }
+} */
+@media (min-width:897px) and (max-width:964px){
+  .con{
+    margin-bottom: 24px;
+  }
+}
+@media (min-width:788px) and (max-width:798px){
+  .con{
+    word-spacing: 3px;
+  }
+}

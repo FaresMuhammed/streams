@@ -1,0 +1,20 @@
+.Link22 {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.Link223 {
+  color: #635f5f;
+}
+.show {
+  background-color: white;
+}
+
+.active {
+  color: coral;
+}
+
+.modal-dialog {
+  max-width: 80% !important;
+  margin: 50px auto 0 auto !important;
+}
