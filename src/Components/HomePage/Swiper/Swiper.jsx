@@ -83,10 +83,7 @@ export default function Swiperr() {
           <div className="fil"></div>
           <div className="hf">
             <h1 className="text-white">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem
-              est, nulla facilis repudiandae corrupti quaerat sequi inventore
-              iure dolor qui quia et nesciunt perferendis, sapiente sunt, animi
-              minima possimus adipisci.
+              Lorem i
             </h1>
             <p className="btn rounded">Learn More</p>
           </div>
