@@ -18,6 +18,7 @@ import Requireauth from "./Dashboard/Requireauth";
 import Users from "./Dashboard/Users/Users";
 import Updateuser from "./Dashboard/Users/UpdateUser";
 import Adduser from "./Dashboard/Users/AddUser";
+import Software from "./Components/Software/Software";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/artificalleft" element={<Artifical />} />
           <Route path="/enhancing" element={<Enhancing />} />
           <Route path="/testing" element={<Testing />} />
+          <Route path="/software" element={<Software />} />
+
 
         </Route>
 

@@ -58,7 +58,7 @@ export default function Swiperr() {
         // }}
         slidesPerView={1}
         breakpoints={{ 768: { slidesPerView: 2 } }}
-        spaceBetween={15}
+        spaceBetween={25}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -68,96 +68,158 @@ export default function Swiperr() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[ Autoplay,Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
         <SwiperSlide
           style={{
-            backgroundImage: "url('Consultation 2.webp')",
+            backgroundImage: "url('Artificial Lift.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "700px",
+            height: "600px",
           }}
         >
           <div className="fil"></div>
           <div className="hf">
-            <h1 className="text-white">
-              Lorem i
-            </h1>
-            <p className="btn rounded">Learn More</p>
+            <div className="center" style={{  flexDirection: 'column'}}>
+              <h5 style={{color: 'white' , marginBottom: '15px'}}> Artificial Lift:</h5>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+                 Streamlines offers innovative artificial lift
+                solutions tailored for the oil and gas industry, enhancing
+                production efficiency and maximizing reservoir performance. Our
+                advanced technologies, including gas lift systems, are designed
+                to optimize well output while minimizing operational costs.
+              </p>
+            </div>
+            <Link to={"/artificalleft"}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div style={{ height: "600px", overflow: "hidden" }}>
-            <img
-              src={"Consultation1.jpg"}
-              style={{
-                objectFit: "cover",
-              }}
-              className="swiper-hover"
-            />{" "}
+        <SwiperSlide
+          style={{
+            backgroundImage: "url('Consultation1.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "600px",
+          }}
+        >
+          <div className="fil"></div>
+          <div className="hf">
+          <div className="center" style={{  flexDirection: 'column'}}>
+            <h5 style={{color: 'white' , marginBottom: '15px' }}> Consultation:  </h5>
+
+            <p className="text-white " style={{ width: "80%" , textAlign: 'start' }}>
+              consultation:
+                Streamlines is offering a variety of Geological, Geophysical, Reservoir Engineering, and Operations
+                Studies. The studies include the various stages from data collection, validation, marching, reservoir
+                history balance, sedimentary modeling, fault seal analysis, structural and tectonic interpretation of
+                2D/3D seismic data, 3D geological modeling, AVO and stochastic seismic Inversion, play and prospect
+                risk analysis, reservoir engineering, FDP & FFR studies, and development plan.
+              </p>
+            </div>
+            <Link to={"/contactus"}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div style={{ height: "600px", overflow: "hidden" }}>
-            <img
-              src={"Consultation 2.webp"}
-              style={{
-                objectFit: "cover",
-              }}
-              className="swiper-hover"
-            />{" "}
+
+        <SwiperSlide
+          style={{
+            backgroundImage: "url('EOR.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "600px",
+          }}
+        >
+          <div className="fil"></div>
+          <div className="hf">
+            <div className="center" style={{  flexDirection: 'column'}}>
+              <h5 style={{color: 'white' , marginBottom: '15px'}}> Enhanced Oil Recovery (EOR):</h5>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+                Streamlines ensures reliable supply chains and provides top-quality chemicals for Enhanced Oil
+                Recovery (EOR), covering the full process from sourcing to field applications and enabling customized
+                EOR strategies that meet specific reservoir requirements.
+              </p>
+            </div>
+            <Link to={"/enhancing"}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div style={{ height: "600px", overflow: "hidden" }}>
-            <img
-              src={"EOR.jpg"}
-              style={{
-                objectFit: "cover",
-              }}
-              className="swiper-hover"
-            />{" "}
+        
+        <SwiperSlide
+          style={{
+            backgroundImage: "url('Production Testing.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "600px",
+          }}
+        >
+          <div className="fil"></div>
+          <div className="hf">
+            <div className="center" style={{  flexDirection: 'column'}}>
+              <h5 style={{color: 'white' , marginBottom: '15px'}}> Testing:</h5>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+                Streamlines provides extensive production well testing services aimed at delivering precise data to
+                enhance well productivity and efficiency. We perform thorough assessments of pressure, temperature,
+                and flow to ensure optimal well performance and reliability. </p>
+              </div>
+            <Link to={"/testing"}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div style={{ height: "600px", overflow: "hidden" }}>
-            <img
-              src={"Production Testing.jpg"}
-              style={{
-                objectFit: "cover",
-              }}
-              className="swiper-hover"
-            />{" "}
+
+        <SwiperSlide
+          style={{
+            backgroundImage: "url('Training.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "600px",
+          }}
+        >
+          <div className="fil"></div>
+          <div className="hf">
+            <div className="center" style={{  flexDirection: 'column'}}>
+              <h5 style={{color: 'white' , marginBottom: '15px'}}>Traning:</h5>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+                At Streamlines, we deliver expert training services designed to advance skills and knowledge across a
+                wide range of industries. Our courses encompass all upstream and downstream disciplines, IT, machine
+                learning, digital transformation, finance, economics, and more. Our training programs are tailored to
+                meet the unique needs of each client, empowering professionals to excel and drive success in their
+                fields.
+              </p>
+            </div>
+            <Link to={"/courses"}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div style={{ height: "600px", overflow: "hidden" }}>
-            {" "}
-            <img
-              src={"Software.webp"}
-              style={{
-                objectFit: "cover",
-              }}
-              className="swiper-hover"
-            />{" "}
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div style={{ height: "600px", overflow: "hidden" }}>
-            <img
-              src={"Training.jpg"}
-              style={{
-                objectFit: "cover",
-              }}
-              className="swiper-hover"
-            />{" "}
+
+        <SwiperSlide
+          style={{
+            backgroundImage: "url('Software.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "600px",
+          }}
+        >
+          <div className="fil"></div>
+          <div className="hf">
+            <div className="center" style={{  flexDirection: 'column'}}>
+              <h5 style={{color: 'white' , marginBottom: '15px'}}> Software:</h5>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+                Our company specializes in providing cutting-edge software solutions tailored to meet the diverse
+                needs of our clients. From specialized single-task tools to comprehensive software suites for complex
+                project management, we offer a wide range of software services to support geoscience, engineering,
+                and other industries.
+              </p>
+            </div>
+            <Link to={"/software"}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
           </div>
         </SwiperSlide>
 
