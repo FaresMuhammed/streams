@@ -4,6 +4,7 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Swiperr from "../Swiper/Swiper";
 import { useEffect, useRef } from "react";
+import AnimatedCounter from "./Animate";
 
 export default function Body() {
   const ref = useRef(null);
@@ -18,6 +19,7 @@ export default function Body() {
   useEffect(() => {
     ref.current.play();
   }, []);
+  
   return (
     <>
       <div className="imggdiv">
@@ -178,15 +180,18 @@ export default function Body() {
             innovative techniques, and comprehensive report exceeded
             expectations, influencing the design of an efficient gas lift system
             for East Zeit Field.
-            <p className="fw-bold mt-3">
-              Eng. Tarek Abdel Raouf <br />
-              Operations General Manager
-            </p>
+            <div style={{ display: 'flex' , justifyContent: 'flex-end' , marginBottom:'-50px'}} >
+              <p className="fw-bold mt-5">
+                Eng. Tarek Abdel Raouf <br />
+                Operations General Manager
+              </p>
+            </div>
+
           </p>
         </div>
       </div>
 
-      <div className="d-flex flex-wrap mb-5">
+      <div className="d-flex flex-wrap">
         <div className=" col-lg-6 col-12 border ">
           <div className="p-md-5 p-4">
             <h6 className="mb-5">ABOUT OUR COMPANY</h6>
@@ -217,19 +222,19 @@ export default function Body() {
           <div className="border d-flex flex-wrap col-md-12 mt-5 ">
             <div className="col-md-4 col-12  border-end border-bottom p-4 p-md-2 startt ">
               <div className="">
-                <h1 className=" display-3 fw-bold">+300</h1>
+                <h1 className=" display-3 fw-bold">+<AnimatedCounter from={0} to={300}/> </h1>
                 <p className="center">Delivered courses</p>
               </div>
             </div>
             <div className="col-md-4 col-12  border-end border-bottom  p-4 p-md-2 startt">
               <div>
-                <h1 className=" display-3 fw-bold">+50</h1>
+                <h1 className=" display-3 fw-bold">+<AnimatedCounter from={0} to={50}/></h1>
                 <p className="center">Clients</p>
               </div>
             </div>{" "}
             <div className="col-md-4 col-12  border-bottom p-md-3  p-4 p-md-2 startt">
               <div>
-                <h1 className=" display-3 fw-bold">5</h1>
+                <h1 className=" display-3 fw-bold"><AnimatedCounter from={0} to={5}/></h1>
                 <p className="center">Studies</p>
               </div>
             </div>

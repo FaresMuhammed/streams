@@ -1,9 +1,9 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer(props) {
   return (
-    <div className={`d-flex justify-content-center flex-wrap`}>
+    <div className={`d-flex justify-content-center flex-wrap`} style={{backgroundColor: ' rgb(231, 232, 238)'}}>
 
       <div
         className="col-lg-4 col-12 mt-5 p-md-5 p-4 border-bottom "

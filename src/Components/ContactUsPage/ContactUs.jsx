@@ -7,6 +7,7 @@ export default function ContactUs() {
     
 
     return(
+        <>
         <div className="d-flex flex-wrap" style={{backgroundColor: '#091929'}}>
             <div className="center flex-wrap p-md-5 p-3" style={{position: 'relative'  , color: '#EDEDED'}}>  
                 <div className="mt-5 d-flex flex-wrap">
@@ -71,8 +72,13 @@ export default function ContactUs() {
                 </div>
             </div>
 
-        <Footer  className={"color-white"}/>
 
         </div>
+                    <div>        
+                    <Footer  
+                    // className={"color-white"}
+                    />
+                </div>
+                </>
     )
 }
