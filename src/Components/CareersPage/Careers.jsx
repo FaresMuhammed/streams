@@ -147,7 +147,7 @@ export default function CareersPage() {
                   ● How to teach an online course{" "}
                 </p>
               </div>
-              <Link to={"/contactus"}>
+              <Link to={"/applynow"}>
                 <button className="btn btn-danger mt-3">Apply now</button>
               </Link>
             </div>

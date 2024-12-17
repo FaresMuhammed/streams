@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer(props) {
   return (
-    <div className={`d-flex justify-content-center flex-wrap`} style={{backgroundColor: ' rgb(231, 232, 238)'}}>
+    <div className={`d-flex justify-content-center flex-wrap`} style={{backgroundColor: '#152C49'}}>
 
       <div
         className="col-lg-4 col-12 mt-5 p-md-5 p-4 border-bottom "
@@ -11,11 +11,11 @@ export default function Footer(props) {
       >
         <h6
           className={`mb-5 ${props.className}`}
-          style={{ fontSize: "18px" }}
+          style={{ fontSize: "18px"  , color: 'white'}}
         >
           HEAD OFFICE
         </h6>
-        <p className={`mb-3 mb-0   ${props.className}`} style={{ fontSize: "14px" }}>
+        <p className={`mb-3 mb-0   ${props.className}`} style={{ fontSize: "14px" ,  color:'white'}}>
           9235/8 Adly El-Melegy
           Al Abageyah, El Mokattam, Cairo Governorate, 11571 , Egypt
         </p>
@@ -37,19 +37,19 @@ export default function Footer(props) {
         </h6>
         <Link
           className={` mb-0 py-4 ln ${props.className}`}
-          style={{ fontSize: "14px" , textDecoration: 'none' }}
+          style={{ fontSize: "14px" , textDecoration: 'none' ,  color:'white' }}
         >
           Facebook
         </Link>
         <Link
           className={` mb-0  py-4 ln ${props.className}`}
-          style={{ fontSize: "14px"  , textDecoration: 'none' }}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
         >
           Instagram
         </Link>
         <Link
           className={` mb-0  py-4 ln ${props.className}`}
-          style={{ fontSize: "14px"  , textDecoration: 'none' }}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
         >
           Linkedin
         </Link>
@@ -60,7 +60,7 @@ export default function Footer(props) {
       >
         <h6
           className={`mb-5 Link22  ${props.className}`}
-          style={{ fontSize: "18px" }}
+          style={{ fontSize: "18px" ,  color:'white'}}
         >
           INQUIRIES
         </h6>
@@ -68,7 +68,7 @@ export default function Footer(props) {
         <Link
           to={"/contactus"}
           className={`mb-5 py-4 ln ${props.className}`}
-          style={{ fontSize: "14px" }}
+          style={{ fontSize: "14px" , color:'white' }}
         >
           Become a subcontractor
         </Link>

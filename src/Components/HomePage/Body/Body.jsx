@@ -51,8 +51,8 @@ export default function Body() {
       </div>
 
       <div ref={secondRef} className="d-flex flex-wrap ">
-        <div className=" col-lg-4 col-12 border">
-          <div className="p-md-5 p-4">
+        <div className=" col-lg-4 col-12 border " style={{display:'flex' , flexDirection: 'column', justifyContent: 'center' , alignItems: 'center'}}>
+          <div className="p-md-5 p-4" >
             <h6 className="mb-4">OUR SERVICES</h6>
             <h2 className="mb-5">
               We Offer a Range of Services to Meet All Types of Needs
@@ -75,43 +75,58 @@ export default function Body() {
           </div>
         </div>
 
-        <div className=" col-lg-4 col-md-6 col-12 border">
+        <div className=" col-lg-4 col-md-6 col-12 border" >
+
           <div className=" border-bottom ">
-            <div className="p-md-5 p-4 col-12 h50">
-              <img
-                className="mb-2"
-                style={{ width: "12%" }}
-                src={"./Training.png"}
-              />
-              <h5 className="mb-4">Training</h5>
-              <p>
+            <div className="p-md-4 p-3 col-12 h50 d-flex gap-3 center">
+              <div
+               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%' }}
+               >
+                <img
+                  className=" mb-2"
+                  style={{ width: "50px" , height: '20%'}}
+                  src={"./Training.png"}
+                  />
+                <h6 className="">Training</h6>
+              </div>
+              <div>
+                <p>
                 Our industry-leading, competency-based training is now available
                 both online and in the classroom. Drawing on extensive global
                 experience, we offer comprehensive and unique courses designed
                 to elevate your qualifications and expertise.
-              </p>
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="p-md-5 p-4 col-12  h50">
-            <img
-              className="mb-2"
-              style={{ width: "12%" }}
-              src={"./Software.png"}
-            />
-            <h5 className="mb-4">Software</h5>
-            <p>
-              Our company specializes in providing cutting-edge software
+
+          <div className="p-md-4 p-3 col-12 h50 d-flex gap-3 center">
+              <div
+               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%' }}
+               >
+                <img
+                  className=" mb-2"
+                  style={{ width: "50px" , height: '20%'}}
+                  src={"./Software.png"}
+                  />
+                <h6 className="">Software</h6>
+              </div>
+              <div>
+                <p>
+                Our company specializes in providing cutting-edge software
               solutions tailored to meet the diverse needs of our clients. From
               specialized single-task tools to comprehensive software suites for
               complex project management, we offer a wide range of software
               services to support geoscience, engineering, and other industries.
-            </p>
-          </div>
+                </p>
+              </div>
+            </div>
+
         </div>
 
         <div className="col-lg-4 col-md-6 col-12 border ">
-          <div className=" border-bottom">
+          {/* <div className=" border-bottom">
             <div className="p-md-5 p-4 col-12">
               <img
                 className="mb-2"
@@ -125,9 +140,52 @@ export default function Body() {
                 sustainable reservoir management.
               </p>
             </div>
+          </div> */}
+          
+            <div className=" border-bottom ">
+            <div className="p-md-4 p-3 col-12 d-flex gap-3 center">
+              <div
+               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%'}}
+               >
+                <img
+                  className=" mb-2"
+                  style={{ width: "50px" , height: '20%'}}
+                  src={"Consultaion.jpg"}
+                  />
+                <h6 className="">Consultation</h6>
+              </div>
+              <div>
+                <p>
+                We provide tailored solutions to help clients overcome complex
+                  subsurface challenges, improve asset value, and ensure
+                  sustainable reservoir management.
+                </p>
+              </div>
+
+            </div>
           </div>
 
-          <div className="p-md-5 p-4 col-12">
+
+          <div className="p-md-4 p-3 col-12 h50 d-flex gap-3 center">
+              <div
+               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%' }}
+               >
+                <img
+                  className=" mb-2"
+                  style={{ width: "50px" , height: '20%'}}
+                  src={"./Opertation.png"}
+                  />
+                <h6 className="">Operations</h6>
+              </div>
+              <div>
+                <p>
+                Streamlines provides extensive production services aimed at
+              delivering precise data to enhance well
+              productivity and efficiency.
+                </p>
+              </div>
+            </div>
+          {/* <div className="p-md-5 p-4 col-12">
             <img
               className="mb-2"
               style={{ width: "12%" }}
@@ -139,7 +197,7 @@ export default function Body() {
               delivering precise data to enhance well
               productivity and efficiency.
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -19,6 +19,7 @@ import Users from "./Dashboard/Users/Users";
 import Updateuser from "./Dashboard/Users/UpdateUser";
 import Adduser from "./Dashboard/Users/AddUser";
 import Software from "./Components/Software/Software";
+import Applynow from "./Components/CareersPage/Applnow";
 
 function App() {
   return (
@@ -26,10 +27,12 @@ function App() {
       <Routes>
         {/* Puplic routes */}
         <Route element={<Website />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/applynow" element={<Applynow />} />
           <Route path="/courses" element={<Courses/>}/>
           <Route path="/courses/course" element={<SingleCourse/>}/>
-          <Route path="/projects" element={<CareersPage />} />
+          <Route path="/projects" element={<CareersPage/>}/>
+          <Route path="/applynow" element={<Applynow />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/artificalleft" element={<Artifical />} />

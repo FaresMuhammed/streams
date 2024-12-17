@@ -199,7 +199,7 @@ export default function Swiperr() {
           </div>
         </SwiperSlide>
 
-        <SwiperSlide
+        {/* <SwiperSlide
           style={{
             backgroundImage: "url('Software.webp')",
             backgroundSize: "cover",
@@ -222,7 +222,7 @@ export default function Swiperr() {
               <button className="btn btn-danger">Learn more</button>
             </Link>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

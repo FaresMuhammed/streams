@@ -143,12 +143,16 @@ export default function Header(props) {
           `}
         >
           <div className={`div1 `}>
+          <Link to={'/'}>
+
             <div className="div2 h-100">
-              <img
-                src={"/Streamlines-logo-without-background.png"}
-                className="img2"
-              />
+                <img
+                  src={"/Streamlines-logo-without-background.png"}
+                  className="img2"
+                />
             </div>
+            </Link>
+
 
             <div className="d-flex h-00">
               <div className="d-flex align-items-center gap-5 ">
