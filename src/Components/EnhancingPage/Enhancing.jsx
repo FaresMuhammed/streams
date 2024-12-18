@@ -23,10 +23,14 @@ export default function Enhancing() {
                         <div className=" d-flex flex-wrap mt-5">
                             <div className="col-lg-5 col-12 p-lg-5  mt-5">
                                 <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
-                                    Artificial Lift
+                                Enhanced Oil Recovery - EOR
                                 </h1>
                                 <p className="mb-lg-5 mb-5">
-                                    Discover the power of Artificial Lift & cutting-edge testing gear in the dynamic world of oil & gas. Unleash the potential of wells with pumps, gas lift & precision monitoring, optimizing production & resource management to new heights!
+                                    Streamlines provides advanced polymer technologies to improve the performance and
+                                    economics of Oil & Gas extraction operations. Our solutions are designed to meet or exceed
+                                    the needs of our customers in the Oil & Gas industry.
+                                    In all Oil & Gas applications, Streamlines offers tailored polymers and equipment solutions
+                                    from conceptual lab studies through to full-field operations. Our support services include: 
                                 </p>
                                 <NavLink to={'/contactus'}>
                                     <button className="p-2 mb-5 " style={{border: 'none' , backgroundColor: '#BD2C2C' , color: 'white' , borderRadius: '5px'}}>Contact us</button>
@@ -42,57 +46,64 @@ export default function Enhancing() {
                         <div>
                             <img  
                                 className="w-100 mb-4"
-                                src={"compound-balance-pump-jack.jpg"}
+                                src={"LOGISTICS.png"}
                                 style={{
                                 objectFit: "cover",
-                                height: '50%'
+                                height: '300px'
                                 }}
                             />
-                                <h1 className="mb-4" style={{color: '#0F2647'}}>Compound Balancing Pumping Unit</h1>
-                                <p style={{color :'#060606'}}>Compound Balancing Pumping Unit creates compound balancing equipment and combinesall the advantages of conventional beam pumping unit. At the same time, it reduces electricity usage when the minimum torque is reached.</p>
+                                <h1 className="mb-4 d-flex align-items-center" style={{color: '#0F2647'  , height: '60px'}}>Logistics & Chemical Supply </h1>
+                                <p style={{color :'#060606' }}>
+                                    Our expertise in polymer chemistry and
+                                    engineering allows any polymer flood project to
+                                    be completed in full with customized solutions.
+                                    Due to the unique nature of each oilfield, we
+                                    offer tailored polymer and equipment
+                                    solutions, from conceptual studies through fullfield operations.
+                                </p>
                         </div>
                     </div>
+
+                    
                     <div className="center flex-wrap p-3 col-12 col-lg-5 shadow rounded" style={{ color: "#EDEDED" }}>
-                        <div>
-                            <img  
-                                className="w-100 mb-4"
-                                src={"double-horsehead-pump-jack.jpg"}
-                                style={{
-                                objectFit: "cover",
-                                height: '50%'
-                                }}
-                            />
-                                <h1 className="mb-4" style={{color: '#0F2647'}}>Double-horsehead<br/> Beam</h1>
-                                <p className="mb-5" style={{color :'#060606'}}>Double-horsehead pumping unit is based on the model of conventional type. It adopts special curve beam arm. It is one of the ten energy conservation pumping unit that China National Petrochemical Corp recommends.</p>
-                        </div>
-                    </div>
-                    <div className="center flex-wrap p-3 col-12 col-lg-5 shadow rounded" style={{ color: "#EDEDED" }}>
-                            <div>
-                                <img  
-                                    className="w-100 mb-4"
-                                    src={"double-horsehead-nodding-donkey-min.jpg"}
-                                    style={{
-                                    objectFit: "cover",
-                                    height: '50%'
-                                    }}
-                                />
-                                    <h1 className="mb-4" style={{color: '#0F2647'}}>Preposition type Double-horsehead</h1>
-                                    <p style={{color :'#060606'}}>Preposition type double-horsehead beam pumping unit is balanced with mounting horsehead on the back of walking beam, inside counterbalance and hanging balancing weight on the back-horse head. It displays simpler structure, easier ways of rebalancing and maintenance, smaller additional dynamic load, longer stroke length, less energy consumption, greater efficiency and longer service life.
+                    <div>
+                        <img  
+                            className="w-100 mb-4"
+                            src={"LAB STUDY.jpg"}
+                            style={{
+                            objectFit: "cover",
+                            height: '300px'
+                        }}
+                        />
+
+                            <h1 className="mb-4 d-flex align-items-center" style={{color: '#0F2647' , height: '60px'}}>Laboratory Studies</h1>
+                            <p style={{color :'#060606' }}>
+                                        Our laboratory technicians work closely with
+                                        local and interationato determine the best
+                                        polymer to suit any oilfield application. From
+                                        polymer selection at project start-up to quality
+                                        assurance and quality control, Streamlines is
+                                        able to ensure that the project runs smoothly.
                                     </p>
-                            </div>
                     </div>
+                </div> 
+
                 <div className="center flex-wrap p-3 col-12 col-lg-5 shadow rounded" style={{ color: "#EDEDED" }}>
                         <div>
                             <img  
                                 className="w-100 mb-4"
-                                src={"diameter-adjust-moment-regulate-oil-well-pumping-unit.jpg"}
+                                src={"Field-Operations.jpg"}
                                 style={{
                                 objectFit: "cover",
-                                height: '50%'
+                                height: '300px'
                                 }}
                             />
-                                <h1 className="mb-4" style={{color: '#0F2647'}}>Diameter adjust moment regulate</h1>
-                                <p style={{color :'#060606'}}>Diameter adjust moment regulate pumping unit has advantages of simpler structure, reliable working quality and convenient repairment. It is extremely suitable for extraction of low and medium viscosity petro and high-water content petro for horizontal well, inclined well and viscous crude well that are hard to extract in normal condition, it is able to extract with greater size of reducer, motor and less SPM.</p>
+                          <h1 className="mb-4 d-flex align-items-center" style={{color: '#0F2647'  , height: '60px'}}>Field Operations</h1>
+                                <p style={{color :'#060606' }}>Training, installation, commissioning, start-up,
+                                    routine fluid testing, troubleshooting, and
+                                    continued laboratory testing services are all
+                                    available to our customers.
+                                </p>
                         </div>
                 </div>
             </div>

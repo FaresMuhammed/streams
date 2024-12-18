@@ -49,7 +49,7 @@ export default function Header(props) {
   // Useeffect to get current user
   const cookie = Cookie();
   const token = cookie.get("eng");
-  console.log(token);
+  // console.log(token);
 
   useEffect(() => {
     setLoading(true);
@@ -60,7 +60,7 @@ export default function Header(props) {
       .then((res) => setcurrentUser(res.data.name))
       .finally(() => setLoading(false));
   }, []);
-  console.log(currentUser);
+  // console.log(currentUser);
 
       // Logout function
       function Logout() {
@@ -92,7 +92,7 @@ export default function Header(props) {
                   fontSize: "17px",
                 }}
               >
-                PRODUCTION
+                OUR TEAM
               </Dropdown.Toggle>
             </NavLink>
             <Dropdown.Menu>
@@ -162,6 +162,14 @@ export default function Header(props) {
                       HOME
                     </NavLink>
 
+                    <NavLink to={"/aboutus"} className="Link topbar">
+                      ABOUT US
+                    </NavLink>
+
+                    <NavLink to={"/courses"} className="Link topbar">
+                      SERVICES
+                    </NavLink>
+
                     <Dropdown>
                       <NavLink className="Link topbar" to={"/artificalleft"}>
                         <Dropdown.Toggle
@@ -172,7 +180,7 @@ export default function Header(props) {
                             fontSize: "14px",
                           }}
                         >
-                          PRODUCTION
+                          OUR TEAM
                         </Dropdown.Toggle>
                       </NavLink>
                       <Dropdown.Menu>
@@ -202,15 +210,11 @@ export default function Header(props) {
                         </Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    <NavLink to={"/courses"} className="Link topbar">
-                      COURSES
-                    </NavLink>
+
                     <NavLink to={"/projects"} className="Link topbar">
                       CAREERS
                     </NavLink>
-                    <NavLink to={"/aboutus"} className="Link topbar">
-                      ABOUT US
-                    </NavLink>
+
                     <NavLink to={"/contactus"} className="Link topbar">
                       CONTACT US
                     </NavLink>

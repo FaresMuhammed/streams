@@ -8,6 +8,7 @@ import AnimatedCounter from "./Animate";
 
 export default function Body() {
   const ref = useRef(null);
+  const sfref = useRef(null);
   const secondRef = useRef(null);
 
   // useEffect(() => {
@@ -19,21 +20,29 @@ export default function Body() {
   useEffect(() => {
     ref.current.play();
   }, []);
-  
+
+  // console.log(sfref.current.offsetTop);
+
   return (
     <>
       <div className="imggdiv">
-        <video
-          ref={ref}
-          className="bg mt-5"
-          loop
-          muted
-          style={{ width: "100%", height: "100%" }}
-        >
-          <source src="video.mp4" type="video/mp4" />
-        </video>
+        <div className="position-relative overflow-hidden">
+          <div
+            className="position-absolute top-0 start-0 bg-black w-100 "
+            style={{ zIndex: "5", opacity: "0.3", height: "99%" }}
+          ></div>
+          <video
+            ref={ref}
+            className="bg mt-5"
+            loop
+            muted
+            style={{ width: "100%", height: "100%" }}
+          >
+            <source src="video.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-        <div className="title-div h-100 ps-md-5 p-3">
+        <div className="title-div ps-md-5 p-3" style={{ zIndex: "6" }}>
           <div className="">
             <h1 className="title fw-bold d-block ani">WE CREATE THE</h1>
             <h1
@@ -51,8 +60,16 @@ export default function Body() {
       </div>
 
       <div ref={secondRef} className="d-flex flex-wrap ">
-        <div className=" col-lg-4 col-12 border " style={{display:'flex' , flexDirection: 'column', justifyContent: 'center' , alignItems: 'center'}}>
-          <div className="p-md-5 p-4" >
+        <div
+          className=" col-lg-4 col-12 border "
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div className="p-md-5 p-4">
             <h6 className="mb-4">OUR SERVICES</h6>
             <h2 className="mb-5">
               We Offer a Range of Services to Meet All Types of Needs
@@ -75,59 +92,70 @@ export default function Body() {
           </div>
         </div>
 
-        <div className=" col-lg-4 col-md-6 col-12 border" >
-
+        <div className=" col-lg-4 col-md-6 col-12 border">
           <div className=" border-bottom ">
-            <div className="p-md-4 p-3 col-12 h50 d-flex gap-3 center">
+            <div className="p-md-4 p-3 col-12 h50 d-flex gap-4 center">
               <div
-               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%' }}
-               >
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  height: "280px",
+                }}
+              >
                 <img
                   className=" mb-2"
-                  style={{ width: "50px" , height: '20%'}}
+                  style={{ width: "50px", height: "20%" }}
                   src={"./Training.png"}
-                  />
+                />
                 <h6 className="">Training</h6>
               </div>
               <div>
                 <p>
-                Our industry-leading, competency-based training is now available
-                both online and in the classroom. Drawing on extensive global
-                experience, we offer comprehensive and unique courses designed
-                to elevate your qualifications and expertise.
+                  Our industry-leading, competency-based training is now
+                  available both online and in the classroom. Drawing on
+                  extensive global experience, we offer comprehensive and unique
+                  courses designed to elevate your qualifications and expertise.
                 </p>
               </div>
             </div>
           </div>
 
-
-          <div className="p-md-4 p-3 col-12 h50 d-flex gap-3 center">
-              <div
-               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%' }}
-               >
-                <img
-                  className=" mb-2"
-                  style={{ width: "50px" , height: '20%'}}
-                  src={"./Software.png"}
-                  />
-                <h6 className="">Software</h6>
-              </div>
-              <div>
-                <p>
-                Our company specializes in providing cutting-edge software
-              solutions tailored to meet the diverse needs of our clients. From
-              specialized single-task tools to comprehensive software suites for
-              complex project management, we offer a wide range of software
-              services to support geoscience, engineering, and other industries.
-                </p>
-              </div>
+          <div className="p-md-4 p-3 col-12 h50 d-flex gap-4 center">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                height: "280px",
+              }}
+            >
+              <img
+                className=" mb-2"
+                style={{ width: "50px", height: "20%" }}
+                src={"./Software.png"}
+              />
+              <h6 className="">Software</h6>
             </div>
-
+            <div>
+              <p>
+                Our company specializes in providing cutting-edge software
+                solutions tailored to meet the diverse needs of our clients.
+                From specialized single-task tools to comprehensive software
+                suites for complex project management, we offer a wide range of
+                software services to support geoscience, engineering, and
+                other industries.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="col-lg-4 col-md-6 col-12 border ">
-          {/* <div className=" border-bottom">
-            <div className="p-md-5 p-4 col-12">
+          <div className=" border-bottom">
+            {/* 
+<div className="p-md-5 p-4 col-12">
               <img
                 className="mb-2"
                 style={{ width: "12%" }}
@@ -141,50 +169,61 @@ export default function Body() {
               </p>
             </div>
           </div> */}
-          
-            <div className=" border-bottom ">
-            <div className="p-md-4 p-3 col-12 d-flex gap-3 center">
-              <div
-               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%'}}
-               >
-                <img
-                  className=" mb-2"
-                  style={{ width: "50px" , height: '20%'}}
-                  src={"Consultaion.jpg"}
-                  />
-                <h6 className="">Consultation</h6>
-              </div>
-              <div>
-                <p>
-                We provide tailored solutions to help clients overcome complex
-                  subsurface challenges, improve asset value, and ensure
-                  sustainable reservoir management.
-                </p>
-              </div>
 
+            <div className=" border-bottom ">
+              <div className="p-md-4 p-3 col-12 d-flex gap-4 center">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    height: "280px",
+                  }}
+                >
+                  <img
+                    className=" mb-2"
+                    style={{ width: "50px", height: "20%" }}
+                    src={"Consultaion.jpg"}
+                  />
+                  <h6 className="">Consultation</h6>
+                </div>
+                <div>
+                  <p>
+                    We provide tailored solutions to help clients overcome
+                    complex subsurface challenges, improve asset value, and
+                    ensure sustainable reservoir management.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-
-          <div className="p-md-4 p-3 col-12 h50 d-flex gap-3 center">
-              <div
-               style={{display: 'flex', justifyContent: 'center' , alignItems: 'center' , flexDirection: 'column' , height: '280px' , width: '100%' }}
-               >
-                <img
-                  className=" mb-2"
-                  style={{ width: "50px" , height: '20%'}}
-                  src={"./Opertation.png"}
-                  />
-                <h6 className="">Operations</h6>
-              </div>
-              <div>
-                <p>
-                Streamlines provides extensive production services aimed at
-              delivering precise data to enhance well
-              productivity and efficiency.
-                </p>
-              </div>
+          <div className="p-md-4 p-3 col-12 h50 d-flex gap-4 center">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                height: "280px",
+              }}
+            >
+              <img
+                className=" mb-2"
+                style={{ width: "50px", height: "20%" }}
+                src={"./Opertation.png"}
+              />
+              <h6 className="">Operations</h6>
             </div>
+            <div>
+              <p>
+                Streamlines provides extensive production services aimed at
+                delivering precise data to enhance well
+                productivity and efficiency.
+              </p>
+            </div>
+          </div>
           {/* <div className="p-md-5 p-4 col-12">
             <img
               className="mb-2"
@@ -238,13 +277,18 @@ export default function Body() {
             innovative techniques, and comprehensive report exceeded
             expectations, influencing the design of an efficient gas lift system
             for East Zeit Field.
-            <div style={{ display: 'flex' , justifyContent: 'flex-end' , marginBottom:'-50px'}} >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginBottom: "-50px",
+              }}
+            >
               <p className="fw-bold mt-5">
                 Eng. Tarek Abdel Raouf <br />
                 Operations General Manager
               </p>
             </div>
-
           </p>
         </div>
       </div>
@@ -277,22 +321,28 @@ export default function Body() {
               </button>
             </Link>
           </div>
-          <div className="border d-flex flex-wrap col-md-12 mt-5 ">
+          <div ref={sfref} className="border d-flex flex-wrap col-md-12 mt-5 ">
             <div className="col-md-4 col-12  border-end border-bottom p-4 p-md-2 startt ">
               <div className="">
-                <h1 className=" display-3 fw-bold">+<AnimatedCounter from={0} to={300}/> </h1>
+                <h1 className=" display-3 fw-bold">
+                  +<AnimatedCounter from={0} to={300} />{" "}
+                </h1>
                 <p className="center">Delivered courses</p>
               </div>
             </div>
             <div className="col-md-4 col-12  border-end border-bottom  p-4 p-md-2 startt">
               <div>
-                <h1 className=" display-3 fw-bold">+<AnimatedCounter from={0} to={50}/></h1>
+                <h1 className=" display-3 fw-bold">
+                  +<AnimatedCounter from={0} to={50} />
+                </h1>
                 <p className="center">Clients</p>
               </div>
             </div>{" "}
             <div className="col-md-4 col-12  border-bottom p-md-3  p-4 p-md-2 startt">
               <div>
-                <h1 className=" display-3 fw-bold"><AnimatedCounter from={0} to={5}/></h1>
+                <h1 className=" display-3 fw-bold">
+                  <AnimatedCounter from={0} to={5} />
+                </h1>
                 <p className="center">Studies</p>
               </div>
             </div>
