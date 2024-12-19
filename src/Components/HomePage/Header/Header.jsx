@@ -169,7 +169,7 @@ export default function Header(props) {
                     </NavLink>
 
                     <Dropdown>
-                      <NavLink className="Link topbar" to={"/artificalleft"}>
+                      <NavLink className="Link topbar" >
                         <Dropdown.Toggle
                           variant="transparent"
                           style={{
