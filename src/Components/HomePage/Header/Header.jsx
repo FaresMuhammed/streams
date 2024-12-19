@@ -86,7 +86,7 @@ export default function Header(props) {
           </NavLink>
 
           <Dropdown style={{ marginLeft: "-12px", marginTop: "35px" }}>
-            <NavLink to={"/artificalleft"}>
+            <NavLink >
               <Dropdown.Toggle
                 variant="transparent"
                 style={{
@@ -139,7 +139,7 @@ export default function Header(props) {
         </div>
       </div>
 
-      <div className="Header w-100">
+      <div className="Header w-100" style={{zIndex: '10'}}>
         <nav
           className={`nav  ${show ? `show ${props.showw}` : "hide"} 
           `}
@@ -168,7 +168,7 @@ export default function Header(props) {
                       ABOUT US
                     </NavLink>
 
-                    <Dropdown>
+                    <Dropdown >
                       <NavLink className="Link topbar" >
                         <Dropdown.Toggle
                           variant="transparent"
