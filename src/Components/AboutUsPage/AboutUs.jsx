@@ -12,16 +12,16 @@ export default function AboutUs() {
 
         <div className=" col-lg-6 col-12 ">
           <div className="p-md-5 p-4">
-            <h2 className="mb-3" style={{ color: "#717171" }}>
-              ABOUT INFINITYCORP
+            <h2 className="mb-4" style={{ color: "white" }}>
+              ABOUT US
             </h2>
-            <h1
+            {/* <h1
               className="mb-5 display-3"
               style={{ color: "#FFFFFF", fontWeight: "bold" }}
             >
               Your Gate to INFINITY solutions
-            </h1>
-            <p className="mb-2" style={{ color: "#A7A7A7" }}>
+            </h1> */}
+            {/* <p className="mb-2" style={{ color: "#A7A7A7" }}>
               The first spark of Infinity Corp. shone in the sky of Egypt in
               2014, serving the majority of the Egyptian market ever since.
             </p>
@@ -43,13 +43,9 @@ export default function AboutUs() {
               This is Infinity Corp Advertising Agency Recognizing the immense
               growth potential, we have decided to extend our professional
               services and inclusive capabilities to the MENA region.
-            </p>
+            </p> */}
             <p className="mb-2" style={{ color: "#A7A7A7" }}>
-              Our journey led us to shine in Kuwait in 2020, to achieve
-              remarkable success in the United Arab Emirates in 2022, and to
-              culminate in our recent expansion to the Kingdom of Saudi Arabia
-              in 2023. We aim to contribute to the Saudi market’s promising
-              future through the visionary initiative “Vision: KSA2030“
+            At Streamlines, we strive to advance the oil and gas industry through innovative services, expert insights, and leading-edge technology. Our team of petroleum engineers and industry specialists brings decades of experience across production testing, EOR applications, software integration, and consulting. Our goal is to drive efficient, data-centered solutions that maximize resource recovery, ensure operational safety, and promote sustainable field management, setting a standard of service excellence in the energy sector.
             </p>
           </div>
         </div>

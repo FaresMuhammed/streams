@@ -81,6 +81,10 @@ export default function Header(props) {
           <NavLink to={"/"} className="Link2 ">
             <h5>HOME</h5>
           </NavLink>
+          <NavLink to={"/aboutus"} className="Link2">
+            <h5>ABOUT US</h5>
+          </NavLink>
+
           <Dropdown style={{ marginLeft: "-12px", marginTop: "35px" }}>
             <NavLink to={"/artificalleft"}>
               <Dropdown.Toggle
@@ -92,7 +96,7 @@ export default function Header(props) {
                   fontSize: "17px",
                 }}
               >
-                OUR TEAM
+                SERVICES
               </Dropdown.Toggle>
             </NavLink>
             <Dropdown.Menu>
@@ -123,14 +127,12 @@ export default function Header(props) {
             </Dropdown.Menu>
           </Dropdown>
           <NavLink to={"/courses"} className="Link2">
-            <h5>COURSES</h5>
+            <h5>OUR TEAM</h5>
           </NavLink>
           <NavLink to={"/projects"} className="Link2">
             <h5>CAREERS</h5>
           </NavLink>
-          <NavLink to={"/aboutus"} className="Link2">
-            <h5>ABOUT US</h5>
-          </NavLink>
+
           <NavLink to={"/contactus"} className="Link2">
             <h5>CONTACT US</h5>
           </NavLink>
@@ -166,10 +168,6 @@ export default function Header(props) {
                       ABOUT US
                     </NavLink>
 
-                    <NavLink to={"/courses"} className="Link topbar">
-                      SERVICES
-                    </NavLink>
-
                     <Dropdown>
                       <NavLink className="Link topbar" to={"/artificalleft"}>
                         <Dropdown.Toggle
@@ -180,7 +178,7 @@ export default function Header(props) {
                             fontSize: "14px",
                           }}
                         >
-                          OUR TEAM
+                            SERVICES
                         </Dropdown.Toggle>
                       </NavLink>
                       <Dropdown.Menu>
@@ -210,6 +208,10 @@ export default function Header(props) {
                         </Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
+
+                    <NavLink to={"/courses"} className="Link topbar">
+                      OUR TEAM
+                    </NavLink>
 
                     <NavLink to={"/projects"} className="Link topbar">
                       CAREERS

@@ -10,8 +10,8 @@ export default function Enhancing() {
                 <div className="d-flex mb-2" style={{ flexDirection: "column" }}>
                     <div className="center flex-wrap p-md-5 p-2" style={{ position: "relative", color: "#EDEDED" }}>
                     <img
-                        className="img11 blur w-100"
-                        src={"nsplsh_47726d77566e5653536455~mv2_d_3626_2479_s_4_2.webp"}
+                        className="img11 blurr w-100"
+                        src={"oil-and-gas-inspections-AJC-18.jpg"}
                         style={{
                         position: "absolute",
                         top: "0",
@@ -19,19 +19,18 @@ export default function Enhancing() {
                         objectFit: "cover",
                         }}
                     />
+                    <div
+                        className="position-absolute top-0 start-0 bg-black w-100 "
+                        style={{ zIndex: "5", opacity: "0.3", height: "100%" }}
+                    ></div>
     
-                        <div className=" d-flex flex-wrap mt-5">
+                        <div className=" d-flex flex-wrap mt-5" style={{zIndex: '10'}}>
                             <div className="col-lg-5 col-12 p-lg-5  mt-5">
                                 <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
-                                Production
+                                Production Well Testing
                                 </h1>
                                 <p className="mb-lg-5 mb-5">
-                                    Streamlines Petroleum services is committed to maximizing the yield and efficiency of oil
-                                    extraction processes. We offer comprehensive solutions tailored to meet your needs:<br/>
-                                    Testing:
-                                    Streamlines conducts thorough testing of production wells to assess reservoir
-                                    characteristics, flow rates, fluid properties, and well integrity. This includes initial well
-                                    testing, extended well testing, and well performance evaluation.
+                                    Testing: Streamlines provides extensive production well testing services aimed at delivering precise data to enhance well productivity and efficiency. We perform thorough assessments of pressure, temperature, and flow to ensure optimal well performance and reliability.
                                 </p>
                                 <NavLink to={'/contactus'}>
                                     <button className="p-2 mb-5 " style={{border: 'none' , backgroundColor: '#BD2C2C' , color: 'white' , borderRadius: '5px'}}>Contact us</button>

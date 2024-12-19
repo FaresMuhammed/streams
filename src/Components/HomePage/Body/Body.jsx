@@ -70,10 +70,10 @@ export default function Body() {
           }}
         >
           <div className="p-md-5 p-4">
-            <h6 className="mb-4">OUR SERVICES</h6>
-            <h2 className="mb-5">
+            <h2 className="mb-4">OUR SERVICES</h2>
+            <h4 className="mb-5">
               We Offer a Range of Services to Meet All Types of Needs
-            </h2>
+            </h4>
 
             <Link to={"/services"} style={{ textDecoration: "none" }}>
               <button

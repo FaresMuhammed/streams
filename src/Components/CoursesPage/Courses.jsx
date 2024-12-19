@@ -21,7 +21,7 @@ export default function Courses() {
         >
           <img
             className="img11 blurr w-100"
-            src={"cd13224.jpg"}
+            src={"directions_training_center_cover.jpg"}
             style={{
               position: "absolute",
               top: "0",
@@ -29,19 +29,18 @@ export default function Courses() {
               objectFit: "cover",
             }}
           />
+          <div
+            className="position-absolute top-0 start-0 bg-black w-100 "
+            style={{ zIndex: "5", opacity: "0.3", height: "100%" }}
+          ></div>
 
-          <div className=" d-flex flex-wrap mt-5">
+          <div className=" d-flex flex-wrap mt-5" style={{zIndex: '10'}}>
             <div className="col-lg-6 col-12 p-lg-5  mt-5">
               <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
-                Training Courses
+                Training Services
               </h1>
               <p className="mb-lg-5 mb-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                At Streamlines, we deliver expert training services designed to advance skills and knowledge across a wide range of industries. Serving both local and international clients—including leading companies like Khalda, Agiba, GUPCO, Rashpetco, Bapetco, ADNOC, and the Ministry of Energy and Mining in Sudan—our courses encompass all upstream disciplines, IT, machine learning, digital transformation, finance, economics, and more. Our training programs are tailored to meet the unique needs of each client, empowering professionals to excel and drive success in their fields.
               </p>
             </div>
           </div>

@@ -8,10 +8,10 @@ export default function Enhancing() {
         return(
             <>
                 <div className="d-flex mb-2" style={{ flexDirection: "column" }}>
-                    <div className="center flex-wrap p-md-5 p-2" style={{ position: "relative", color: "#EDEDED" }}>
+                    <div className="center flex-wrap p-md-5 p-2 mt-5" style={{ position: "relative", color: "#EDEDED" }}>
                     <img
-                        className="img11 blur w-100"
-                        src={"nsplsh_47726d77566e5653536455~mv2_d_3626_2479_s_4_2.webp"}
+                        className="img11 blurr w-100"
+                        src={"polymers-could-have-big-potential-in-kuwait-chemical-eor.png"}
                         style={{
                         position: "absolute",
                         top: "0",

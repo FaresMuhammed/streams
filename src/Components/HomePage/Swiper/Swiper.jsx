@@ -26,13 +26,13 @@ export default function Swiperr() {
   return (
     <div className="mb-5">
       <div
-        className="col-12 p-md-5 p-3 d-flex flex-wrap "
+        className="col-12 p-3 d-flex flex-wrap "
         style={{ justifyContent: "space-between" }}
       >
-        <div className=" col-lg-10 d-flex align-items-center">
-          <h6 className="mb-4">FEATURED PROJECTS</h6>
+        <div className="  d-flex align-items-center">
+          <h2 className="mb-4">FEATURED PROJECTS</h2>
         </div>
-        <div className=" col-lg-2 mb-4">
+        <div className="  mb-4">
           <Link to={"/projects"} style={{ textDecoration: "none" }}>
             <button
               style={{ padding: "0 30px" }}
