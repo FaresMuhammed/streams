@@ -73,7 +73,7 @@ export default function Header(props) {
   
   return (
     <>
-      <div className={`slider p-4  ${showSlider ? "goIn" : "goOut"} `}>
+      <div className={`slider p-4  ${showSlider ? "goIn" : "goOut"} `} style={{ zIndex: '202'}}>
         <div className="icon2" onClick={() => setShowslider((prev) => !prev)}>
           <FontAwesomeIcon icon={faClose} />
         </div>
@@ -139,7 +139,7 @@ export default function Header(props) {
         </div>
       </div>
 
-      <div className="Header w-100" style={{zIndex: '10'}}>
+      <div className="Header w-100" style={{zIndex: '100'}}>
         <nav
           className={`nav  ${show ? `show ${props.showw}` : "hide"} 
           `}

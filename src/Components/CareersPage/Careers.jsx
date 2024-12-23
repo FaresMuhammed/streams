@@ -10,19 +10,23 @@ export default function CareersPage() {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="d-flex" style={{ flexDirection: "column" }}>
+    <div className="d-flex mt-5" style={{ flexDirection: "column" }}>
       <div
-        className="center flex-wrap p-5 div-cover"
+        className="center flex-wrap p-md-5 p-3 mt-3"
         style={{ position: "relative", color: "#EDEDED" }}
       >
         <img
-          className="img1 blur w-100"
-          src={"nsplsh_47726d77566e5653536455~mv2_d_3626_2479_s_4_2.webp"}
+          className="img1 blurr w-100"
+          src={"illustration-offshore-workers-image-xmentoys-112296-ezgif.com-webp-to-jpg-converter.jpg"}
           style={{ position: "absolute", top: "0", zIndex: "-1" }}
         />
+        <div
+          className="position-absolute top-0 start-0 bg-black w-100 "
+          style={{ zIndex: "5", opacity: "0.3", height: "100%" }}
+        ></div>
 
-        <div className="mt-5 d-flex flex-wrap">
-          <div className="col-lg-6 col-12 p-lg-5  mt-lg-5">
+        <div className=" d-flex flex-wrap" style={{zIndex: '10'}}>
+          <div className="col-lg-6 col-12 p-lg-5">
             <h1 className="mb-lg-5 mb-3" style={{ fontSize: "60px" }}>
               Careers
             </h1>
@@ -45,68 +49,68 @@ export default function CareersPage() {
             </p>
           </div>
 
-          <div className="col-lg-6 col-12 mt-5">
+          <div className="col-lg-6 col-12 mt-md-5">
+          <h1 className="mb-lg-5 mb-3 " style={{ fontSize: "60px" }}>
+              Jobs
+            </h1>
             <div className="col-12 w-100 mb-md-5 mb-3"></div>
             <Link
               onClick={handleShow}
-              className=" w-100"
+              className=" w-100 "
               style={{ textDecoration: "none" }}
             >
               <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2"
-                style={{ backgroundColor: "white" }}
+                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
+                style={{ backgroundColor: "white" , borderRadius: '13px'}}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h3 style={{ color: "black" }} className="apply-h3">
+                <h4 style={{ color: "black" }} className="apply-h3">
                   C++/QT Software Engineer – Belgrade, Serbia
-                </h3>
+                </h4>
               </div>
             </Link>
             <Link
               onClick={handleShow}
-              className=" w-100"
+              className=" w-100 hv"
               style={{ textDecoration: "none" }}
             >
               <div
                 className="col-12 mt-md-5 mb-3 p-md-4 p-2"
-                style={{ backgroundColor: "white" }}
+                style={{ backgroundColor: "white" , borderRadius: '13px' }}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h3 style={{ color: "black" }} className="apply-h3">
-                  Software Automation Test Engineer with Python / AQA / SDET –
-                  Belgrade, Serbia{" "}
-                </h3>
+                <h4 style={{ color: "black" }} className="apply-h3">
+                  Software Automation Test Engineer with Python / AQA 
+                </h4>
               </div>
             </Link>
             <Link
               onClick={handleShow}
-              className=" w-100"
+              className=" w-100 hv"
               style={{ textDecoration: "none" }}
             >
               <div
                 className="col-12 mt-md-5 mb-3 p-md-4 p-2"
-                style={{ backgroundColor: "white" }}
+                style={{ backgroundColor: "white" , borderRadius: '13px' }}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h3 style={{ color: "black" }} className="apply-h3">
+                <h4 style={{ color: "black" }} className="apply-h3">
                   Mathematician-Programmer (C++) – Belgrade, Serbia
-                </h3>
+                </h4>
               </div>
             </Link>
             <Link
               onClick={handleShow}
-              className=" w-100"
+              className=" w-100 hv"
               style={{ textDecoration: "none" }}
             >
               <div
                 className="col-12 mt-md-5 mb-3 p-md-4 p-2"
-                style={{ backgroundColor: "white" }}
+                style={{ backgroundColor: "white" , borderRadius: '13px' }}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h3 style={{ color: "black" }} className="apply-h3">
-                  Reservoir Engineer with Integrated Modeling Experience –
-                  Belgrade, Serbia{" "}
-                </h3>
+                <h4 style={{ color: "black" }} className="apply-h3">
+                  Reservoir Engineer with Integrated Modeling Experience                </h4>
               </div>
             </Link>
           </div>

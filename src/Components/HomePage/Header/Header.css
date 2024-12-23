@@ -291,10 +291,14 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 770px) {
   .div1 {
     height: 100%;
-  }
+  }}
+
+
+@media (max-width: 600px) {
+
   .img2 {
     height: 100%;
   }

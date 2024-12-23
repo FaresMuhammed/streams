@@ -58,3 +58,24 @@
 .black{
   background-color: black;
 }
+
+/* .hv{
+  height: 100px;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
+  transform: .5s;
+  -webkit-transform: .5s;
+  -moz-transform: .5s;
+  -ms-transform: .5s;
+  -o-transform: .5s;
+} */
+/* .hv:hover{ */
+  /* height: 110px; */
+
+  /* border: 3px solid black; */
+  /* zoom: 102%; */
+  /* font-size: 25px; */
+/* } */
