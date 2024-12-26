@@ -2,101 +2,128 @@ import Footer from "../HomePage/Footer/Footer";
 
 export default function AboutUs() {
   return (
-    <div className="bg-black">
-        <div className="py-5 p-4 mt-5 d-flex flex-wrap gap-md-4">
+    <div>
+        {/* <div className="py-5 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
+</div> */}
 
-      <div className="d-flex flex-wrap mb-5" style={{ marginBottom: "200px" }}>
-        <div className="col-lg-6 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"compound-balance-nodding-donkey.jpg"} />
-        </div>
+      <div className="py-5 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
+        <div className="d-flex flex-wrap" >
+          <div className=" col-lg-6 col-12 ">
+            <div className="p-lg-5 p-1 py-md-5 mb-5">
 
-        <div className=" col-lg-6 col-12 ">
-          <div className="p-md-5 p-4">
-            <h2 className="mb-4" style={{ color: "white" }}>
-              ABOUT US
-            </h2>
-            {/* <h1
-              className="mb-5 display-3"
-              style={{ color: "#FFFFFF", fontWeight: "bold" }}
-            >
-              Your Gate to INFINITY solutions
-            </h1> */}
-            {/* <p className="mb-2" style={{ color: "#A7A7A7" }}>
-              The first spark of Infinity Corp. shone in the sky of Egypt in
-              2014, serving the majority of the Egyptian market ever since.
-            </p>
-            <p className="mb-2" style={{ color: "#A7A7A7" }}>
-              Infinity Advertising Agency provides 360⁰ marketing creative
-              solutions & brings together all different forms to develop
-              integrated campaigns that suit your entire needs & expectations.
-            </p>
-            <p className="mb-2" style={{ color: "#A7A7A7" }}>
-              This is a place where people gather without barriers, where trust
-              & respect dominate, and where data, technology & creativity meet
-              in endless possibilities.{" "}
-            </p>
-            <p className="mb-5" style={{ color: "#A7A7A7" }}>
-              All those incredible powers are used for the benefit of everyone’s
-              good.
-            </p>
-            <p className="mb-2" style={{ color: "#A7A7A7" }}>
-              This is Infinity Corp Advertising Agency Recognizing the immense
-              growth potential, we have decided to extend our professional
-              services and inclusive capabilities to the MENA region.
-            </p> */}
-            <p className="mb-2" style={{ color: "#A7A7A7" }}>
-            At Streamlines, we strive to advance the oil and gas industry through innovative services, expert insights, and leading-edge technology. Our team of petroleum engineers and industry specialists brings decades of experience across production testing, EOR applications, software integration, and consulting. Our goal is to drive efficient, data-centered solutions that maximize resource recovery, ensure operational safety, and promote sustainable field management, setting a standard of service excellence in the energy sector.
-            </p>
+              <h2 className="mb-4">
+                SERVICES
+              </h2>
+              <p className="mb-4">
+                <p>Training and Expert Oil and Gas Solutions by Streamlines Energy Enterprise              </p>
+                <p>At Streamlines Energy we focus and offer extensive technical training courses by expertise instructors of oil & gas sectors.  In addition to Specialized field development studies, field optimization studies, testing and operations services.              </p>
+                <p>Our expert team combines industry knowledge with production enhancement acumen to deliver tailored solutions that drive success for our clients.              </p>
+              </p>
+              <p className="mb-1 fw-bold">
+                •	Training <br/>
+                •	Software <br/>
+                •	Consultation<br/>
+                •	Operations<br/>
+              </p>
           </div>
         </div>
+        <div className="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+          <img className="img1" src={"compound-balance-beam-pump-manufacturers-1.jpg"}/>
+        </div>
       </div>
       </div>
 
-      <div
-        style={{ backgroundColor: "#15171C", marginBottom: "200px" , display: 'flex' , flexDirection: 'column'}}
+      <div className=" p-4 d-flex flex-wrap gap-md-4 border-bottom">
+        <div className="d-flex flex-wrap" >
+          <div className=" col-lg-6 col-12 ">
+            <div className="p-lg-5 p-1 py-md-5 mb-5">
+
+              <h2 className="mb-4">
+              OUR TEAM
+              </h2>
+              <p className="mb-4">
+                <p>With more than 40 years of combined experience in oil and gas chain from leading companies, we focus on providing clients with solutions that maximize value in a rapidly evolving oil & gas sector.</p>
+                <p>Our extensive network allows us to identify and execute the best opportunities for training, field development, field study, field optimization, testing, and operations.</p>
+                <p>Our professional team consists of experienced managers, technical specialists, and instructors from reputable local engineering partners.</p>
+                <p>Together, we assist our clients in successfully managing multidisciplinary studies, field development, and field optimization. We focus on providing clients with solutions that maximize value in the rapidly evolving oil and gas sectors.</p>
+              </p>
+              <p className="mb-1 fw-bold">
+                •	Growth Manager<br/>
+                •	General Manager<br/>
+                •	Service Manager<br/>
+                •	Technical Team<br/>
+                •	Support & HR Team<br/>
+                •	Accounting Team<br/>
+              </p>
+          </div>
+        </div>
+        <div className="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+          <img className="img1" src={"Screenshot 2024-12-23 133136.png"}/>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div className="p-lg-5 "
+        style={{  display: 'flex' , flexDirection: 'column'}}
       >
 
-
-        
-        {/* <div className="col-12 d-flex flex-wrap p-lg-5"> */}
-
-          <div className="col-12 p-4">
+        <div className="col-12 p-4">
             <div
               className="d-flex align-items-center"
             >
-              <h1 style={{ backgroundColor: "#DD4242" }} className="d-flex">
-                VISION
-              </h1>
+              <h4 style={{ backgroundColor: "#BF2A2A" , color: 'white' , width: '150px'}} className="center p-1">
+              HOME
+              </h4>
             </div>
-            <p style={{ color: "#9D9D9E" }}>
-              Our vision is to create a whole new marketing generation & to be
-              one of the top advertising agencies in the middle east. We plan to
-              demonstrate our impeccable philosophy by constantly keeping every
-              one of our clients updated on the most recent digital marketing &
-              advertising trends.
-            </p>
+            <p className="mb-4">
+                <p>Powering the world with Streamlines Energy Enterprise. We provide innovative and sustainable solutions for oil & gas industry.                </p>
+              </p>
           </div>
-          <div className="col-12 p-4">
+
+        <div className="col-12 p-4"  style={{marginTop: '-30px'}}>
             <div
               className="d-flex align-items-center"
-              // style={{ backgroundColor: "#DD4242" }}
             >
-              <h1 style={{ backgroundColor: "#DD4242" }} className="d-flex">
-                MISSION
-              </h1>
+              <h4 style={{ backgroundColor: "#BF2A2A" , color: 'white' , width: '150px'}} className="center p-1">
+              ABOUT US
+              </h4>
             </div>
-            <p style={{ color: "#9D9D9E" }}>
-              We are involved in increasing your market position & growth by
-              providing a wide variety of advertising services to ensure that
-              your brand will expand and reach the most significant number of
-              interested audience and loyal buyers.
+            <p className="mb-4">
+                <p>We are your Trusted Partner in the Oil and Gas Industry.                </p>
+                <p>Streamlines Energy is a service and supportive company focused on oil and gas sectors. We specialize in Training, Software Modelling, Field Development and Field Optimization Study, Testing and operations.                </p>
+                <p>Our unique approach combines corporate Training, operational, and technical expertise across various oil/gas sectors.                </p>
+              </p>
+          </div>
+
+          <div className="col-12 p-4" style={{marginTop: '-30px'}}>
+            <div
+              className="d-flex align-items-center"
+            >
+              <h4 style={{ backgroundColor: "#BF2A2A" , color: 'white' , width: '150px'}} className="center p-1">
+              VISION
+              </h4>
+            </div>
+            <p>
+              Leading sustainable Training, Studies, Modelling & field operation support services. 
+              Development the way to get started is to quit talking and begin doing.
+            </p>
+          </div>
+          <div className="col-12 p-4" style={{marginTop: '-30px'}}>
+            <div
+              className="d-flex align-items-center"
+            >
+              <h4 style={{ backgroundColor: "#BF2A2A" , color: 'white' , width: '150px'}} className="center p-1">
+              MISSION
+              </h4>
+            </div>
+            <p>
+            Evolve our business to add value to our people, customers, and shareholders by following the highest safety, technological, and operational standards.
             </p>
           </div>
         </div>
-        <div className="col-12 w-100">
-          <img className="img1 w-100" src="sucker rod2.jpg" />
-        </div>
-      {/* </div> */}
 
       <Footer className={"color-white"}/>
     </div>

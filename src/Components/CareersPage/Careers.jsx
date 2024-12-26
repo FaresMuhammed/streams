@@ -60,7 +60,7 @@ export default function CareersPage() {
               style={{ textDecoration: "none" }}
             >
               <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
+                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv hv"
                 style={{ backgroundColor: "white" , borderRadius: '13px'}}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
@@ -75,7 +75,7 @@ export default function CareersPage() {
               style={{ textDecoration: "none" }}
             >
               <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2"
+                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
                 style={{ backgroundColor: "white" , borderRadius: '13px' }}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
@@ -90,7 +90,7 @@ export default function CareersPage() {
               style={{ textDecoration: "none" }}
             >
               <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2"
+                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
                 style={{ backgroundColor: "white" , borderRadius: '13px' }}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
@@ -105,7 +105,7 @@ export default function CareersPage() {
               style={{ textDecoration: "none" }}
             >
               <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2"
+                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
                 style={{ backgroundColor: "white" , borderRadius: '13px' }}
               >
                 <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
