@@ -57,10 +57,10 @@ export default function AboutUs() {
               OUR TEAM
               </h2>
               <p className="mb-5">
-                With more than 40 years of combined experience in oil and gas chain from leading companies, we focus on providing clients with solutions that maximize value in a rapidly evolving oil & gas sector.<br/>
-                Our extensive network allows us to identify and execute the best opportunities for training, field development, field study, field optimization, testing, and operations.<br/>
-                Our professional team consists of experienced managers, technical specialists, and instructors from reputable local engineering partners.<br/>
-                Together, we assist our clients in successfully managing multidisciplinary studies, field development, and field optimization. We focus on providing clients with solutions that maximize value in the rapidly evolving oil and gas sectors.<br/>
+              <p className="mb-2">With more than 40 years of combined experience in oil and gas chain from leading companies, we focus on providing clients with solutions that maximize value in a rapidly evolving oil & gas sector.<br/>              </p>
+              <p className="mb-2">Our extensive network allows us to identify and execute the best opportunities for training, field development, field study, field optimization, testing, and operations.<br/>              </p>
+              <p className="mb-2">Our professional team consists of experienced managers, technical specialists, and instructors from reputable local engineering partners.<br/>              </p>
+              <p className="mb-2">Together, we assist our clients in successfully managing multidisciplinary studies, field development, and field optimization. We focus on providing clients with solutions that maximize value in the rapidly evolving oil and gas sectors.<br/>              </p>
               </p>
 
               
