@@ -22,16 +22,16 @@ export default function AboutUs() {
 
               <div className="col-12 flex-wrap gap-3" style={{display: 'flex' , justifyContent: 'space-between'}}>
                 <div className="col-md-5 col-12"  style={{backgroundColor: '#EAEAEA' , borderRadius: '5px' , height: '36px'}}>
-                  <p className="fw-bold p-1 ">  •  Training </p>
+                  <p className="fw-bold p-1 center">   Training </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1">  •	Software </p>
+                  <p className="fw-bold p-1 center">  Software </p>
+                </div>
+                <div className="col-md-5 col-12 " style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
+                  <p className="fw-bold p-1 center" > 	Consultation </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1">  •	Consultation </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1">  •	Operations </p>
+                  <p className="fw-bold p-1 center">  Operations </p>
                 </div>
               </div>
               {/* <p className="mb-1 fw-bold">
@@ -66,19 +66,19 @@ export default function AboutUs() {
               
               <div className="col-12 flex-wrap gap-3" style={{display: 'flex' , justifyContent: 'space-between'}}>
                 <div className="col-md-5 col-12"  style={{backgroundColor: '#EAEAEA' , borderRadius: '5px' , height: '36px'}}>
-                  <p className="fw-bold p-1 ">  •  Growth Manager </p>
+                  <p className="fw-bold p-1 center ">   Growth Manager </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1"> •	General Manager </p>
+                  <p className="fw-bold p-1 center"> General Manager </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1">  •	Service Manage </p>
+                  <p className="fw-bold p-1 center"> 	Service Manage </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1">  •	Support & HR Team </p>
+                  <p className="fw-bold p-1 center">	Support & HR Team </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1">   •	Accounting Team </p>
+                  <p className="fw-bold p-1 center">  Accounting Team </p>
                 </div>
               </div>
               {/* <p className="mb-1 fw-bold">

@@ -352,6 +352,137 @@ export default function Body() {
         <div className="col-lg-6 col-12 d-flex align-items-center justify-content-center border">
           <img className="img1" src={"ph.jpg"} />
         </div>
+
+        {/* <div className="col-12"  */}
+        {/* // style={{position: 'relative' , width: '100%' , height: '100%' , overflow: 'hidden'}}
+        // > */}
+
+        {/* <div className="col-12 mt-5 py-5 p-3" >
+            <h2 className="mb-4">Industry veterans that trust us</h2>
+          </div> */}
+
+        <div className=" d-flex gap-3 p-2 sc-2">
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"1-Logo.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"3-2.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"4F397657-CE5B-426D-8BB5-04FBBC3E2469.jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"5e709a571b62e.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"62cc3c128506279.Y3JvcCw1NjY5LDQ0MzQsMCw2MTc.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"1024x1024bb.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"16934754508.jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"1631353406420.jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"1637153398716.jfif"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"agiba-petroleum-company-logo-1D991D1519-seeklogo.com.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"Arda_Member_Logos_EGPC.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"Arda_Sponsor_Logos_Gold_Adnoc.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"aunnamed (1).png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"EGAS-e1560080422598-1-750x411.jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"images (1).jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"Logo-1.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"OC_02.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"osoco-logo.jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"suco-logo.webp"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"unnamed.jpg"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"unnamed.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"scimitar_production_egypt_ltd_spel_logo (11).png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"images.png"}
+          />
+          <img
+            className=""
+            style={{ height: "100px", width: "100px" }}
+            src={"1637153398716.png"}
+          />
+        </div>
       </div>
     </>
   );
