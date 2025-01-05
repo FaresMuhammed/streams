@@ -353,21 +353,23 @@ export default function Body() {
           <img className="img1" src={"ph.jpg"} />
         </div>
 
-        {/* <div className="col-12"  */}
-        {/* // style={{position: 'relative' , width: '100%' , height: '100%' , overflow: 'hidden'}}
-        // > */}
+         <div className="col-12"  
+          style={{position: 'relative' , width: '100%' , height: '100%' , overflow: 'hidden'}}
+        >
 
-        {/* <div className="col-12 mt-5 py-5 p-3" >
-            <h2 className="mb-4">Industry veterans that trust us</h2>
-          </div> */}
+        <div className="col-12 py-5 p-3" style={{marginBottom: '-80px'}}>
+          <h2 className="mb-4">INDUSTRY VETERANS THAT TRUST US</h2>
+        </div>
+
 
         <div
-          className="position-relative py-5 w-100"
-          style={{ height: "200px" }}
+          className="position-relative w-100 "
+          style={{ height: "200px" , overflowX: 'hidden'}}
         >
+          
           <div
             className="position-absolute top-50 "
-            style={{ overflow: "hidden", transform: "translateY(-50%)" }}
+            style={{ overflowX: "hidden", transform: "translateY(-50%)" }}
           >
             <div className="ticker-wrap">
               <div className="p-2 sc-1">
@@ -416,7 +418,7 @@ export default function Body() {
                     <img
                       className=""
                       style={{ height: "100px", width: "100px" }}
-                      src={"1637153398716.jfif"}
+                      src={"1637153398716.png"}
                     />
                     <img
                       className=""
@@ -493,7 +495,7 @@ export default function Body() {
                     <img
                       className=""
                       style={{ height: "100px", width: "100px" }}
-                      src={"1637153398716.png"}
+                      src={"16934760724.jpg"}
                     />
                   </div>
                 </div>
@@ -503,12 +505,13 @@ export default function Body() {
 
           <div
             className="position-absolute top-50 "
-            style={{ overflow: "hidden", transform: "translateY(-50%)" }}
+            style={{ overflow: "hidden", transform: "translateY(-50%)" , overflowX: 'hidden'}}
           >
             <div className="ticker-wrap">
               <div className="p-2 sc-2">
                 <div className="sc-2-track">
                   <div className="d-flex">
+                    
                     <img
                       className=""
                       style={{ height: "100px", width: "100px" }}
@@ -552,7 +555,7 @@ export default function Body() {
                     <img
                       className=""
                       style={{ height: "100px", width: "100px" }}
-                      src={"1637153398716.jfif"}
+                      src={"1637153398716.png"}
                     />
                     <img
                       className=""
@@ -630,10 +633,11 @@ export default function Body() {
                       className=""
                       style={{ height: "100px", width: "100px" }}
                       src={"1637153398716.png"}
-                    />
+                    /> 
                   </div>
                 </div>
-              </div>
+              </div>          </div>
+
             </div>
           </div>
         </div>
