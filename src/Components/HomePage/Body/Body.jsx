@@ -358,7 +358,7 @@ export default function Body() {
         >
 
         <div className="col-12 py-5 p-3" style={{marginBottom: '-80px'}}>
-          <h2 className="mb-4">INDUSTRY VETERANS THAT TRUST US</h2>
+          <h2 className="mb-4">OUR CLIENTS</h2>
         </div>
 
 

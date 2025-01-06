@@ -94,20 +94,20 @@
 .sc-1-track {
   transform: translateX(100%);
   display: inline-block;
-  animation: scroll 15s linear infinite;
-  animation-delay: 7.5s;
+  animation: scroll 25s linear infinite;
+  animation-delay: 12.5s;
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
-  -webkit-animation: scroll 15s linear infinite;
-  -webkit-animation-delay: 7.5s;
+  -webkit-animation: scroll 25s linear infinite;
+  -webkit-animation-delay: 12.5s;
 }
 
 .sc-2-track {
   display: inline-block;
-  animation: scroll 15s linear infinite;
-  -webkit-animation: scroll 15s linear infinite;
+  animation: scroll 25s linear infinite;
+  -webkit-animation: scroll 25s linear infinite;
 }
 .sc-2-track > * {
   display: inline-block;
