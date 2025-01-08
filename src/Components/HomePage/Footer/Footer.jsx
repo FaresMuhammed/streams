@@ -54,17 +54,24 @@ export default function Footer(props) {
               <p>LinkedIn</p>
             </div>         
         </Link>
+
+        <Link to={'https://wa.me/+201274953659'}  target="_blank"
+          className={` mb-0  py-4 ln ${props.className}`}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
+        >
         <div 
           className={` mb-0  py-4 ln ${props.className}`}
           style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
         >
             <div className="d-flex gap-2">
               <span className="icon-whatsapp" style={{fontSize: '22px'}}></span>
-              <p>+201274953659</p>
+              <p>Whatsapp</p>
             </div>        
           </div>
+          </Link>
 
       </div>
+
       <div
         className="col-lg-4 col-12 mt-5 p-md-5 p-4 "
         style={{ display: "flex", flexDirection: "column" }}
