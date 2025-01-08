@@ -61,19 +61,15 @@ export default function Body() {
 
       <div ref={secondRef} className="d-flex flex-wrap ">
         <div
-          className=" col-lg-4 col-12 border "
+          className=" col-lg-4 col-12 border roww"
           style={{
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
+            // flexDirection: "column",
             alignItems: "center",
           }}
         >
           <div className="p-md-5 p-4">
             <h2 className="mb-4">OUR SERVICES</h2>
-            <h4 className="mb-5">
-              We Offer a Range of Services to Meet All Types of Needs
-            </h4>
 
             <Link to={"/services"} style={{ textDecoration: "none" }}>
               <button
@@ -242,8 +238,8 @@ export default function Body() {
 
       <Swiperr />
 
-      <div className="d-flex flex-wrap p-md-3 center">
-        <div className="col-md-4 col-12 mt-5 py-5 p-3 res">
+      <div className="d-flex flex-wrap p-3 center" style={{marginTop:'-70px'}}>
+        {/* <div className="col-md-4 col-12 mt-5 py-5 p-3 res">
           <div className=" mt-3 ">
             <div>
               <h2 className="mb-5">STORIES</h2>
@@ -267,16 +263,41 @@ export default function Body() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="col-md-8 col-12 d-flex align-items-center justify-content-center py-5 border p-3 mt-3">
-          <p style={{ fontSize: "20px" }}>
+        <div className=" col-12 py-5 p-3 mt-5"  style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
+        <div>
+              <h2 className="mb-4">STORIES</h2>
+            </div>
+            
+          <p style={{ fontSize: "20px" }} className="mb-5">
             Streamlines adeptness in reservoir modelling, data integration, and
             field development strategies significantly shaped OSOCO's vision for
             Optimized reservoir Performance. The team's professionalism,
             innovative techniques, and comprehensive report exceeded
             expectations, influencing the design of an efficient gas lift system
             for East Zeit Field.
+            </p>
+
+
+            
+            <div className="mb-4">
+              <h6>Project Spotlight:</h6>
+              <p>Offshore Shukeir Oil CO. (OSOCO), Egypt </p>
+            </div>
+
+            <div className="mb-4">
+              <h6>Year Completed:</h6>
+              <p>2023</p>
+            </div>
+
+            <div>
+              <h6>Title:</h6>
+              <p>
+                Production Optimization, reservoir Modelling, and Gas Lift
+                Design
+              </p>
+            </div>
             <div
               style={{
                 display: "flex",
@@ -284,12 +305,11 @@ export default function Body() {
                 marginBottom: "-50px",
               }}
             >
-              <p className="fw-bold mt-5">
+              <p className="fw-bold mt-5" style={{fontSize:'22px'}}>
                 Eng. Tarek Abdel Raouf <br />
                 Operations General Manager
               </p>
             </div>
-          </p>
         </div>
       </div>
 
@@ -372,12 +392,12 @@ export default function Body() {
             style={{ overflowX: "hidden", transform: "translateY(-50%)" }}
           >
             <div className="ticker-wrap">
-              <div className="p-2 sc-1">
+              <div className="p-3 sc-1">
                 <div className="sc-1-track">
                   <div className="d-flex">
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"1-Logo.png"}
                     />
                     <img
@@ -392,7 +412,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "200px" }}
                       src={"5e709a571b62e.png"}
                     />
                     <img
@@ -417,7 +437,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"1637153398716.png"}
                     />
                     <img
@@ -464,7 +484,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"osoco-logo.jpg"}
                     />
                     <img
@@ -474,12 +494,12 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"unnamed.jpg"}
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"unnamed.png"}
                     />
                     <img
@@ -514,7 +534,7 @@ export default function Body() {
                     
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"1-Logo.png"}
                     />
                     <img
@@ -529,7 +549,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "200px" }}
                       src={"5e709a571b62e.png"}
                     />
                     <img
@@ -554,7 +574,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"1637153398716.png"}
                     />
                     <img
@@ -601,7 +621,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"osoco-logo.jpg"}
                     />
                     <img
@@ -611,12 +631,12 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"unnamed.jpg"}
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"unnamed.png"}
                     />
                     <img
@@ -631,7 +651,7 @@ export default function Body() {
                     />
                     <img
                       className=""
-                      style={{ height: "100px", width: "100px" }}
+                      style={{ height: "100px", width: "150px" }}
                       src={"1637153398716.png"}
                     /> 
                   </div>

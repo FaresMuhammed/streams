@@ -94,20 +94,20 @@
 .sc-1-track {
   transform: translateX(100%);
   display: inline-block;
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
   animation-delay: 12.5s;
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
-  -webkit-animation: scroll 25s linear infinite;
-  -webkit-animation-delay: 12.5s;
+  -webkit-animation: scroll 30s linear infinite;
+  -webkit-animation-delay: 15s;
 }
 
 .sc-2-track {
   display: inline-block;
-  animation: scroll 25s linear infinite;
-  -webkit-animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
+  -webkit-animation: scroll 30s linear infinite;
 }
 .sc-2-track > * {
   display: inline-block;
@@ -117,7 +117,7 @@
 .sc-2 img {
   width: 100px;
   height: 100px;
-  margin-right: 10px; /* Spacing */
+  margin-right: 30px; /* Spacing */
   flex-shrink: 0; /* Prevent shrinking */
 }
 

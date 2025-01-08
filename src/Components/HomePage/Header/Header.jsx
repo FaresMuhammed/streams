@@ -96,7 +96,7 @@ export default function Header(props) {
                   fontSize: "17px",
                 }}
               >
-                SERVICES
+                OPERATIONS
               </Dropdown.Toggle>
             </NavLink>
             <Dropdown.Menu>
@@ -127,7 +127,10 @@ export default function Header(props) {
             </Dropdown.Menu>
           </Dropdown>
           <NavLink to={"/courses"} className="Link2">
-            <h5>OUR TEAM</h5>
+            <h5>TRAINING</h5>
+          </NavLink>
+          <NavLink to={"/software"} className="Link2">
+            <h5>SOFTWARE</h5>
           </NavLink>
           <NavLink to={"/projects"} className="Link2">
             <h5>CAREERS</h5>
@@ -178,7 +181,7 @@ export default function Header(props) {
                             fontSize: "14px",
                           }}
                         >
-                            SERVICES
+                            OPERATIONS
                         </Dropdown.Toggle>
                       </NavLink>
                       <Dropdown.Menu>
@@ -210,7 +213,11 @@ export default function Header(props) {
                     </Dropdown>
 
                     <NavLink to={"/courses"} className="Link topbar">
-                      OUR TEAM
+                      TRAINING
+                    </NavLink>
+
+                    <NavLink to={"/software"} className="Link topbar">
+                      SOFTWARE
                     </NavLink>
 
                     <NavLink to={"/projects"} className="Link topbar">

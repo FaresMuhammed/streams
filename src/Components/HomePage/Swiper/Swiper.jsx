@@ -84,8 +84,8 @@ export default function Swiperr() {
           <div className="fil"></div>
           <div className="hf">
             <div className="center" style={{  flexDirection: 'column'}}>
-              <h5 style={{color: 'white' , marginBottom: '15px'}}> Artificial Lift:</h5>
-              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+              <h4 style={{color: 'white' , marginBottom: '15px'}}>ARTIFICIAL LEFT </h4>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'justify' }}>
                  Streamlines offers innovative artificial lift
                 solutions tailored for the oil and gas industry, enhancing
                 production efficiency and maximizing reservoir performance. Our
@@ -109,10 +109,9 @@ export default function Swiperr() {
           <div className="fil"></div>
           <div className="hf">
           <div className="center" style={{  flexDirection: 'column'}}>
-            <h5 style={{color: 'white' , marginBottom: '15px' }}> Consultation:  </h5>
+            <h4 style={{color: 'white' , marginBottom: '15px' }}>CONSULTATION </h4>
 
-            <p className="text-white " style={{ width: "80%" , textAlign: 'start' }}>
-              consultation:
+            <p className="text-white " style={{ width: "80%" , textAlign: 'justify' }}>
                 Streamlines is offering a variety of Geological, Geophysical, Reservoir Engineering, and Operations
                 Studies. The studies include the various stages from data collection, validation, marching, reservoir
                 history balance, sedimentary modeling, fault seal analysis, structural and tectonic interpretation of
@@ -137,8 +136,8 @@ export default function Swiperr() {
           <div className="fil"></div>
           <div className="hf">
             <div className="center" style={{  flexDirection: 'column'}}>
-              <h5 style={{color: 'white' , marginBottom: '15px'}}> Enhanced Oil Recovery (EOR):</h5>
-              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+              <h4 style={{color: 'white' , marginBottom: '15px'}}>ENHANCED OIL RECOVERY (EOR)</h4>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'justify' }}>
                 Streamlines ensures reliable supply chains and provides top-quality chemicals for Enhanced Oil
                 Recovery (EOR), covering the full process from sourcing to field applications and enabling customized
                 EOR strategies that meet specific reservoir requirements.
@@ -161,8 +160,8 @@ export default function Swiperr() {
           <div className="fil"></div>
           <div className="hf">
             <div className="center" style={{  flexDirection: 'column'}}>
-              <h5 style={{color: 'white' , marginBottom: '15px'}}> Testing:</h5>
-              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+              <h4 style={{color: 'white' , marginBottom: '15px'}}> TESTING</h4>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'justify' }}>
                 Streamlines provides extensive production well testing services aimed at delivering precise data to
                 enhance well productivity and efficiency. We perform thorough assessments of pressure, temperature,
                 and flow to ensure optimal well performance and reliability. </p>
@@ -184,8 +183,8 @@ export default function Swiperr() {
           <div className="fil"></div>
           <div className="hf">
             <div className="center" style={{  flexDirection: 'column'}}>
-              <h5 style={{color: 'white' , marginBottom: '15px'}}>Traning:</h5>
-              <p className="text-white " style={{ width: "80%"  , textAlign: 'start' }}>
+              <h4 style={{color: 'white' , marginBottom: '15px'}}>TRAINING</h4>
+              <p className="text-white " style={{ width: "80%"  , textAlign: 'justify' }}>
                 At Streamlines, we deliver expert training services designed to advance skills and knowledge across a
                 wide range of industries. Our courses encompass all upstream and downstream disciplines, IT, machine
                 learning, digital transformation, finance, economics, and more. Our training programs are tailored to

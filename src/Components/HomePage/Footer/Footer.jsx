@@ -37,7 +37,7 @@ export default function Footer(props) {
         >
           SOCIALS
         </h6>
-        <Link to={'/'}
+        <Link to={'https://www.facebook.com/streamlinesEnergy/'} target="_blank"
           className={` mb-0 py-4 ln ${props.className}`}
           style={{ fontSize: "14px" , textDecoration: 'none' ,  color:'white' }}>
             <div className="d-flex gap-2">
@@ -45,23 +45,25 @@ export default function Footer(props) {
               <p>Facebook</p>
             </div>
         </Link>
-        <Link
-          className={` mb-0  py-4 ln ${props.className}`}
-          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
-        >
-            <div className="d-flex gap-2">
-              <span className="icon-instagram" style={{fontSize: '22px'}}></span>
-              <p>Instagram</p>
-            </div>        
-          </Link>
-        <Link
+        <Link to={'https://www.linkedin.com/company/streamlinestraining/'}  target="_blank"
           className={` mb-0  py-4 ln ${props.className}`}
           style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
         >
             <div className="d-flex gap-2">
               <span className="icon-linkedin" style={{fontSize: '22px'}}></span>
               <p>LinkedIn</p>
-            </div>         </Link>
+            </div>         
+        </Link>
+        <div 
+          className={` mb-0  py-4 ln ${props.className}`}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
+        >
+            <div className="d-flex gap-2">
+              <span className="icon-whatsapp" style={{fontSize: '22px'}}></span>
+              <p>+201274953659</p>
+            </div>        
+          </div>
+
       </div>
       <div
         className="col-lg-4 col-12 mt-5 p-md-5 p-4 "

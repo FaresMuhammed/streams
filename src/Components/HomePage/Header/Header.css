@@ -236,7 +236,17 @@
   align-items: center;
 }
 
+.roww{
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media (max-width: 1100px) {
+  .roww{
+    justify-content: start;
+    flex-direction: row;
+
+  }
   .none {
     display: none;
   }

@@ -48,28 +48,28 @@ export default function Courses() {
 
         <div className="py-5" style={{ backgroundColor: "#EDEDED" }}>
           <div className="d-flex justify-content-center sublinks flex-wrap gap-4 mb-5">
-            <NavLink to={"/courses"} className="cat-btn p-1">
+            <NavLink to={"/courses"} className="cat-btn p-2 rounded">
               SUBSURFACE
             </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-1">
+            <NavLink to={"/S"} className="cat-btn p-2 rounded">
               WELLS
             </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-1">
+            <NavLink to={"/S"} className="cat-btn p-2 rounded">
               HSE
             </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-1">
+            <NavLink to={"/S"} className="cat-btn p-2 rounded">
               Business & Management
             </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-1">
+            <NavLink to={"/S"} className="cat-btn p-2 rounded">
               Digitalization
             </NavLink>
           </div>
 
           <div className="d-flex justify-content-center flex-wrap gap-3 mb-5">
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -83,10 +83,10 @@ export default function Courses() {
               </Link>
             </div>
 
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -99,10 +99,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -115,10 +115,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -131,10 +131,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -147,10 +147,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -163,10 +163,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className=" w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className=" w-100 ">
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -179,10 +179,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className="w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className="w-100" >
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
@@ -195,10 +195,10 @@ export default function Courses() {
                 </button>
               </Link>
             </div>
-            <div className="col-lg-3 col-md-6 col-10">
-              <Link onClick={handleShow} className="w-100">
+            <div className="col-lg-3 col-md-6 col-10 ">
+              <Link onClick={handleShow} className="w-100" >
                 <button
-                  className="p-3 w-100"
+                  className="p-3 w-100 rounded"
                   style={{
                     backgroundColor: "#FFFFFF",
                     width: "100%",
