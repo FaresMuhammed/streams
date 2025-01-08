@@ -61,7 +61,7 @@ export default function Footer(props) {
         >
         <div 
           className={` mb-0  py-4 ln ${props.className}`}
-          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' ,  marginTop: '-30px'}}
         >
             <div className="d-flex gap-2">
               <span className="icon-whatsapp" style={{fontSize: '22px'}}></span>
