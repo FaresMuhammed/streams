@@ -190,7 +190,7 @@ export default function Header(props) {
                             to={"/artificalleft"}
                             style={{ textDecoration: "none", color: "#2D2727" }}
                           >
-                            ARTIFICAL LIFT
+                            Artificial Lift
                           </NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
@@ -198,7 +198,7 @@ export default function Header(props) {
                             to={"/testing"}
                             style={{ textDecoration: "none", color: "#2D2727" }}
                           >
-                            TESTING
+                            Well Testing
                           </NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
@@ -206,7 +206,7 @@ export default function Header(props) {
                             to={"/enhancing"}
                             style={{ textDecoration: "none", color: "#2D2727" }}
                           >
-                            ENHANCING
+                            Enhanced Oil Recovery
                           </NavLink>
                         </Dropdown.Item>
                       </Dropdown.Menu>
