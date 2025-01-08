@@ -171,6 +171,105 @@ export default function Header(props) {
                       ABOUT US
                     </NavLink>
 
+
+                    
+                    <Dropdown >
+                      <NavLink className="Link topbar" >
+                        <Dropdown.Toggle
+                          variant="transparent"
+                          style={{
+                            border: "none",
+                            fontWeight: "bold",
+                            fontSize: "14px",
+                          }}
+                        >
+                            SERVICES
+                        </Dropdown.Toggle>
+                      </NavLink>
+                      <Dropdown.Menu>
+                        {/* <Dropdown.Item> */}
+
+
+
+
+
+                    <Dropdown >
+                      <NavLink className="" >
+                        <Dropdown.Toggle
+                          variant="transparent"
+                          style={{
+                            border: "none",
+                            // fontWeight: "bold",
+                            fontSize: "14px",
+                             textDecoration: "none"
+                             , color: "#2D2727", 
+                             marginLeft: '5px'
+
+
+                          }}
+                        >
+                            OPERATIONS
+                        </Dropdown.Toggle>
+                      </NavLink>
+                      <Dropdown.Menu>
+                        <Dropdown.Item>
+                          <NavLink
+                            to={"/artificalleft"}
+                            style={{ textDecoration: "none", color: "#2D2727" }}
+                          >
+                            Artificial lift
+                          </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                          <NavLink
+                            to={"/testing"}
+                            style={{ textDecoration: "none", color: "#2D2727" }}
+                          >
+                            Well Testing
+                          </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                          <NavLink
+                            to={"/enhancing"}
+                            style={{ textDecoration: "none", color: "#2D2727" }}
+                          >
+                            Enhanced Oil
+                          </NavLink>
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                        {/* </Dropdown.Item> */}
+
+
+
+                        <Dropdown.Item>
+                          <NavLink
+                            to={"/courses"}
+                            style={{ textDecoration: "none", color: "#2D2727" }}
+                          >
+                            Training
+                          </NavLink>
+                        </Dropdown.Item>
+
+                        <Dropdown.Item>
+                          <NavLink
+                            to={"/software"}
+                            style={{ textDecoration: "none", color: "#2D2727" }}
+                          >
+                            Software
+                          </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                          <NavLink
+                            to={"/consultation"}
+                            style={{ textDecoration: "none", color: "#2D2727" }}
+                          >
+                            Consultation
+                          </NavLink>
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+{/* 
                     <Dropdown >
                       <NavLink className="Link topbar" >
                         <Dropdown.Toggle
@@ -190,7 +289,7 @@ export default function Header(props) {
                             to={"/artificalleft"}
                             style={{ textDecoration: "none", color: "#2D2727" }}
                           >
-                            Artificial Lift
+                            Artificial lift
                           </NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
@@ -206,19 +305,11 @@ export default function Header(props) {
                             to={"/enhancing"}
                             style={{ textDecoration: "none", color: "#2D2727" }}
                           >
-                            Enhanced Oil Recovery
+                            Enhanced Oil
                           </NavLink>
                         </Dropdown.Item>
                       </Dropdown.Menu>
-                    </Dropdown>
-
-                    <NavLink to={"/courses"} className="Link topbar">
-                      TRAINING
-                    </NavLink>
-
-                    <NavLink to={"/software"} className="Link topbar">
-                      SOFTWARE
-                    </NavLink>
+                    </Dropdown> */}
 
                     <NavLink to={"/projects"} className="Link topbar">
                       CAREERS

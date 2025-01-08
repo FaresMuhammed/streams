@@ -267,10 +267,10 @@ export default function Body() {
 
         <div className=" col-12 py-5 p-3 mt-5"  style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
         <div>
-              <h2 className="mb-4">STORIES</h2>
+              <h2 className="mb-4">TESTIMONY</h2>
             </div>
             
-          <p style={{ fontSize: "20px" }} className="mb-5">
+          <p style={{ fontSize: "20px" }} className="mb-4">
             Streamlines adeptness in reservoir modelling, data integration, and
             field development strategies significantly shaped OSOCO's vision for
             Optimized reservoir Performance. The team's professionalism,
@@ -293,7 +293,7 @@ export default function Body() {
 
             <div>
               <h6>Title:</h6>
-              <p>
+              <p className="mb-5">
                 Production Optimization, reservoir Modelling, and Gas Lift
                 Design
               </p>
@@ -305,10 +305,10 @@ export default function Body() {
                 marginBottom: "-50px",
               }}
             >
-              <p className="fw-bold mt-5" style={{fontSize:'22px'}}>
+              {/* <p className="fw-bold mt-5" style={{fontSize:'22px'}}>
                 Eng. Tarek Abdel Raouf <br />
                 Operations General Manager
-              </p>
+              </p> */}
             </div>
         </div>
       </div>
