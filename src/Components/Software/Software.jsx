@@ -7,7 +7,7 @@ export default function Software() {
     return(
         <>
         <div className="mt-5 ">
-            <div className="center flex-wrap p-3 p-md-5 col-12 border-bottom" style={{ color: "#EDEDED" }}>
+            <div className=" flex-wrap p-3 p-md-5 col-12 border-bottom" style={{ color: "#EDEDED" }}>
             <div className="ps">
                     <Link  to={"https://rfdyn.com/"} target="_blank">
                         <h1  className="sh  d-flex align-items-center mt-5" style={{ height: '60px'}}>tNavigator</h1>
@@ -27,8 +27,7 @@ export default function Software() {
             </div>
 
             <div className=" flex-wrap p-3 p-md-5 col-12 border-bottom" style={{ color: "#EDEDED" }}>
-            <div className="ps">
-
+                <div className="ps">
                     <Link  to={"https://www.peloton.com/"} target="_blank">
                         <h1  className="sh  d-flex align-items-center " style={{ height: '60px'}}>Peloton</h1>
                     </Link>
@@ -103,7 +102,7 @@ export default function Software() {
                         </p>
                     <img  
                         className="w-100 mb-4"
-                        src={"Technology_oil_gas_subsurface_reservoir_modelling_Poseidon2.png.jpg"}
+                        src={"WhatsApp Image 2025-01-13 at 12.21.34_4328126c.jpg"}
                             style={{
                             objectFit: "cover",
                             // height: '500px'
