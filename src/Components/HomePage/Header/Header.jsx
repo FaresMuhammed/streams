@@ -1,5 +1,6 @@
 import "./Header.css";
 
+
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,10 +10,11 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { Dropdown } from "react-bootstrap";
+import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import Loading2 from "../../Loading/Loading2";
+import DropDirectionExample from "./drop";
 // import Loading2 from "Components/Loading/Loading2";
 
 export default function Header(props) {
@@ -172,7 +174,6 @@ export default function Header(props) {
                     </NavLink>
 
 
-                    
                     <Dropdown >
                       <NavLink className="Link topbar" >
                         <Dropdown.Toggle
@@ -187,65 +188,15 @@ export default function Header(props) {
                         </Dropdown.Toggle>
                       </NavLink>
                       <Dropdown.Menu>
-                        {/* <Dropdown.Item> */}
 
 
-
-
-
-                    <Dropdown >
-                      <NavLink className="" >
-                        <Dropdown.Toggle
-                          variant="transparent"
-                          style={{
-                            border: "none",
-                            // fontWeight: "bold",
-                            fontSize: "14px",
-                             textDecoration: "none"
-                             , color: "#2D2727", 
-                             marginLeft: '5px'
-
-
-                          }}
-                        >
-                            OPERATIONS
-                        </Dropdown.Toggle>
-                      </NavLink>
-                      <Dropdown.Menu>
-                        <Dropdown.Item>
-                          <NavLink
-                            to={"/artificalleft"}
-                            style={{ textDecoration: "none", color: "#2D2727" }}
-                          >
-                            Artificial lift
-                          </NavLink>
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                          <NavLink
-                            to={"/testing"}
-                            style={{ textDecoration: "none", color: "#2D2727" }}
-                          >
-                            Well Testing
-                          </NavLink>
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                          <NavLink
-                            to={"/enhancing"}
-                            style={{ textDecoration: "none", color: "#2D2727" }}
-                          >
-                            Enhanced Oil
-                          </NavLink>
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                        {/* </Dropdown.Item> */}
 
 
 
                         <Dropdown.Item>
                           <NavLink
                             to={"/courses"}
-                            style={{ textDecoration: "none", color: "#2D2727" }}
+                            style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px'}}
                           >
                             Training
                           </NavLink>
@@ -254,7 +205,7 @@ export default function Header(props) {
                         <Dropdown.Item>
                           <NavLink
                             to={"/software"}
-                            style={{ textDecoration: "none", color: "#2D2727" }}
+                            style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px'}}
                           >
                             Software
                           </NavLink>
@@ -262,11 +213,57 @@ export default function Header(props) {
                         <Dropdown.Item>
                           <NavLink
                             to={"/contactus"}
-                            style={{ textDecoration: "none", color: "#2D2727" }}
+                            style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px'}}
                           >
                             Consultation
                           </NavLink>
                         </Dropdown.Item>
+
+
+
+                      {['end'].map(
+                        (direction) => (
+                          <DropdownButton
+                            style={{marginLeft:'10px'}}
+                            as={ButtonGroup}
+                            key={direction}
+                            id={`dropdown-button-drop-${direction}`}
+                            drop={direction}
+                            variant="transparent"
+                            title={'OPERATIONS'}
+                          >
+                            <Dropdown.Item eventKey="1">                          
+                              <NavLink
+                                to={"/artificalleft"}
+                                style={{ textDecoration: "none", color: "#2D2727" }}
+                              >
+                                Artificial lift
+                              </NavLink>
+                            </Dropdown.Item>
+
+                            <Dropdown.Item eventKey="2">                          
+                              <NavLink
+                                to={"/testing"}
+                                style={{ textDecoration: "none", color: "#2D2727" }}
+                              >
+                                Well Testing
+                              </NavLink>
+                            </Dropdown.Item>
+
+                            <Dropdown.Item eventKey="3">                         
+                              <NavLink
+                                to={"/enhancing"}
+                                style={{ textDecoration: "none", color: "#2D2727" }}
+                              >
+                                Enhanced Oil
+                              </NavLink>
+                            </Dropdown.Item>
+                          </DropdownButton>
+                        ),
+                      )}
+
+
+
                       </Dropdown.Menu>
                     </Dropdown>
 {/* 
@@ -314,7 +311,6 @@ export default function Header(props) {
                     <NavLink to={"/projects"} className="Link topbar">
                       CAREERS
                     </NavLink>
-
                     <NavLink to={"/contactus"} className="Link topbar">
                       CONTACT US
                     </NavLink>
