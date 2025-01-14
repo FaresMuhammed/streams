@@ -224,7 +224,7 @@ export default function Header(props) {
                       {['end'].map(
                         (direction) => (
                           <DropdownButton
-                            style={{marginLeft:'10px'}}
+                            style={{marginLeft:'8px'}}
                             as={ButtonGroup}
                             key={direction}
                             id={`dropdown-button-drop-${direction}`}
