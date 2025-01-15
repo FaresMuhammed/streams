@@ -14,7 +14,6 @@ import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import Loading2 from "../../Loading/Loading2";
-import DropDirectionExample from "./drop";
 // import Loading2 from "Components/Loading/Loading2";
 
 export default function Header(props) {
@@ -212,7 +211,7 @@ export default function Header(props) {
                         </Dropdown.Item>
                         <Dropdown.Item>
                           <NavLink
-                            to={"/contactus"}
+                            to={"/consultation"}
                             style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px'}}
                           >
                             Consultation

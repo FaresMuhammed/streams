@@ -20,6 +20,7 @@ import Updateuser from "./Dashboard/Users/UpdateUser";
 import Adduser from "./Dashboard/Users/AddUser";
 import Software from "./Components/Software/Software";
 import Applynow from "./Components/CareersPage/Applnow";
+import Consultation from "./Components/Consultation/consultation";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
           <Route path="/enhancing" element={<Enhancing />} />
           <Route path="/testing" element={<Testing />} />
           <Route path="/software" element={<Software />} />
+          <Route path="/consultation" element={<Consultation />} />
+
 
 
         </Route>
