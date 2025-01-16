@@ -21,6 +21,9 @@ import Adduser from "./Dashboard/Users/AddUser";
 import Software from "./Components/Software/Software";
 import Applynow from "./Components/CareersPage/Applnow";
 import Consultation from "./Components/Consultation/consultation";
+import Jobs from "./Dashboard/Jobs/jobs";
+import Updatejobs from "./Dashboard/Jobs/Updatejobs";
+import Addjob from "./Dashboard/Jobs/Addjobs";
 
 function App() {
   return (
@@ -42,8 +45,6 @@ function App() {
           <Route path="/software" element={<Software />} />
           <Route path="/consultation" element={<Consultation />} />
 
-
-
         </Route>
 
         <Route element={<RequireLogin/>}>
@@ -56,6 +57,11 @@ function App() {
               <Route path='users' element={<Users/>}/>
               <Route path='users/:ID' element={<Updateuser/>}/>
               <Route path='user/add' element={<Adduser/>}/>
+
+              <Route path='jobs' element={<Jobs/>}/>
+              <Route path='jobs/:ID' element={<Updatejobs/>}/>
+              <Route path='jobs/add' element={<Addjob/>}/>
+
 
           </Route>
 

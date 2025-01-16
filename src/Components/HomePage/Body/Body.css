@@ -202,6 +202,12 @@
     padding: 0 150px;
   }
 }
+@media (min-width: 1638px){
+
+  .ll{
+    margin-left: 60px;
+  }
+}
 
 .sh{
   color: black;

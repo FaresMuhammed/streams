@@ -14,6 +14,20 @@ export const Links =[
         role: '2001'
     } ,
     {
+        name: 'Jobs' ,
+        path: 'jobs' ,
+        icon: faCartShopping,
+        role: ['2001']
+    } ,
+
+    {
+        name: 'Add job' ,
+        path: '/dashboard/jobs/add' ,
+        icon: faPlus ,
+        role: ['2001']
+    } ,
+
+    {
         name: 'Courses' ,
         path: '/dashboard/products' ,
         icon: faBook ,
@@ -25,16 +39,6 @@ export const Links =[
         icon: faPlus ,
         role: ['2001']
     } ,
-    {
-        name: 'Jobs' ,
-        path: '/dashboard/categories' ,
-        icon: faCartShopping,
-        role: ['2001']
-    } ,
-    {
-        name: 'Add job' ,
-        path: '/dashboard/category/add' ,
-        icon: faPlus ,
-        role: ['2001']
-    } ,
+
+
 ]

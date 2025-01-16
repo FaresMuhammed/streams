@@ -20,7 +20,7 @@ export default function Consultation() {
     <div>
       <div className="py-lg-2 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
         <div className="d-flex flex-wrap mt-5" >
-          <div className=" col-lg-5 col-12 ">
+          <div className=" col-lg-6 col-12 ">
             <div className="p-lg-5 p-1 py-md-5 mb-5">
 
               <h2 className="mb-4">
@@ -33,7 +33,7 @@ export default function Consultation() {
               </p>
           </div>
         </div>
-        <div className="col-lg-7 col-12 d-flex align-items-center justify-content-center">
+        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
           <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.37.59_0573c1cf.jpg"}/>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function Consultation() {
 
       <div className="py-lg-2 p-4  d-flex flex-wrap gap-md-4 border-bottom">
         <div className="d-flex flex-wrap " >
-          <div className=" col-lg-5 col-12 ">
+          <div className=" col-lg-6 col-12 ">
             <div className="p-lg-5 p-1 py-md-5 mb-5">
 
               <h2 className="mb-4">
@@ -57,15 +57,15 @@ export default function Consultation() {
               </p>
           </div>
         </div>
-        <div className="col-lg-7 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.37.59_709c6e49.jpg"}/>
+        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
+          <img className="img1 ll" src={"WhatsApp Image 2025-01-15 at 09.37.59_709c6e49.jpg"}/>
         </div>
       </div>
       </div>
 
       <div className="py-lg-2 p-4 d-flex flex-wrap gap-md-4 border-bottom">
         <div className="d-flex flex-wrap" >
-          <div className=" col-lg-5 col-12 ">
+          <div className=" col-lg-6 col-12 ">
             <div className="p-lg-5 p-1 py-md-5 mb-5">
 
               <h2 className="mb-4">
@@ -78,7 +78,7 @@ export default function Consultation() {
               </p>
           </div>
         </div>
-        <div className="col-lg-7 col-12 d-flex align-items-center justify-content-center">
+        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
           <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.38.00_0d2fd132.jpg"}/>
         </div>
       </div>
@@ -86,19 +86,19 @@ export default function Consultation() {
 
       <div className="py-lg-2 p-4 d-flex flex-wrap gap-md-4 mb-5">
         <div className="d-flex flex-wrap" >
-          <div className=" col-lg-5 col-12 ">
+          <div className=" col-lg-6 col-12 ">
             <div className="p-lg-5 p-1 py-md-5 mb-5">
               <h2 className="mb-4">
               Our Approach
               </h2>
               <p className="mb-4">
-                <p className="mb-2">•	Comprehensive Insights: Addressing interconnected technical, operational, and business challenges.                <br/></p>
-                <p className="mb-2">•	Operational Excellence: Identifying optimization opportunities at every stage.                <br/></p>
-                <p className="mb-5">•	Client-Centric Focus: Deep understanding of unique industry challenges and needs.                <br/></p>
+                <p className="mb-2">Comprehensive Insights: Addressing interconnected technical, operational, and business challenges.                <br/></p>
+                <p className="mb-2">Operational Excellence: Identifying optimization opportunities at every stage.                <br/></p>
+                <p className="mb-5">Client-Centric Focus: Deep understanding of unique industry challenges and needs.                <br/></p>
               </p>
           </div>
         </div>
-        <div className="col-lg-7 col-12 d-flex align-items-center justify-content-center">
+        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
           <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.38.00_7d38156d.jpg"}/>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function Consultation() {
 
 
       <div className="py-lg-0 p-4 d-flex flex-wrap gap-md-4">
-          <div className=" col-lg-5 col-12 ">
+          <div className=" col-lg-6 col-12 ">
             <div className="p-lg-5 p-1 py-md-5">
               <button className="btn btn-primary" onClick={onButtonClick}>Learn more <FontAwesomeIcon icon={faArrowRight}/></button>
         </div>
