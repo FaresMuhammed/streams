@@ -57,8 +57,8 @@ export default function Consultation() {
               </p>
           </div>
         </div>
-        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1 ll" src={"WhatsApp Image 2025-01-15 at 09.37.59_709c6e49.jpg"}/>
+        <div className=" col-lg-4 col-12 d-flex align-items-center justify-content-center">
+          <img className="img1 " style={{borderRadius: '30px'}} src={"WhatsApp Image 2025-01-16 at 10.14.38_6110b8b7.jpg"}/>
         </div>
       </div>
       </div>
