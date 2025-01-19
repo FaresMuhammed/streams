@@ -119,7 +119,7 @@ export default function Swiperr() {
                 risk analysis, reservoir engineering, FDP & FFR studies, and development plan.
               </p>
             </div>
-            <Link to={"/contactus"}>
+            <Link to={"/consultation"}>
               <button className="btn btn-danger">Learn more</button>
             </Link>
           </div>
@@ -198,9 +198,9 @@ export default function Swiperr() {
           </div>
         </SwiperSlide>
 
-        {/* <SwiperSlide
+        <SwiperSlide
           style={{
-            backgroundImage: "url('Software.webp')",
+            backgroundImage: "url('WhatsApp Image 2025-01-19 at 17.05.35_03c9afa4.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             height: "600px",
@@ -221,7 +221,7 @@ export default function Swiperr() {
               <button className="btn btn-danger">Learn more</button>
             </Link>
           </div>
-        </SwiperSlide> */}
+        </SwiperSlide>
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

@@ -31,11 +31,11 @@ function App() {
       <Routes>
         {/* Puplic routes */}
         <Route element={<Website />}>
-          <Route path="/" element={<HomePage/>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/applynow" element={<Applynow />} />
-          <Route path="/courses" element={<Courses/>}/>
-          <Route path="/courses/course" element={<SingleCourse/>}/>
-          <Route path="/projects" element={<CareersPage/>}/>
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/course" element={<SingleCourse />} />
+          <Route path="/projects" element={<CareersPage />} />
           <Route path="/applynow" element={<Applynow />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
@@ -44,30 +44,24 @@ function App() {
           <Route path="/testing" element={<Testing />} />
           <Route path="/software" element={<Software />} />
           <Route path="/consultation" element={<Consultation />} />
-
         </Route>
 
-        <Route element={<RequireLogin/>}>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/login" element={<Login/>}/>
+        <Route element={<RequireLogin />}>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Route>
 
-        <Route element={<Requireauth Allowedrole={['2001']}/>}>
-          <Route path='/dashboard' element={<Dashboard/>}>
-              <Route path='users' element={<Users/>}/>
-              <Route path='users/:ID' element={<Updateuser/>}/>
-              <Route path='user/add' element={<Adduser/>}/>
+        <Route element={<Requireauth Allowedrole={["2001"]} />}>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="users" element={<Users />} />
+            <Route path="users/:ID" element={<Updateuser />} />
+            <Route path="user/add" element={<Adduser />} />
 
-              <Route path='jobs' element={<Jobs/>}/>
-              <Route path='jobs/:ID' element={<Updatejobs/>}/>
-              <Route path='jobs/add' element={<Addjob/>}/>
-
-
+            <Route path="jobs" element={<Jobs />} />
+            <Route path="jobs/:ID" element={<Updatejobs />} />
+            <Route path="job/add" element={<Addjob />} />
           </Route>
-
-
-
-          </Route>
+        </Route>
       </Routes>
     </>
   );

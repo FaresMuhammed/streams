@@ -1,13 +1,75 @@
 import { Dropdown, DropdownItem, Modal, NavDropdown } from "react-bootstrap";
 import Footer from "../HomePage/Footer/Footer";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Cookie from "cookie-universal";
+import axios from "axios";
+import parse from "html-react-parser";
 
 export default function CareersPage() {
   const [show, setShow] = useState(false);
 
+  const [singleJob, setSingleJob] = useState([]);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (id) => {
+    const filterJob = jobs?.filter((item) => item.id == Number(id));
+    setSingleJob(filterJob);
+    setShow(true);
+  };
+
+  const cookie = Cookie();
+  const token = cookie.get("eng");
+  const [loading, setloading] = useState(false);
+  const [jobs, setjobs] = useState([]);
+
+  console.log(singleJob);
+
+  useEffect(() => {
+    setloading(true);
+    axios
+      .get(`https://backend.slsog.com/api/jobs`, {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((data) => {
+        setjobs(data.data);
+      })
+      .finally(() => setloading(false))
+      .catch((err) => err);
+  }, []);
+
+  const ShowJobs = jobs.map((job) => (
+    <div
+      onClick={() => handleShow(job.id)}
+      className=" w-100 "
+      style={{ textDecoration: "none" , lineBreak: 'anywhere'}}
+    >
+      <div
+        className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv hv"
+        style={{ backgroundColor: "white", borderRadius: "13px" }}
+      >
+        <h6 style={{ color: "#277EC3" }}>{job.title}</h6>
+        <h4 style={{ color: "black" }} className="apply-h3">
+          {job.category}
+        </h4>
+      </div>
+    </div>
+  ));
+
+  //   useEffect (() => {
+  //     setloading(true);
+  //     axios
+  //     .get(`https://backend.slsog.com/api/jobs/${ID}`, {
+  //         headers: { Authorization: "Bearer " + token },
+  //       })
+
+  //     .then ( (data) => {
+  //     // seTitle(data.data.title)
+  //     // setCategeory(data.data.category)
+  //     setDescription(data.data.description)
+  //     setloading(false)
+  // })
+  // .catch(() => Nav('/dashboard/users/page/404' , {replace: true})) // if there isn't user it will be error and go to error page and delete the last page
+  // } , [] )
 
   return (
     <div className="d-flex mt-5" style={{ flexDirection: "column" }}>
@@ -17,7 +79,9 @@ export default function CareersPage() {
       >
         <img
           className="img1 blurr w-100"
-          src={"illustration-offshore-workers-image-xmentoys-112296-ezgif.com-webp-to-jpg-converter.jpg"}
+          src={
+            "illustration-offshore-workers-image-xmentoys-112296-ezgif.com-webp-to-jpg-converter.jpg"
+          }
           style={{ position: "absolute", top: "0", zIndex: "-1" }}
         />
         <div
@@ -25,7 +89,7 @@ export default function CareersPage() {
           style={{ zIndex: "5", opacity: "0.3", height: "100%" }}
         ></div>
 
-        <div className=" d-flex flex-wrap" style={{zIndex: '10'}}>
+        <div className=" d-flex flex-wrap" style={{ zIndex: "10" }}>
           <div className="col-lg-6 col-12 p-lg-5">
             <h1 className="mb-lg-5 mb-3" style={{ fontSize: "60px" }}>
               Careers
@@ -50,11 +114,13 @@ export default function CareersPage() {
           </div>
 
           <div className="col-lg-6 col-12 mt-md-5">
-          <h1 className="mb-lg-5 mb-3 " style={{ fontSize: "60px" }}>
+            <h1 className="mb-lg-5 mb-3 " style={{ fontSize: "60px" }}>
               Jobs
             </h1>
             <div className="col-12 w-100 mb-md-5 mb-3"></div>
-            <Link
+
+            {ShowJobs}
+            {/* <Link
               onClick={handleShow}
               className=" w-100 "
               style={{ textDecoration: "none" }}
@@ -68,51 +134,7 @@ export default function CareersPage() {
                   C++/QT Software Engineer – Belgrade, Serbia
                 </h4>
               </div>
-            </Link>
-            <Link
-              onClick={handleShow}
-              className=" w-100 hv"
-              style={{ textDecoration: "none" }}
-            >
-              <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
-                style={{ backgroundColor: "white" , borderRadius: '13px' }}
-              >
-                <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h4 style={{ color: "black" }} className="apply-h3">
-                  Software Automation Test Engineer with Python / AQA 
-                </h4>
-              </div>
-            </Link>
-            <Link
-              onClick={handleShow}
-              className=" w-100 hv"
-              style={{ textDecoration: "none" }}
-            >
-              <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
-                style={{ backgroundColor: "white" , borderRadius: '13px' }}
-              >
-                <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h4 style={{ color: "black" }} className="apply-h3">
-                  Mathematician-Programmer (C++) – Belgrade, Serbia
-                </h4>
-              </div>
-            </Link>
-            <Link
-              onClick={handleShow}
-              className=" w-100 hv"
-              style={{ textDecoration: "none" }}
-            >
-              <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv"
-                style={{ backgroundColor: "white" , borderRadius: '13px' }}
-              >
-                <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h4 style={{ color: "black" }} className="apply-h3">
-                  Reservoir Engineer with Integrated Modeling Experience                </h4>
-              </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -121,7 +143,6 @@ export default function CareersPage() {
         style={{
           backgroundColor: "transparent",
           display: "flex",
-      
         }}
         show={show}
         onHide={handleClose}
@@ -129,31 +150,25 @@ export default function CareersPage() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>
-            <h1>Jop opportunity</h1>
+          <Modal.Title >
+            <h2 style={{ lineBreak: "anywhere" }} >{singleJob?.[0]?.title}</h2>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="mb-4">
-            <div className="d-flex align-items-start gap-2 flex-wrap">
-              <div className="col-12">
-                <h5 className="mb-4"> Fresh graduate</h5>
-                <p className="m-0 text-truncate mb-3">
-                  ● How to teach an online course{" "}
-                </p>
-                <p className="m-0 text-truncate mb-3">
-                  ● How to teach an online course{" "}
-                </p>
-                <p className="m-0 text-truncate mb-3">
-                  ● How to teach an online course{" "}
-                </p>
-                <p className="m-0 text-truncate mb-3">
-                  ● How to teach an online course{" "}
-                </p>
+            <div className="">
+              <div style={{ lineBreak: "anywhere" }} className="col-12">
+                {singleJob?.[0]?.description &&
+                  parse(singleJob?.[0]?.description)}
               </div>
-              <Link to={"/applynow"}>
-                <button className="btn btn-danger mt-3">Apply now</button>
-              </Link>
+
+              <div className="col-12">
+                <Link to={"/applynow"}>
+                  <button className="btn btn-danger mt-3 col-12">
+                    Apply now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </Modal.Body>

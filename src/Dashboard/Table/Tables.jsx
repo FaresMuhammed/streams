@@ -79,12 +79,17 @@ export default function Tables(props) {
                 </div>
               ) : item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
                 TransformDate(item[item2.keyy])
-              ) : // : item2.keyy === 'description' ? (<td style={{width: '120px' , overflow:'hidden' , textOverflow: 'ellipsis' , marginBottom: '1'}}>
-              //         {item[item2.keyy]}
-              //     </td>)
+              ) 
+              : item2.keyy === 'description' || item2.keyy === "title" || item2.keyy === "category" ? (
+                  // <td >
+              <div style={{ width:"100px" , overflow: 'hidden'}} className="col-12">
+              {item[item2.keyy] }
+                      </div>
+                  // </td>
+                  )
 
               // Condition on role
-              item[item2.keyy] === "2001" ? (
+              : item[item2.keyy] === "2001" ? (
                 "Admin"
               ) : item[item2.keyy] === "1996" ? (
                 "User"
@@ -122,7 +127,7 @@ export default function Tables(props) {
   ));
 
   return (
-    <div>
+    <div >
       <div className="head">
         <div>
           <h2>{props.Title}</h2>
@@ -142,7 +147,7 @@ export default function Tables(props) {
         </div>
       </div>
 
-      <Table striped bordered hover>
+      <Table striped bordered hover >
         <thead>
           <tr>
             {ShowHeader}
