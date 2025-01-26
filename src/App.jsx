@@ -24,6 +24,10 @@ import Consultation from "./Components/Consultation/consultation";
 import Jobs from "./Dashboard/Jobs/jobs";
 import Updatejobs from "./Dashboard/Jobs/Updatejobs";
 import Addjob from "./Dashboard/Jobs/Addjobs";
+import Appliedjobs from "./Dashboard/Jobs/appliedjobs";
+import Cat1 from "./Dashboard/COURSES/AddCategory1";
+import Categeory1 from "./Dashboard/COURSES/Categoeries1";
+import Updatecat1 from "./Dashboard/COURSES/Updatecat1";
 
 function App() {
   return (
@@ -60,6 +64,13 @@ function App() {
             <Route path="jobs" element={<Jobs />} />
             <Route path="jobs/:ID" element={<Updatejobs />} />
             <Route path="job/add" element={<Addjob />} />
+            <Route path="job/jobrequests" element={<Appliedjobs />} />
+
+            <Route path="addcategoery1" element={<Cat1 />} />
+            <Route path="categoery1" element={<Categeory1 />} />
+            <Route path="categoery1/:ID" element={<Updatecat1 />} />
+
+
           </Route>
         </Route>
       </Routes>

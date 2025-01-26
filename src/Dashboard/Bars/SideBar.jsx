@@ -68,8 +68,8 @@ export default function Sidebar() {
                 />
 
                 <p
-                  className="m-0"
-                  style={{ display: Isopen ? "block" : "none" }}
+                  className="m-0 "
+                  style={{ display: Isopen ? "block" : "none" , width: '117px'}}
                 >
                   {Link.name}
                 </p>

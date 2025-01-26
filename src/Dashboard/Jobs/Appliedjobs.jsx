@@ -7,17 +7,18 @@ export default function Jobs() {
   // Table's Header in users page
   const UsersHeader = [
     { name: "ID", keyy: "id" },
-    { name: "Title", keyy: "title" },
-    { name: "Categeory", keyy: "category" },
-    { name: "Description", keyy: "description" },
-    { name: "Craeted", keyy: "created_at" },
-    { name: "Last Login", keyy: "updated_at" },
+    { name: "NAME", keyy: "full_name" },
+    { name: "COUNTRY", keyy: "country" },
+    { name: "EMAIL", keyy: "email" },
+    { name: "PHONE", keyy: "phone" },
+    { name: "CV", keyy: "cv" },
+    { name: "CREATED", keyy: "created_at" },
+    { name: "UPDATED", keyy: "updated_at" },
   ];
 
-  const Title = "Jobs Page";
+  const Title = "Job requests page";
 
   const [users, setusers] = useState([]);
-  const [currentUser, setcurrentUser] = useState("");
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -34,7 +35,7 @@ export default function Jobs() {
   useEffect(() => {
     setloading(true);
     axios
-      .get(`https://backend.slsog.com/api/jobs?page=${Page}&limit=${Limit}`, {
+      .get(`https://backend.slsog.com/api/job-requests?page=${Page}&limit=${Limit}`, {
         headers: { Authorization: "Bearer " + token },
       })
       // get(`/${USERS}?limit=${Limit}&page=${Page}`)
@@ -46,13 +47,8 @@ export default function Jobs() {
       .catch((err) => err);
   }, [Limit, Page]);
 
-  // Delete function
-  async function handleDelete(id) {
-    await axios.delete(`https://backend.slsog.com/api/jobs/${id}`, {
-      headers: { Authorization: "Bearer " + token },
-    });
-    setusers((previous) => previous.filter((item) => item.id !== id));
-  }
+console.log(users);
+
 
   return (
     <div className=" w-100 p-2 shadow-sm">
@@ -64,8 +60,6 @@ export default function Jobs() {
         Total={Total}
         Data={users}
         Header={UsersHeader}
-        currentUser={currentUser}
-        Delete={handleDelete}
         Title={Title}
         Search="name"
         loading={loading}

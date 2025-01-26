@@ -7,17 +7,15 @@ import PaginatedItems from "./Pagination/Pagination";
 import { useEffect, useState } from "react";
 import TransformDate from "./DateFunction/Date";
 import axios from "axios";
-import Cookie from  'cookie-universal'
-
+import Cookie from "cookie-universal";
 
 export default function Tables(props) {
   // Props in one page or more , Default value(props not in all pages)
   const Currentuser = props.currentUser || { name: "" };
   const dataSent = props.dataSent;
 
-  const cookie = Cookie()
-  const token = cookie.get('eng')
-
+  const cookie = Cookie();
+  const token = cookie.get("eng");
 
   // Search
   const [Search, setSearch] = useState("");
@@ -25,9 +23,13 @@ export default function Tables(props) {
   const [Searching, setSearchig] = useState(false);
   async function Getsearch() {
     try {
-      const res = await axios.post(`http://backend.slsog.com/api/users/search?email=${Search} `, null , {
-            headers: { Authorization: "Bearer " + token },
-        });
+      const res = await axios.post(
+        `http://backend.slsog.com/api/users/search?email=${Search} `,
+        null,
+        {
+          headers: { Authorization: "Bearer " + token },
+        }
+      );
       setSearchResult(res.data);
     } catch (err) {
       // result after search
@@ -61,35 +63,38 @@ export default function Tables(props) {
         ) => (
           <td key={key2}>
             {
-              item2.keyy === "image" ? (
-                <img width="80px" src={item[item2.keyy]} />
-              ) : item2.keyy === "images" ? (
-                <div>
-                  {item[item2.keyy].map((img) => (
-                    <img
-                      style={{
-                        width: "80px",
-                        display: "flex",
-                        flexDirection: "column",
-                        marginBottom: "10px",
-                      }}
-                      src={img.image}
-                    />
-                  ))}
-                </div>
-              ) : item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
+              item2.keyy === "cv" ? (
+                <img
+                  width="80px"
+                  src={`http://backend.slsog.com/api${item[item2.keyy]}`}
+                />
+              ) : // ) : item2.keyy === "images" ? (
+              //   <div>
+              //     {item[item2.keyy].map((img) => (
+              //       <img
+              //         style={{
+              //           width: "80px",
+              //           display: "flex",
+              //           flexDirection: "column",
+              //           marginBottom: "10px",
+              //         }}
+              //         src={img.image}
+              //       />
+              //     ))}
+              //   </div>
+              item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
                 TransformDate(item[item2.keyy])
-              ) 
-              : item2.keyy === 'description' || item2.keyy === "title" || item2.keyy === "category" ? (
-                  // <td >
-              <div style={{ width:"100px" , overflow: 'hidden'}} className="col-12">
-              {item[item2.keyy] }
-                      </div>
-                  // </td>
-                  )
-
+              ) : item2.keyy === "description" ? (
+                // <td >
+                <div
+                  style={{ width: "", overflow: "hidden" }}
+                  className="col-12"
+                >
+                  {item[item2.keyy].slice(0, 20) + "..."}
+                </div>
+              ) : // </td>
               // Condition on role
-              : item[item2.keyy] === "2001" ? (
+              item[item2.keyy] === "2001" ? (
                 "Admin"
               ) : item[item2.keyy] === "1996" ? (
                 "User"
@@ -127,7 +132,7 @@ export default function Tables(props) {
   ));
 
   return (
-    <div >
+    <div>
       <div className="head">
         <div>
           <h2>{props.Title}</h2>
@@ -147,11 +152,11 @@ export default function Tables(props) {
         </div>
       </div>
 
-      <Table striped bordered hover >
+      <Table striped bordered hover>
         <thead>
           <tr>
             {ShowHeader}
-            <th>Action</th>
+            <th>ACTION</th>
           </tr>
         </thead>
 

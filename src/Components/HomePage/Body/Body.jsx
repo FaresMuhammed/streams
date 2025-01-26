@@ -238,7 +238,10 @@ export default function Body() {
 
       <Swiperr />
 
-      <div className="d-flex flex-wrap p-3 center" style={{marginTop:'-70px'}}>
+      <div
+        className="d-flex flex-wrap p-3 center"
+        style={{ marginTop: "-70px" }}
+      >
         {/* <div className="col-md-4 col-12 mt-5 py-5 p-3 res">
           <div className=" mt-3 ">
             <div>
@@ -265,11 +268,14 @@ export default function Body() {
           </div>
         </div> */}
 
-        <div className=" col-12 py-5 p-3 mt-5"  style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
-        <div>
-              <h2 className="mb-4">TESTIMONY</h2>
-            </div>
-            
+        <div
+          className=" col-12 py-5 p-3 mt-5"
+          style={{ backgroundColor: "#EAEAEA", borderRadius: "15px" }}
+        >
+          <div>
+            <h2 className="mb-4">TESTIMONY</h2>
+          </div>
+
           <p style={{ fontSize: "20px" }} className="mb-4">
             Streamlines adeptness in reservoir modelling, data integration, and
             field development strategies significantly shaped OSOCO's vision for
@@ -277,39 +283,36 @@ export default function Body() {
             innovative techniques, and comprehensive report exceeded
             expectations, influencing the design of an efficient gas lift system
             for East Zeit Field.
+          </p>
+
+          <div className="mb-4">
+            <h6>Project Spotlight:</h6>
+            <p>Offshore Shukeir Oil CO. (OSOCO), Egypt </p>
+          </div>
+
+          <div className="mb-4">
+            <h6>Year Completed:</h6>
+            <p>2023</p>
+          </div>
+
+          <div>
+            <h6>Title:</h6>
+            <p className="mb-5">
+              Production Optimization, reservoir Modelling, and Gas Lift Design
             </p>
-
-
-            
-            <div className="mb-4">
-              <h6>Project Spotlight:</h6>
-              <p>Offshore Shukeir Oil CO. (OSOCO), Egypt </p>
-            </div>
-
-            <div className="mb-4">
-              <h6>Year Completed:</h6>
-              <p>2023</p>
-            </div>
-
-            <div>
-              <h6>Title:</h6>
-              <p className="mb-5">
-                Production Optimization, reservoir Modelling, and Gas Lift
-                Design
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                marginBottom: "-50px",
-              }}
-            >
-              {/* <p className="fw-bold mt-5" style={{fontSize:'22px'}}>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginBottom: "-50px",
+            }}
+          >
+            {/* <p className="fw-bold mt-5" style={{fontSize:'22px'}}>
                 Eng. Tarek Abdel Raouf <br />
                 Operations General Manager
               </p> */}
-            </div>
+          </div>
         </div>
       </div>
 
@@ -373,291 +376,297 @@ export default function Body() {
           <img className="img1" src={"ph.jpg"} />
         </div>
 
-         <div className="col-12"  
-          style={{position: 'relative' , width: '100%' , height: '100%' , overflow: 'hidden'}}
-        >
-
-        <div className="col-12 py-5 p-3" style={{marginBottom: '-80px'}}>
-          <h2 className="mb-4">OUR CLIENTS</h2>
-        </div>
-
-
         <div
-          className="position-relative w-100 "
-          style={{ height: "200px" , overflowX: 'hidden'}}
+          className="col-12"
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+          }}
         >
-          
+          <div className="col-12 py-5 p-3" style={{ marginBottom: "-80px" }}>
+            <h2 className="mb-4">OUR CLIENTS</h2>
+          </div>
+
           <div
-            className="position-absolute top-50 "
-            style={{ overflowX: "hidden", transform: "translateY(-50%)" }}
+            className="position-relative w-100 "
+            style={{ height: "200px", overflowX: "hidden" }}
           >
-            <div className="ticker-wrap">
-              <div className="p-3 sc-1">
-                <div className="sc-1-track">
-                  <div className="d-flex">
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"1-Logo.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"3-2.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"4F397657-CE5B-426D-8BB5-04FBBC3E2469.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "200px" }}
-                      src={"5e709a571b62e.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"62cc3c128506279.Y3JvcCw1NjY5LDQ0MzQsMCw2MTc.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"1024x1024bb.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"16934754508.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"1631353406420.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"1637153398716.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={
-                        "agiba-petroleum-company-logo-1D991D1519-seeklogo.com.png"
-                      }
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"Arda_Member_Logos_EGPC.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"Arda_Sponsor_Logos_Gold_Adnoc.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"aunnamed (1).png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"EGAS-e1560080422598-1-750x411.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"images (1).jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"Logo-1.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"OC_02.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"osoco-logo.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"suco-logo.webp"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"unnamed.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"unnamed.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"scimitar_production_egypt_ltd_spel_logo (11).png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"images.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"16934760724.jpg"}
-                    />
+            <div
+              className="position-absolute top-50 "
+              style={{ overflowX: "hidden", transform: "translateY(-50%)" }}
+            >
+              <div className="ticker-wrap">
+                <div className="p-3 sc-1">
+                  <div className="sc-1-track">
+                    <div className="d-flex">
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"1-Logo.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"3-2.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"4F397657-CE5B-426D-8BB5-04FBBC3E2469.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "200px" }}
+                        src={"5e709a571b62e.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"62cc3c128506279.Y3JvcCw1NjY5LDQ0MzQsMCw2MTc.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"1024x1024bb.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"16934754508.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"1631353406420.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"1637153398716.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={
+                          "agiba-petroleum-company-logo-1D991D1519-seeklogo.com.png"
+                        }
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"Arda_Member_Logos_EGPC.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"Arda_Sponsor_Logos_Gold_Adnoc.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"aunnamed (1).png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"EGAS-e1560080422598-1-750x411.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"images (1).jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"Logo-1.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"OC_02.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"osoco-logo.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"suco-logo.webp"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"unnamed.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"unnamed.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"scimitar_production_egypt_ltd_spel_logo (11).png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"images.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"16934760724.jpg"}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div
-            className="position-absolute top-50 "
-            style={{ overflow: "hidden", transform: "translateY(-50%)" , overflowX: 'hidden'}}
-          >
-            <div className="ticker-wrap">
-              <div className="p-2 sc-2">
-                <div className="sc-2-track">
-                  <div className="d-flex">
-                    
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"1-Logo.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"3-2.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"4F397657-CE5B-426D-8BB5-04FBBC3E2469.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "200px" }}
-                      src={"5e709a571b62e.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"62cc3c128506279.Y3JvcCw1NjY5LDQ0MzQsMCw2MTc.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"1024x1024bb.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"16934754508.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"1631353406420.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"1637153398716.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={
-                        "agiba-petroleum-company-logo-1D991D1519-seeklogo.com.png"
-                      }
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"Arda_Member_Logos_EGPC.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"Arda_Sponsor_Logos_Gold_Adnoc.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"aunnamed (1).png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"EGAS-e1560080422598-1-750x411.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"images (1).jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"Logo-1.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"OC_02.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"osoco-logo.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"suco-logo.webp"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"unnamed.jpg"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"unnamed.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"scimitar_production_egypt_ltd_spel_logo (11).png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "100px" }}
-                      src={"images.png"}
-                    />
-                    <img
-                      className=""
-                      style={{ height: "100px", width: "150px" }}
-                      src={"1637153398716.png"}
-                    /> 
+            <div
+              className="position-absolute top-50 "
+              style={{
+                overflow: "hidden",
+                transform: "translateY(-50%)",
+                overflowX: "hidden",
+              }}
+            >
+              <div className="ticker-wrap">
+                <div className="p-2 sc-2">
+                  <div className="sc-2-track">
+                    <div className="d-flex">
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"1-Logo.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"3-2.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"4F397657-CE5B-426D-8BB5-04FBBC3E2469.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "200px" }}
+                        src={"5e709a571b62e.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"62cc3c128506279.Y3JvcCw1NjY5LDQ0MzQsMCw2MTc.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"1024x1024bb.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"16934754508.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"1631353406420.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"1637153398716.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={
+                          "agiba-petroleum-company-logo-1D991D1519-seeklogo.com.png"
+                        }
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"Arda_Member_Logos_EGPC.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"Arda_Sponsor_Logos_Gold_Adnoc.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"aunnamed (1).png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"EGAS-e1560080422598-1-750x411.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"images (1).jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"Logo-1.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"OC_02.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"osoco-logo.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"suco-logo.webp"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"unnamed.jpg"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"unnamed.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"scimitar_production_egypt_ltd_spel_logo (11).png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "100px" }}
+                        src={"images.png"}
+                      />
+                      <img
+                        className=""
+                        style={{ height: "100px", width: "150px" }}
+                        src={"1637153398716.png"}
+                      />
+                    </div>
                   </div>
-                </div>
-              </div>          </div>
-
+                </div>{" "}
+              </div>
             </div>
           </div>
         </div>

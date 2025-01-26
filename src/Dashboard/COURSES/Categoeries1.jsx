@@ -3,21 +3,15 @@ import Tables from "../Table/Tables";
 import axios from "axios";
 import Cookie from "cookie-universal";
 
-export default function Jobs() {
+export default function Categeory1() {
   // Table's Header in users page
   const UsersHeader = [
-    { name: "ID", keyy: "id" },
     { name: "Title", keyy: "title" },
-    { name: "Categeory", keyy: "category" },
-    { name: "Description", keyy: "description" },
-    { name: "Craeted", keyy: "created_at" },
-    { name: "Last Login", keyy: "updated_at" },
   ];
 
-  const Title = "Jobs Page";
+  const Title = "Categeory1 Page";
 
   const [users, setusers] = useState([]);
-  const [currentUser, setcurrentUser] = useState("");
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -34,10 +28,9 @@ export default function Jobs() {
   useEffect(() => {
     setloading(true);
     axios
-      .get(`https://backend.slsog.com/api/jobs?page=${Page}&limit=${Limit}`, {
+      .get(`https://backend.slsog.com/api/categories?page=${Page}&limit=${Limit}`, {
         headers: { Authorization: "Bearer " + token },
       })
-      // get(`/${USERS}?limit=${Limit}&page=${Page}`)
       .then((data) => {
         setusers(data.data.data);
         setTotal(data.data.total);
@@ -48,7 +41,7 @@ export default function Jobs() {
 
   // Delete function
   async function handleDelete(id) {
-    await axios.delete(`https://backend.slsog.com/api/jobs/${id}`, {
+    await axios.delete(`https://backend.slsog.com/api/categories/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
     setusers((previous) => previous.filter((item) => item.id !== id));
@@ -64,7 +57,6 @@ export default function Jobs() {
         Total={Total}
         Data={users}
         Header={UsersHeader}
-        currentUser={currentUser}
         Delete={handleDelete}
         Title={Title}
         Search="name"
