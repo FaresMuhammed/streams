@@ -395,7 +395,11 @@ export default function Body() {
           >
             <div
               className="position-absolute top-50 "
-              style={{ overflowX: "hidden", transform: "translateY(-50%)" }}
+              style={{
+                overflowX: "hidden",
+                transform: "translateY(-50%)",
+                zIndex: "55",
+              }}
             >
               <div className="ticker-wrap">
                 <div className="p-3 sc-1">

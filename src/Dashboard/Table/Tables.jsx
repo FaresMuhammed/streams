@@ -66,7 +66,7 @@ export default function Tables(props) {
               item2.keyy === "cv" ? (
                 <img
                   width="80px"
-                  src={`http://backend.slsog.com/api${item[item2.keyy]}`}
+                  src={`http://backend.slsog.com${item[item2.keyy]}`}
                 />
               ) : // ) : item2.keyy === "images" ? (
               //   <div>

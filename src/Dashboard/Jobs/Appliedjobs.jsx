@@ -30,14 +30,16 @@ export default function Jobs() {
   const cookie = Cookie();
   const token = cookie.get("eng");
 
-
   // Useeffect to get all jobs
   useEffect(() => {
     setloading(true);
     axios
-      .get(`https://backend.slsog.com/api/job-requests?page=${Page}&limit=${Limit}`, {
-        headers: { Authorization: "Bearer " + token },
-      })
+      .get(
+        `https://backend.slsog.com/api/job-requests?page=${Page}&limit=${Limit}`,
+        {
+          headers: { Authorization: "Bearer " + token },
+        }
+      )
       // get(`/${USERS}?limit=${Limit}&page=${Page}`)
       .then((data) => {
         setusers(data.data.data);
@@ -47,8 +49,7 @@ export default function Jobs() {
       .catch((err) => err);
   }, [Limit, Page]);
 
-console.log(users);
-
+  console.log(users);
 
   return (
     <div className=" w-100 p-2 shadow-sm">
