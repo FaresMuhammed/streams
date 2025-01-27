@@ -4,6 +4,9 @@ import Footer from "../HomePage/Footer/Footer";
 import { Link, NavLink } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import Cookie from "cookie-universal";
 
 export default function Courses() {
   const [show, setShow] = useState(false);
@@ -11,21 +14,42 @@ export default function Courses() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [loading, setloading] = useState(false);
+  const [Categeories, setCategeories] = useState([]);
+
+  useEffect(() => {
+    setloading(true);
+    axios
+      .get(`https://backend.slsog.com/api/categories`)
+      .then((data) => {
+        setCategeories(data.data);
+      })
+      .finally(() => setloading(false))
+      .catch((err) => err);
+  }, []);
+console.log(Categeories);
+
+  const Show = Categeories.map( (cat) =>(
+    <div className=" sub p-2 rounded">
+      {cat.title}
+    </div>
+   ) )
+
+
   return (
     <>
       <div className="d-flex" style={{ flexDirection: "column" }}>
-        {/* <Header /> */}
         <div
           className="center flex-wrap p-md-5 p-2"
           style={{ position: "relative", color: "#EDEDED" }}
         >
           <img
             className="img11 blurr w-100"
-            src={"directions_training_center_cover.jpg"}
+            src={"cd13224.jpg"}
             style={{
               position: "absolute",
               top: "0",
-              zIndex: "-1",
+              zIndex: "1",
               objectFit: "cover",
             }}
           />
@@ -47,23 +71,9 @@ export default function Courses() {
         </div>
 
         <div className="py-5" style={{ backgroundColor: "#EDEDED" }}>
-          <div className="d-flex justify-content-center sublinks flex-wrap gap-4 mb-5">
-            <NavLink to={"/courses"} className="cat-btn p-2 rounded">
-              SUBSURFACE
-            </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-2 rounded">
-              WELLS
-            </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-2 rounded">
-              HSE
-            </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-2 rounded">
-              Business & Management
-            </NavLink>
-            <NavLink to={"/S"} className="cat-btn p-2 rounded">
-              Digitalization
-            </NavLink>
-          </div>
+          <NavLink to={'/courses'} className="d-flex justify-content-center sublinks flex-wrap gap-4 mb-5">
+            {Show}
+          </NavLink>
 
           <div className="d-flex justify-content-center flex-wrap gap-3 mb-5">
             <div className="col-lg-3 col-md-6 col-10 ">

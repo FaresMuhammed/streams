@@ -64,24 +64,15 @@ export default function Tables(props) {
           <td key={key2}>
             {
               item2.keyy === "cv" ? (
+                // const type = item[item2.keyy].slice(-3)
+                // if () {
+                  
+                // }       
                 <img
-                  width="80px"
-                  src={`http://backend.slsog.com${item[item2.keyy]}`}
-                />
-              ) : // ) : item2.keyy === "images" ? (
-              //   <div>
-              //     {item[item2.keyy].map((img) => (
-              //       <img
-              //         style={{
-              //           width: "80px",
-              //           display: "flex",
-              //           flexDirection: "column",
-              //           marginBottom: "10px",
-              //         }}
-              //         src={img.image}
-              //       />
-              //     ))}
-              //   </div>
+                   width="80px"
+                   src={`http://backend.slsog.com${item[item2.keyy]}`}
+                 />
+              ) : 
               item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
                 TransformDate(item[item2.keyy])
               ) : item2.keyy === "description" ? (

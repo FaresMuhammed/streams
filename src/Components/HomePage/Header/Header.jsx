@@ -97,42 +97,79 @@ export default function Header(props) {
                   fontSize: "17px",
                 }}
               >
-                OPERATIONS
+                SERVICES
               </Dropdown.Toggle>
             </NavLink>
             <Dropdown.Menu>
               <Dropdown.Item active>
                 <NavLink
-                  to={"/artificalleft"}
+                  to={"/courses"}
                   style={{ textDecoration: "none", color: "#2D2727" }}
                 >
-                  ARTIFICAL LIFT
+                  TRAINING
                 </NavLink>
               </Dropdown.Item>
               <Dropdown.Item>
                 <NavLink
-                  to={"/testing"}
+                  to={"/software"}
                   style={{ textDecoration: "none", color: "#2D2727" }}
                 >
-                  TESTING
+                  SOFTWARE
                 </NavLink>
               </Dropdown.Item>
               <Dropdown.Item>
                 <NavLink
-                  to={"/enhancing"}
+                  to={"/consultation"}
                   style={{ textDecoration: "none", color: "#2D2727" }}
                 >
-                  ENHANCING
+                  CONSULTATION
                 </NavLink>
               </Dropdown.Item>
+
+
+              {['down'].map(
+                        (direction) => (
+                          <DropdownButton
+                            style={{marginLeft:''}}
+                            as={ButtonGroup}
+                            key={direction}
+                            id={`dropdown-button-drop-${direction}`}
+                            drop={direction}
+                            variant="transparent"
+                            title={'OPERATIONS'}
+                          >
+                            <Dropdown.Item eventKey="1">                          
+                              <NavLink
+                                to={"/artificalleft"}
+                                style={{ textDecoration: "none", color: "#2D2727" }}
+                              >
+                                Artificial lift
+                              </NavLink>
+                            </Dropdown.Item>
+
+                            <Dropdown.Item eventKey="2">                          
+                              <NavLink
+                                to={"/testing"}
+                                style={{ textDecoration: "none", color: "#2D2727" }}
+                              >
+                                Well Testing
+                              </NavLink>
+                            </Dropdown.Item>
+
+                            <Dropdown.Item eventKey="3">                         
+                              <NavLink
+                                to={"/enhancing"}
+                                style={{ textDecoration: "none", color: "#2D2727" }}
+                              >
+                                Enhanced Oil
+                              </NavLink>
+                            </Dropdown.Item>
+                          </DropdownButton>
+                        ),
+                      )}
             </Dropdown.Menu>
           </Dropdown>
-          <NavLink to={"/courses"} className="Link2">
-            <h5>TRAINING</h5>
-          </NavLink>
-          <NavLink to={"/software"} className="Link2">
-            <h5>SOFTWARE</h5>
-          </NavLink>
+
           <NavLink to={"/projects"} className="Link2">
             <h5>CAREERS</h5>
           </NavLink>
@@ -188,10 +225,6 @@ export default function Header(props) {
                       </NavLink>
                       <Dropdown.Menu>
 
-
-
-
-
                         <Dropdown.Item>
                           <NavLink
                             to={"/courses"}
@@ -217,8 +250,6 @@ export default function Header(props) {
                             Consultation
                           </NavLink>
                         </Dropdown.Item>
-
-
 
                       {['end'].map(
                         (direction) => (
@@ -260,7 +291,6 @@ export default function Header(props) {
                           </DropdownButton>
                         ),
                       )}
-
 
 
                       </Dropdown.Menu>

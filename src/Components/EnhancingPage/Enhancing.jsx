@@ -15,12 +15,12 @@ export default function Enhancing() {
                         style={{
                         position: "absolute",
                         top: "0",
-                        zIndex: "-1",
+                        zIndex: "1",
                         objectFit: "cover",
                         }}
                     />
     
-                        <div className=" d-flex flex-wrap mt-5">
+                        <div className=" d-flex flex-wrap mt-5" style={{zIndex: '2'}}>
                             <div className="col-lg-5 col-12 p-lg-5  mt-5">
                                 <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
                                 Enhanced Oil Recovery - EOR

@@ -13,7 +13,7 @@ export default function Jobs() {
     { name: "PHONE", keyy: "phone" },
     { name: "CV", keyy: "cv" },
     { name: "CREATED", keyy: "created_at" },
-    { name: "UPDATED", keyy: "updated_at" },
+    // { name: "UPDATED", keyy: "updated_at" },
   ];
 
   const Title = "Job requests page";
@@ -49,7 +49,13 @@ export default function Jobs() {
       .catch((err) => err);
   }, [Limit, Page]);
 
-  console.log(users);
+  // Delete function
+  async function handleDelete(id) {
+    await axios.delete(`https://backend.slsog.com/api/job-requests/${id}`, {
+      headers: { Authorization: "Bearer " + token },
+    });
+    setusers((previous) => previous.filter((item) => item.id !== id));
+  }
 
   return (
     <div className=" w-100 p-2 shadow-sm">
@@ -61,6 +67,7 @@ export default function Jobs() {
         Total={Total}
         Data={users}
         Header={UsersHeader}
+        Delete={handleDelete}
         Title={Title}
         Search="name"
         loading={loading}
