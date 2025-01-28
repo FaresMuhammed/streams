@@ -62,40 +62,35 @@ export default function Tables(props) {
           key2 // map in map(map on header to get $users's object value from $UsersHeader)  ,,  // item2.keyy have the value
         ) => (
           <td key={key2}>
-            {
-              item2.keyy === "cv" ? (
-                // const type = item[item2.keyy].slice(-3)
-                // if () {
-                  
-                // }       
+            {item2.keyy === "cv" ? (
+              item[item2.keyy]?.match(/\.(jpeg|jpg|gif|png)$/) !== null ? (
                 <img
-                   width="80px"
-                   src={`http://backend.slsog.com${item[item2.keyy]}`}
-                 />
-              ) : 
-              item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
-                TransformDate(item[item2.keyy])
-              ) : item2.keyy === "description" ? (
-                // <td >
-                <div
-                  style={{ width: "", overflow: "hidden" }}
-                  className="col-12"
-                >
-                  {item[item2.keyy].slice(0, 20) + "..."}
-                </div>
-              ) : // </td>
-              // Condition on role
-              item[item2.keyy] === "2001" ? (
-                "Admin"
-              ) : item[item2.keyy] === "1996" ? (
-                "User"
+                  width="80px"
+                  src={`http://backend.slsog.com${item[item2.keyy]}`}
+                  alt="CV"
+                />
               ) : (
-                item[item2.keyy]
-              ) // if the data isn't role & image , show it as is it
-            }
-            {
-              Currentuser && item[item2.keyy] === Currentuser.name && " (You)" // if the page have current user and his name equals item's name add 'You'
-            }
+                <a
+                  href={`http://backend.slsog.com${item[item2.keyy]}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download CV
+                </a>
+              )
+            ) : item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
+              TransformDate(item[item2.keyy])
+            ) : item2.keyy === "description" ? (
+              <div style={{ width: "", overflow: "hidden" }} className="col-12">
+                {item[item2.keyy].slice(0, 20) + "..."}
+              </div>
+            ) : item2.keyy === "category.job" ? (
+              item["category"]
+            ) : item2.keyy === "category" ? (
+              item[item2.keyy].title
+            ) : (
+              item[item2.keyy]
+            )}
           </td>
         )
       )}

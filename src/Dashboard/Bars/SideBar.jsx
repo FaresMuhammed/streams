@@ -26,8 +26,6 @@ export default function Sidebar() {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => setUserRole(data.data.role));
-    console.log(UserRole);
-
     // .catch( () => Navigate( '/login' , {replace: true}))
   }, []);
 
@@ -69,7 +67,7 @@ export default function Sidebar() {
 
                 <p
                   className="m-0 "
-                  style={{ display: Isopen ? "block" : "none" , width: '117px'}}
+                  style={{ display: Isopen ? "block" : "none" , width: '120px'}}
                 >
                   {Link.name}
                 </p>

@@ -3,13 +3,15 @@ import Tables from "../Table/Tables";
 import axios from "axios";
 import Cookie from "cookie-universal";
 
-export default function Categeory1() {
+export default function Subcategeories() {
   // Table's Header in users page
   const UsersHeader = [
-    { name: "Title", keyy: "title" },
+    { name: "ID", keyy: "id" },
+    { name: "Subcategory", keyy: "title" },
+    { name: "Category", keyy: "category" },
   ];
 
-  const Title = "Categories Page";
+  const Title = "Subcategories Page";
 
   const [users, setusers] = useState([]);
 
@@ -28,7 +30,7 @@ export default function Categeory1() {
   useEffect(() => {
     setloading(true);
     axios
-      .get(`https://backend.slsog.com/api/categories?page=${Page}&limit=${Limit}`, {
+      .get(`https://backend.slsog.com/api/sub-categories?page=${Page}&limit=${Limit}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => {
@@ -41,7 +43,7 @@ export default function Categeory1() {
 
   // Delete function
   async function handleDelete(id) {
-    await axios.delete(`https://backend.slsog.com/api/categories/${id}`, {
+    await axios.delete(`https://backend.slsog.com/api/sub-categories/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
     setusers((previous) => previous.filter((item) => item.id !== id));

@@ -25,7 +25,7 @@ export default function CAT1() {
 
   // Add function
   async function Handlesubmit(e) {
-    // setLoad(true)
+    setLoad(true)
     e.preventDefault();
     await axios.post(
       "http://backend.slsog.com/api/categories",
@@ -35,7 +35,7 @@ export default function CAT1() {
       { headers: { Authorization: "Bearer " + token } }
     );
     setLoad(false);
-    window.location.pathname = "/dashboard/categoery1";
+    window.location.pathname = "/dashboard/categories";
   }
 
   console.log(Upadateform);

@@ -8,7 +8,7 @@ export default function Jobs() {
   const UsersHeader = [
     { name: "ID", keyy: "id" },
     { name: "Title", keyy: "title" },
-    { name: "Categeory", keyy: "category" },
+    { name: "Categeory", keyy: "category.job" },
     { name: "Description", keyy: "description" },
     { name: "Craeted", keyy: "created_at" },
     { name: "Last Login", keyy: "updated_at" },
@@ -28,7 +28,6 @@ export default function Jobs() {
 
   const cookie = Cookie();
   const token = cookie.get("eng");
-
 
   // Useeffect to get all jobs
   useEffect(() => {

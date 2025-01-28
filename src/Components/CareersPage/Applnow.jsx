@@ -208,6 +208,7 @@ export default function Applynow() {
                       className="p-3"
                       id="cv"
                       type="file"
+                      accept=".pdf,.doc,.docx,image/*"
                       onChange={Handlechange}
                       name="cv"
                       required

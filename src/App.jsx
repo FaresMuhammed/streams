@@ -24,10 +24,14 @@ import Consultation from "./Components/Consultation/consultation";
 import Jobs from "./Dashboard/Jobs/jobs";
 import Updatejobs from "./Dashboard/Jobs/Updatejobs";
 import Addjob from "./Dashboard/Jobs/Addjobs";
-import Appliedjobs from "./Dashboard/Jobs/appliedjobs";
+import Appliedjobs from "./Dashboard/Jobs/Appliedjobs";
 import Cat1 from "./Dashboard/COURSES/AddCategory1";
 import Categeory1 from "./Dashboard/COURSES/Categoeries1";
 import Updatecat1 from "./Dashboard/COURSES/Updatecat1";
+import Addsubcategeories from "./Dashboard/COURSES/Addsubcategeories";
+import Subcategeories from "./Dashboard/COURSES/Subcategeories";
+import Updatesubcategory from "./Dashboard/COURSES/Updatesubcategory";
+import AddCourse from "./Dashboard/COURSES/Addcourse";
 
 function App() {
   return (
@@ -66,11 +70,15 @@ function App() {
             <Route path="job/add" element={<Addjob />} />
             <Route path="job/jobrequests" element={<Appliedjobs />} />
 
-            <Route path="addcategoery1" element={<Cat1 />} />
-            <Route path="categoery1" element={<Categeory1 />} />
-            <Route path="categoery1/:ID" element={<Updatecat1 />} />
+            <Route path="categories" element={<Categeory1 />} />
+            <Route path="addcategory" element={<Cat1 />} />
+            <Route path="categoeries/:ID" element={<Updatecat1 />} />
 
+            <Route path="subcategories" element={<Subcategeories />} />
+            <Route path="addsubcategory" element={<Addsubcategeories />} />
+            <Route path="subcategories/:ID" element={<Updatesubcategory />} />
 
+            <Route path="addcourse" element={<AddCourse />} />
           </Route>
         </Route>
       </Routes>
