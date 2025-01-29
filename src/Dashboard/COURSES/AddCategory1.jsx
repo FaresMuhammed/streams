@@ -25,12 +25,12 @@ export default function CAT1() {
 
   // Add function
   async function Handlesubmit(e) {
-    setLoad(true)
+    setLoad(true);
     e.preventDefault();
     await axios.post(
-      "http://backend.slsog.com/api/categories",
+      "https://backend.slsog.com/api/categories",
       {
-        title: Upadateform.title
+        title: Upadateform.title,
       },
       { headers: { Authorization: "Bearer " + token } }
     );
@@ -57,11 +57,7 @@ export default function CAT1() {
         </Form.Group>
 
         <Button
-          disabled={
-            Upadateform.title.length > 1
-              ? false
-              : true
-          }
+          disabled={Upadateform.title.length > 1 ? false : true}
           className="center mt-3"
           variant="primary"
           type="submit"

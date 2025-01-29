@@ -22,7 +22,7 @@ export default function Sidebar() {
   const [UserRole, setUserRole] = useState("");
   useEffect(() => {
     axios
-      .get("http://backend.slsog.com/api/user", {
+      .get("https://backend.slsog.com/api/user", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => setUserRole(data.data.role));
@@ -67,7 +67,7 @@ export default function Sidebar() {
 
                 <p
                   className="m-0 "
-                  style={{ display: Isopen ? "block" : "none" , width: '120px'}}
+                  style={{ display: Isopen ? "block" : "none", width: "120px" }}
                 >
                   {Link.name}
                 </p>

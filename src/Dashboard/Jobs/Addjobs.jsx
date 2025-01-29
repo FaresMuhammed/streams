@@ -30,7 +30,7 @@ export default function Addjob() {
     // setLoad(true)
     e.preventDefault();
     await axios.post(
-      "http://backend.slsog.com/api/jobs",
+      "https://backend.slsog.com/api/jobs",
       {
         title: Upadateform.title,
         category: Upadateform.category,

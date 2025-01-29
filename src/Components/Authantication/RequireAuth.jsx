@@ -6,7 +6,6 @@
 // import { Axios } from "../../../API/Axios";
 // import Error403 from "../Errors/Error403";
 
-
 // export default function Requireauth({Allowedrole}) {
 
 //     const navigate = useNavigate()
@@ -20,7 +19,7 @@
 
 //     useEffect ( () => {
 //         Axios
-//         .get('http://backend.slsog.com/api/users/3')
+//         .get('https://backend.slsog.com/api/users/3')
 //         .then( data => setUser(data))
 //         .catch( () => navigate( '/login' , {replace: true}))
 //     } , [] )
@@ -33,6 +32,6 @@
 //             : Allowedrole.includes(User.role) ?
 //             (<Outlet/>) :
 //             (<Error403 role={User.role}/>)
-//         ) : 
+//         ) :
 //         (<Navigate to={'/login'} replace={true}/> )
 // }

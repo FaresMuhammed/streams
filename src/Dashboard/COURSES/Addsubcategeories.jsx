@@ -6,15 +6,11 @@ import Cookie from "cookie-universal";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-
 export default function Addsubcategeories() {
-
-
   const cookie = Cookie();
   const token = cookie.get("eng");
 
-  const [Categeories , setCategeories] = useState([])
-
+  const [Categeories, setCategeories] = useState([]);
 
   useEffect(() => {
     axios
@@ -27,15 +23,14 @@ export default function Addsubcategeories() {
       .catch((err) => err);
   }, []);
 
-  const Show = Categeories.map( (cat ) => (
+  const Show = Categeories.map((cat) => (
     <option value={cat.id}>{cat.title}</option>
-  ) )
-
+  ));
 
   // Usestates
   const [Upadateform, setUpdateform] = useState({
     title: "",
-    category_id: ""
+    category_id: "",
   });
   const [Load, setLoad] = useState(false);
 
@@ -46,13 +41,13 @@ export default function Addsubcategeories() {
 
   // Add function
   async function Handlesubmit(e) {
-    setLoad(true)
+    setLoad(true);
     e.preventDefault();
     await axios.post(
-      "http://backend.slsog.com/api/sub-categories",
+      "https://backend.slsog.com/api/sub-categories",
       {
         title: Upadateform.title,
-        category_id: Upadateform.category_id
+        category_id: Upadateform.category_id,
       },
       { headers: { Authorization: "Bearer " + token } }
     );
@@ -65,18 +60,19 @@ export default function Addsubcategeories() {
       {Load && <Loading3 />}
 
       <Form onSubmit={Handlesubmit} className="bg-white w-100 mx-2 p-3">
-
-      <Form.Group className="mb-3" controlId="formBasicRole">
-        <Form.Label>Select category</Form.Label>
+        <Form.Group className="mb-3" controlId="formBasicRole">
+          <Form.Label>Select category</Form.Label>
           <Form.Select
-            name='category_id'
+            name="category_id"
             value={Upadateform.category_id}
             onChange={Onchange}
           >
-            <option disabled value=''>Select category</option>
+            <option disabled value="">
+              Select category
+            </option>
             {Show}
           </Form.Select>
-      </Form.Group>
+        </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicNameee">
           <Form.Label>Title</Form.Label>
@@ -90,11 +86,7 @@ export default function Addsubcategeories() {
         </Form.Group>
 
         <Button
-          disabled={
-            Upadateform.title.length > 1
-              ? false
-              : true
-          }
+          disabled={Upadateform.title.length > 1 ? false : true}
           className="center mt-3"
           variant="primary"
           type="submit"
