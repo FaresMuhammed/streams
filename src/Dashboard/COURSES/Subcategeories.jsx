@@ -6,9 +6,8 @@ import Cookie from "cookie-universal";
 export default function Subcategeories() {
   // Table's Header in users page
   const UsersHeader = [
-    { name: "ID", keyy: "id" },
-    { name: "Subcategory", keyy: "title" },
     { name: "Category", keyy: "category" },
+    { name: "Subcategory", keyy: "title" },
   ];
 
   const Title = "Subcategories Page";

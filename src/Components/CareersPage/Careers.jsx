@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Cookie from "cookie-universal";
 import axios from "axios";
 import parse from "html-react-parser";
+import Showskelton from "../Skelton/Skelton";
+import Skeleton from "react-loading-skeleton";
 
 export default function CareersPage() {
   const [show, setShow] = useState(false);
@@ -19,13 +21,12 @@ export default function CareersPage() {
 
   const cookie = Cookie();
   const token = cookie.get("eng");
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
   const [jobs, setjobs] = useState([]);
 
   console.log(singleJob);
 
   useEffect(() => {
-    setloading(true);
     axios
       .get(`https://backend.slsog.com/api/jobs`, {
         headers: { Authorization: "Bearer " + token },
@@ -55,23 +56,8 @@ export default function CareersPage() {
     </div>
   ));
 
-  //   useEffect (() => {
-  //     setloading(true);
-  //     axios
-  //     .get(`https://backend.slsog.com/api/jobs/${ID}`, {
-  //         headers: { Authorization: "Bearer " + token },
-  //       })
-
-  //     .then ( (data) => {
-  //     // seTitle(data.data.title)
-  //     // setCategeory(data.data.category)
-  //     setDescription(data.data.description)
-  //     setloading(false)
-  // })
-  // .catch(() => Nav('/dashboard/users/page/404' , {replace: true})) // if there isn't user it will be error and go to error page and delete the last page
-  // } , [] )
-
   return (
+    
     <div className="d-flex mt-5" style={{ flexDirection: "column" }}>
       <div
         className="center flex-wrap p-md-5 p-3 mt-3"
@@ -119,22 +105,14 @@ export default function CareersPage() {
             </h1>
             <div className="col-12 w-100 mb-md-5 mb-3"></div>
 
-            {ShowJobs}
-            {/* <Link
-              onClick={handleShow}
-              className=" w-100 "
-              style={{ textDecoration: "none" }}
-            >
-              <div
-                className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv hv"
-                style={{ backgroundColor: "white" , borderRadius: '13px'}}
-              >
-                <h6 style={{ color: "#277EC3" }}>DEVELOPMENT</h6>
-                <h4 style={{ color: "black" }} className="apply-h3">
-                  C++/QT Software Engineer – Belgrade, Serbia
-                </h4>
-              </div>
-            </Link> */}
+            { loading ? (
+                    <div style={{zIndex: '10'}}>
+                        <Showskelton height='100px' length='4' classes='col-12'/>
+                    </div>
+                ) 
+                    : (ShowJobs)
+                }
+
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import {
   faBook,
   faPersonChalkboard,
   faReceipt,
+  faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Links = [
@@ -30,13 +31,6 @@ export const Links = [
     name: "Jobs",
     path: "jobs",
     icon: faPersonChalkboard,
-    role: ["2001"],
-  },
-
-  {
-    name: "Job requests",
-    path: "/dashboard/job/jobrequests",
-    icon: faReceipt,
     role: ["2001"],
   },
 
@@ -78,6 +72,12 @@ export const Links = [
     name: "Courses",
     path: "/dashboard/courses",
     icon: faBook,
+    role: ["2001"],
+  },
+  {
+    name: "Job requests",
+    path: "/dashboard/job/jobrequests",
+    icon: faMessage,
     role: ["2001"],
   },
 ];

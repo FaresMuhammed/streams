@@ -63,13 +63,13 @@ export default function Tables(props) {
         ) => (
           <td key={key2}>
             {item2.keyy === "cv" ? (
-              item[item2.keyy]?.match(/\.(jpeg|jpg|gif|png)$/) !== null ? (
-                <img
-                  width="80px"
-                  src={`http://backend.slsog.com${item[item2.keyy]}`}
-                  alt="CV"
-                />
-              ) : (
+              // item[item2.keyy]?.match(/\.(jpeg|jpg|gif|png)$/) !== null ? (
+              //   <img
+              //     width="80px"
+              //     src={`http://backend.slsog.com${item[item2.keyy]}`}
+              //     alt="CV"
+              //   />
+              // ) : (
                 <a
                   href={`http://backend.slsog.com${item[item2.keyy]}`}
                   target="_blank"
@@ -77,8 +77,14 @@ export default function Tables(props) {
                 >
                   Download CV
                 </a>
-              )
-            ) : item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
+              // )
+            ): item2.keyy === "image" ? (
+              <img
+              width="80px"
+              src={`http://backend.slsog.com${item[item2.keyy]}`}
+            />
+            )
+            : item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
               TransformDate(item[item2.keyy])
             ) : item2.keyy === "description" ? (
               <div style={{ width: "", overflow: "hidden" }} className="col-12">
@@ -86,9 +92,13 @@ export default function Tables(props) {
               </div>
             ) : item2.keyy === "category.job" ? (
               item["category"]
-            ) : item2.keyy === "category" ? (
+            ) : item2.keyy === "category" || item2.keyy === "sub_category" ? (
               item[item2.keyy].title
-            ) : (
+            ) 
+            : item[item2.keyy] === '1997' ? 'Admin'
+            : item[item2.keyy]  === '1996' ? 'User'
+
+            : (
               item[item2.keyy]
             )}
           </td>
@@ -96,13 +106,14 @@ export default function Tables(props) {
       )}
 
       <td>
+      { window.location.pathname !== "/dashboard/job/jobrequests" &&   
         <Link to={`${item.id}`} style={{ marginRight: "10px" }}>
           <FontAwesomeIcon
             fontSize={"19px"}
             color="blue"
             icon={faPenToSquare}
           />
-        </Link>
+        </Link>}
 
         {Currentuser.name !== item.name && (
           <FontAwesomeIcon
@@ -142,7 +153,7 @@ export default function Tables(props) {
         <thead>
           <tr>
             {ShowHeader}
-            <th>ACTION</th>
+            <th>Action</th>
           </tr>
         </thead>
 

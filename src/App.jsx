@@ -32,6 +32,9 @@ import Addsubcategeories from "./Dashboard/COURSES/Addsubcategeories";
 import Subcategeories from "./Dashboard/COURSES/Subcategeories";
 import Updatesubcategory from "./Dashboard/COURSES/Updatesubcategory";
 import AddCourse from "./Dashboard/COURSES/Addcourse";
+import Coursespage from "./Dashboard/COURSES/Courses";
+import Updatecourse from "./Dashboard/COURSES/Updatecourse";
+
 
 function App() {
   return (
@@ -78,7 +81,10 @@ function App() {
             <Route path="addsubcategory" element={<Addsubcategeories />} />
             <Route path="subcategories/:ID" element={<Updatesubcategory />} />
 
+            <Route path="courses" element={<Coursespage/>} />
             <Route path="addcourse" element={<AddCourse />} />
+            <Route path="courses/:ID" element={<Updatecourse/>} />
+
           </Route>
         </Route>
       </Routes>

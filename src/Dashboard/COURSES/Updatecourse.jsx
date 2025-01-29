@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import Loading3 from "../Loading3/Loading3";
-import axios from "axios";
+// import Loading from '......./Loading';
+import { useNavigate, useParams } from "react-router-dom";
 import Cookie from "cookie-universal";
-import "react-quill/dist/quill.snow.css";
+import axios from "axios";
+import Loading3 from "../Loading3/Loading3";
 import ReactQuill from "react-quill";
 
-export default function AddCourse() {
-  const cookie = Cookie();
-  const token = cookie.get("eng");
-
+export default function Updatecourse() {
   const [Categeories, setCategeories] = useState([]);
   const [Subcategeories, setSubcategeories] = useState([]);
-  const [id, setId] = useState();
+
+  const [discipline, setdiscipline] = useState("");
+  const [classification, setclassification] = useState("");
+  const [name, setname] = useState("");
+  const [image, setimage] = useState("");
+  const [description, setdescription] = useState("");
+  const [sub_category_id, setsub_category_id] = useState("");
+  const [category_id, setcategory_id] = useState("");
 
   useEffect(() => {
     axios
@@ -42,46 +47,54 @@ export default function AddCourse() {
 
   const Show2 = Subcategeories.map(
     (subcat) =>
-      subcat.category_id === Number(id) && (
+      subcat.category_id === Number(category_id) && (
         <option value={subcat.id}>{subcat.title}</option>
       )
   );
 
-  const [Upadateform, setUpdateform] = useState({
-    discipline: "",
-    classification: "",
-    name: "",
-    description: "",
-    category_id: "",
-    sub_category_id: "",
-    image: "",
-  });
+  const Nav = useNavigate();
+
+  const { ID } = useParams();
   const [Load, setLoad] = useState(false);
 
-  // Input function
-  function Onchange(e) {
-    setUpdateform({
-      ...Upadateform,
-      [e.target.name]:
-        e.target.name === "image" ? e.target.files[0] : e.target.value,
-    });
-  }
+  const cookie = Cookie();
+  const token = cookie.get("eng");
+
+  useEffect(() => {
+    setLoad(true);
+    axios
+      .get(`https://backend.slsog.com/api/courses/${ID}`, {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((data) => {
+        setdiscipline(data.data.discipline);
+        setclassification(data.data.classification);
+        setname(data.data.name);
+        setimage(data.data.image);
+        setdescription(data.data.description);
+        setcategory_id(data.data.category_id);
+        setsub_category_id(data.data.sub_category_id);
+        setLoad(false);
+      });
+  }, []);
+  console.log(name);
 
   async function Handlesubmit(e) {
     e.preventDefault();
     setLoad(true);
     const formData = new FormData();
-    formData.append("discipline", Upadateform.discipline);
-    formData.append("classification", Upadateform.classification);
-    formData.append("name", Upadateform.name);
-    formData.append("description", Upadateform.description);
-    formData.append("category_id", Upadateform.category_id);
-    formData.append("sub_category_id", Upadateform.sub_category_id);
-    formData.append("image", Upadateform.image);
-
+    formData.append("discipline", discipline);
+    formData.append("classification", classification);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("category_id", category_id);
+    formData.append("sub_category_id", sub_category_id);
+    if (typeof image === "object") {
+      formData.append("image", image);
+    }
     try {
       const res = await axios.post(
-        "https://backend.slsog.com/api/courses",
+        `https://backend.slsog.com/api/courses/${ID}`,
         formData,
         { headers: { Authorization: "Bearer " + token } }
       );
@@ -101,28 +114,25 @@ export default function AddCourse() {
           <Form.Label>Select category</Form.Label>
           <Form.Select
             name="category_id"
-            value={Upadateform.category_id}
-            onChange={(e) => {
-              Onchange(e);
-              setId(e.target.value);
-            }}
+            value={category_id}
+            onChange={(e) => setcategory_id(e.target.value)}
           >
             <option disabled value="">
-              Select category
+              Select Category
             </option>
             {Show}
           </Form.Select>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicRole">
-          <Form.Label>Select subcategory</Form.Label>
+          <Form.Label>Select Subcategory</Form.Label>
           <Form.Select
             name="sub_category_id"
-            value={Upadateform.sub_category_id}
-            onChange={Onchange}
+            value={sub_category_id}
+            onChange={(e) => setsub_category_id(e.target.value)}
           >
             <option disabled value="">
-              Select subcategory
+              Select Subcategory
             </option>
             {Show2}
           </Form.Select>
@@ -132,10 +142,9 @@ export default function AddCourse() {
           <Form.Label>Discipline</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter discipline"
-            name="discipline"
-            value={Upadateform.discipline}
-            onChange={Onchange}
+            placeholder="Enter title"
+            value={discipline}
+            onChange={(e) => setdiscipline(e.target.value)}
           />
         </Form.Group>
 
@@ -143,58 +152,46 @@ export default function AddCourse() {
           <Form.Label>Classification</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter classification"
-            name="classification"
-            value={Upadateform.classification}
-            onChange={Onchange}
+            placeholder="Enter title"
+            value={classification}
+            onChange={(e) => setclassification(e.target.value)}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicNameee">
-          <Form.Label>Course name</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter course name"
-            name="name"
-            value={Upadateform.name}
-            onChange={Onchange}
+            placeholder="Enter title"
+            value={name}
+            onChange={(e) => setname(e.target.value)}
           />
         </Form.Group>
-
-          <Form.Label>Description</Form.Label>
-                <ReactQuill
-                  theme="snow"
-                  value={Upadateform.description}
-                  onChange={(value) =>
-                    setUpdateform({ ...Upadateform, description: value })
-                  }
-                />
 
         <Form.Group className="mb-3">
           <Form.Label>Image </Form.Label>
           <Form.Control
             id="image"
             type="file"
-            onChange={Onchange}
+            onChange={(e) => setimage(e.target.value)}
             name="image"
-            required
           />
         </Form.Group>
 
+        <Form.Label>Description</Form.Label>
+        <ReactQuill
+          theme="snow"
+          value={description}
+          onChange={setdescription}
+        />
+
         <Button
-          disabled={
-            Upadateform.name.length > 1 &&
-            Upadateform.discipline.length > 1 &&
-            Upadateform.description.length > 1 &&
-            Upadateform.classification.length > 1
-              ? false
-              : true
-          }
-          className="center mt-3"
+          disabled={discipline.length > 1 ? false : true}
+          className="d-flex "
           variant="primary"
           type="submit"
         >
-          Add
+          Update
         </Button>
       </Form>
     </>

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Cookie from "cookie-universal";
 import axios from 'axios';
 import Loading3 from '../Loading3/Loading3';
+import ReactQuill from 'react-quill';
 
 
 export default function Updatejobs() {
@@ -79,13 +80,12 @@ export default function Updatejobs() {
                         />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPhone">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="Enter description" 
+                    <Form.Label>Description</Form.Label>
+                    <ReactQuill
+                        theme="snow"
                         value={Description}
-                        onChange={ (e) => setDescription(e.target.value) }
-                        />
-                    </Form.Group>
+                        onChange={setDescription}
+                    />
 
                     <Button disabled={Title.length > 1 && Categeory.length > 1 && Description !== '' ? false : true } className='d-flex ' variant="primary" type="submit">
                         Update

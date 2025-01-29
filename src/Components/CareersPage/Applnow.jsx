@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loading from "../Loading/Loading";
+
 
 export default function Applynow() {
   const Ref = useRef();
@@ -26,6 +28,7 @@ export default function Applynow() {
   const [Error, setError] = useState("");
 
   const [loading, setloading] = useState(false);
+
 
   // Functions
   function Handlechange(e) {
@@ -59,6 +62,10 @@ export default function Applynow() {
 
   return (
     <>
+
+      {loading && <Loading />}
+
+
       <div className="d-flex flex-wrap" style={{ backgroundColor: "#091929" }}>
         <div
           className="center flex-wrap p-md-5 p-3"

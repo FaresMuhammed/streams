@@ -94,8 +94,8 @@ export default function Adduser() {
                         onChange={Onchange}
                             >
                             <option disabled value=''>Select Role</option>
-                            <option value='2001'>Admin</option>
-                            <option value='1966'>User</option>
+                            <option value='1997'>Admin</option>
+                            <option value='1996'>User</option>
                         </Form.Select>
                     </Form.Group>
 
@@ -109,7 +109,7 @@ export default function Adduser() {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassCon">
-                        <Form.Label>Password confirm</Form.Label>
+                        <Form.Label>Password confirmation</Form.Label>
                         <Form.Control type="password" placeholder="Confirm Password"
                         name='PasswordConfirm'
                         value={Upadateform.PasswordConfirm}
@@ -117,7 +117,7 @@ export default function Adduser() {
                         />
                     </Form.Group>
 
-                    <Button disabled={Upadateform.Name.length > 1 && Upadateform.Email.length > 1 && Upadateform.Password.length > 6 && Upadateform.Role !== '' ? false : true } className='center ' variant="primary" type="submit">
+                    <Button disabled={Upadateform.Name.length > 1 && Upadateform.Email.length > 1 && Upadateform.Password.length > 6 ? false : true } className='center ' variant="primary" type="submit">
                         Add
                     </Button>
 

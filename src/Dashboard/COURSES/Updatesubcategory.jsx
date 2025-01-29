@@ -53,10 +53,8 @@ export default function Updatesubcategory() {
           
         .then ( (data) => {
         seTitle(data.data.title)
-        // setCategeory(data.data.category.title)
         setLoad(false)
     })
-    // .catch(() => Nav('/dashboard/users/page/404' , {replace: true})) // if there isn't user it will be error and go to error page and delete the last page
     } , [] )
     console.log(Title);
 
