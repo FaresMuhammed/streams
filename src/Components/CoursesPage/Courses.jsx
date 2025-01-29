@@ -16,6 +16,7 @@ export default function Courses() {
 
   const [loading, setloading] = useState(false);
   const [Categeories, setCategeories] = useState([]);
+  const [Subcategeories, setSubcategeories] = useState([]);
 
   useEffect(() => {
     setloading(true);
@@ -27,15 +28,45 @@ export default function Courses() {
       .finally(() => setloading(false))
       .catch((err) => err);
   }, []);
-console.log(Categeories);
+
+  useEffect(() => {
+    axios
+      .get(`https://backend.slsog.com/api/sub-categories`)
+      .then((data) => {
+        setSubcategeories(data.data);
+      })
+      .catch((err) => err);
+  }, []);
 
   const Show = Categeories.map( (cat) =>(
-    <div className=" sub p-2 rounded">
+    <NavLink onClick={() => Showsubcategories(cat.id)}  className=" sub p-2 rounded">
       {cat.title}
-    </div>
+    </NavLink>
    ) )
 
+  const Showsubcategories = (id) => {
+    const filterJob = Subcategeories?.filter((item) => item.id == Number(id));
+    setSubcategeories(filterJob);
+  };
+  console.log(Subcategeories);
 
+    const Show2 = Subcategeories.map( (subcat) =>(
+              <Link onClick={handleShow} className=" w-100 ">
+                <button
+                  className="p-3 w-100 rounded"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    width: "100%",
+                    border: "none",
+                  }}
+                >
+                  <h5 className="" style={{ color: "#CC2C2C" }}>
+                    {subcat.title}
+                  </h5>
+                </button>
+              </Link>
+  ));
+  
   return (
     <>
       <div className="d-flex" style={{ flexDirection: "column" }}>
@@ -71,155 +102,13 @@ console.log(Categeories);
         </div>
 
         <div className="py-5" style={{ backgroundColor: "#EDEDED" }}>
-          <NavLink to={'/courses'} className="d-flex justify-content-center sublinks flex-wrap gap-4 mb-5">
+          <div className="d-flex justify-content-center sublinks flex-wrap gap-4 mb-5">
             {Show}
-          </NavLink>
+          </div>
 
           <div className="d-flex justify-content-center flex-wrap gap-3 mb-5">
             <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className="w-100" >
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-10 ">
-              <Link onClick={handleShow} className="w-100" >
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    Development Geology
-                  </h5>
-                </button>
-              </Link>
+              {Show2}
             </div>
           </div>
         </div>

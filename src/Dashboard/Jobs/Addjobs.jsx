@@ -71,6 +71,7 @@ export default function Addjob() {
           />
         </Form.Group>
 
+        <Form.Label>Description</Form.Label>
         <ReactQuill
           theme="snow"
           value={Upadateform.description}
