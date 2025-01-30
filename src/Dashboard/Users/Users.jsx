@@ -78,7 +78,8 @@ export default function Users() {
         currentUser={currentUser}
         Delete={handleDelete}
         Title={Title}
-        Search="name"
+        Api="users"
+        Search="email"
         loading={loading}
       />
     </div>

@@ -1,25 +1,29 @@
 import "./Courses.css";
-
 import Footer from "../HomePage/Footer/Footer";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import Cookie from "cookie-universal";
+import Showskelton from "../Skelton/Skelton";
 
 export default function Courses() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
+  const [loading2, setloading2] = useState(true);
   const [Categeories, setCategeories] = useState([]);
   const [Subcategeories, setSubcategeories] = useState([]);
+  const [UpdateubCategories, setUpdateubCategories] = useState([]);
+  const [Courses, setCourses] = useState([]);
+  const [Updatecourses, setUpdatecourses] = useState([]);
 
+
+  // getting categories
   useEffect(() => {
-    setloading(true);
     axios
       .get(`https://backend.slsog.com/api/categories`)
       .then((data) => {
@@ -29,6 +33,7 @@ export default function Courses() {
       .catch((err) => err);
   }, []);
 
+  // getting subcategories
   useEffect(() => {
     axios
       .get(`https://backend.slsog.com/api/sub-categories`)
@@ -38,35 +43,76 @@ export default function Courses() {
       .catch((err) => err);
   }, []);
 
-  const Show = Categeories.map( (cat) =>(
-    <NavLink onClick={() => Showsubcategories(cat.id)}  className=" sub p-2 rounded">
-      {cat.title}
-    </NavLink>
-   ) )
+  // getting courses
+  useEffect(() => {
+    axios
+      .get(`https://backend.slsog.com/api/courses`)
+      .then((data) => {
+        setCourses(data.data);
+      })
+      .finally(() => setloading2(false))
+      .catch((err) => err);
+  }, []);
+  // console.log(Courses);
 
-  const Showsubcategories = (id) => {
-    const filterJob = Subcategeories?.filter((item) => item.id == Number(id));
-    setSubcategeories(filterJob);
-  };
-  console.log(Subcategeories);
-
-    const Show2 = Subcategeories.map( (subcat) =>(
-              <Link onClick={handleShow} className=" w-100 ">
-                <button
-                  className="p-3 w-100 rounded"
-                  style={{
-                    backgroundColor: "#FFFFFF",
-                    width: "100%",
-                    border: "none",
-                  }}
-                >
-                  <h5 className="" style={{ color: "#CC2C2C" }}>
-                    {subcat.title}
-                  </h5>
-                </button>
-              </Link>
+  // showing categories
+  const Show = Categeories.map((cat) => (
+      <div 
+        onClick={() => Showsubcategories(cat.id)}
+        className="rounded cat col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
+      >
+        <h5>{cat.title}</h5>
+      </div>
   ));
-  
+
+  // showing subcategories
+  const Showsubcategories = (id) => {
+    const filterJob = Subcategeories?.filter((item) => item.category_id == id);
+    setUpdateubCategories(filterJob);
+  };
+
+  const Show2 = UpdateubCategories.map((subcat) => (
+      <button
+        onClick={() => handleShow(subcat.id)}
+        className="btn btn-danger m-2 rounded col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
+      >
+        {subcat.title}
+      </button>
+  ));
+
+  // showing courses
+  const handleShow = (id) => {
+    setShow(true)
+    const filterCourses = Courses?.filter((item) => item.sub_category_id == id );
+    setUpdatecourses(filterCourses);
+  };
+
+  const Show3 = Updatecourses.map((course) => (
+    <div className="mb-4">
+    <div className="d-flex align-items-start gap-2 flex-wrap">
+      <img
+        src={`http://backend.slsog.com${course.image}`}
+        height={"100px"}
+        style={{ objectFit: "cover" }}
+        className="rounded col-sm-3 col-12"
+        alt="img"
+      />
+      <div className="col-sm-6 col-12">
+        <h6>{course.name}</h6>
+        <p className="m-0 text-truncate mb-2">
+          {course.classification}
+        </p>
+        <div className="d-flex align-items-center gap-3">
+          <h5 className="m-0 text-primary col-5">{course.price}EGP</h5>
+          <Link to={`/courses/${course.id}`}>
+            <button className="btn btn-danger">Learn more</button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+));
+
   return (
     <>
       <div className="d-flex" style={{ flexDirection: "column" }}>
@@ -89,27 +135,40 @@ export default function Courses() {
             style={{ zIndex: "5", opacity: "0.3", height: "100%" }}
           ></div>
 
-          <div className=" d-flex flex-wrap mt-5" style={{zIndex: '10'}}>
+          <div className=" d-flex flex-wrap mt-5" style={{ zIndex: "10" }}>
             <div className="col-lg-6 col-12 p-lg-5  mt-5">
               <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
                 Training Services
               </h1>
               <p className="mb-lg-5 mb-3">
-                At Streamlines, we deliver expert training services designed to advance skills and knowledge across a wide range of industries. Serving both local and international clients—including leading companies like Khalda, Agiba, GUPCO, Rashpetco, Bapetco, ADNOC, and the Ministry of Energy and Mining in Sudan—our courses encompass all upstream disciplines, IT, machine learning, digital transformation, finance, economics, and more. Our training programs are tailored to meet the unique needs of each client, empowering professionals to excel and drive success in their fields.
+                At Streamlines, we deliver expert training services designed to
+                advance skills and knowledge across a wide range of industries.
+                Serving both local and international clients—including leading
+                companies like Khalda, Agiba, GUPCO, Rashpetco, Bapetco, ADNOC,
+                and the Ministry of Energy and Mining in Sudan—our courses
+                encompass all upstream disciplines, IT, machine learning,
+                digital transformation, finance, economics, and more. Our
+                training programs are tailored to meet the unique needs of each
+                client, empowering professionals to excel and drive
+                success in their fields.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="py-5" style={{ backgroundColor: "#EDEDED" }}>
-          <div className="d-flex justify-content-center sublinks flex-wrap gap-4 mb-5">
-            {Show}
-          </div>
-
-          <div className="d-flex justify-content-center flex-wrap gap-3 mb-5">
-            <div className="col-lg-3 col-md-6 col-10 ">
-              {Show2}
+      <div className="py-5">
+        <div className="d-flex justify-content-center flex-wrap gap-2 mb-5">
+            { loading ? (
+              <div style={{display: 'flex' , flexWrap: 'wrap' , gap: '3px'}}>
+                <Showskelton height='40px' width='100px' length='3'  />
+              </div>
+            ) 
+              : (Show)
+            }
             </div>
+
+          <div className="d-flex justify-content-center flex-wrap mb-5 " style={{lineBreak: 'anywhere'}}>
+              {Show2}
           </div>
         </div>
 
@@ -124,99 +183,14 @@ export default function Courses() {
             <Modal.Title>Courses</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div className="mb-4">
-              <div className="d-flex align-items-start gap-2 flex-wrap">
-                <img
-                  src={"course-2.jpg"}
-                  height={"100px"}
-                  style={{ objectFit: "cover" }}
-                  className="rounded col-sm-3 col-12"
-                  alt="img"
-                />
-                <div className="col-sm-6 col-12">
-                  <h6>On Course</h6>
-                  <p className="m-0 text-truncate mb-2">
-                    How to teach an online course{" "}
-                  </p>
-                  <div className="d-flex align-items-center gap-3">
-                    <h5 className="m-0 text-primary">1500$</h5>
-                    <Link to={"/courses/course"}>
-                      <button className="btn btn-danger">Learn more</button>
-                    </Link>
-                  </div>
-                </div>
+          { loading2 ? (
+              <div>
+                <Showskelton height='80px' length='3'  />
               </div>
-            </div>
-            <div className="mb-4">
-              <div className="d-flex align-items-start gap-2 flex-wrap">
-                <img
-                  src={"course-2.jpg"}
-                  height={"100px"}
-                  style={{ objectFit: "cover" }}
-                  className="rounded col-sm-3 col-12"
-                  alt="img"
-                />
-                <div className="col-sm-6 col-12">
-                  <h6>On Course</h6>
-                  <p className="m-0 text-truncate mb-2">
-                    How to teach an online course
-                  </p>
-                  <div className="d-flex align-items-center gap-3">
-                    <h5 className="m-0 text-primary">1500$</h5>
-                    <Link to={"/courses/course"}>
-                      <button className="btn btn-danger">Learn more</button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mb-4">
-              <div className="d-flex align-items-start gap-2 flex-wrap">
-                <img
-                  src={"/course-2.jpg"}
-                  height={"100px"}
-                  style={{ objectFit: "cover" }}
-                  className="rounded col-sm-3 col-12"
-                  alt="img"
-                />
-                <div className="col-sm-6 col-12">
-                  <h6>On Course</h6>
-                  <p className="m-0 text-truncate mb-2">
-                    How to teach an online course{" "}
-                  </p>
-                  <div className="d-flex align-items-center gap-3">
-                    <h5 className="m-0 text-primary">1500$</h5>
-                    <Link to={"/courses/course"}>
-                      <button className="btn btn-danger">Learn more</button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mb-4">
-              <div className="d-flex align-items-start gap-2 flex-wrap">
-                <img
-                  src={"course-2.jpg"}
-                  height={"100px"}
-                  style={{ objectFit: "cover" }}
-                  className="rounded col-sm-3 col-12"
-                  alt="img"
-                />
-                <div className="col-sm-6 col-12">
-                  <h6>On Course</h6>
-                  <p className="m-0 text-truncate mb-2">
-                    How to teach an online course{" "}
-                  </p>
-                  <div className="d-flex align-items-center gap-3">
-                    <h5 className="m-0 text-primary">1500$</h5>
-                    <Link to={"/courses/course"}>
-                      <button className="btn btn-danger">Learn more</button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Modal.Body>
+            ) 
+              : (Show3)
+            }          
+            </Modal.Body>
         </Modal>
 
         <Footer />

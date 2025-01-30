@@ -66,7 +66,8 @@ export default function Jobs() {
         currentUser={currentUser}
         Delete={handleDelete}
         Title={Title}
-        Search="name"
+        Api="jobs"
+        Search="title"
         loading={loading}
       />
     </div>

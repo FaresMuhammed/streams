@@ -59,7 +59,8 @@ export default function Categeory1() {
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}
-        Search="name"
+        Api="categories"
+        Search="title"
         loading={loading}
       />
     </div>

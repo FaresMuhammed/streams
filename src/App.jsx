@@ -45,7 +45,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/applynow" element={<Applynow />} />
           <Route path="/courses" element={<Courses />} />
-          <Route path="/courses/course" element={<SingleCourse />} />
+          <Route path="/courses/:ID" element={<SingleCourse />} />
           <Route path="/projects" element={<CareersPage />} />
           <Route path="/applynow" element={<Applynow />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -62,11 +62,14 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
 
-        <Route element={<Requireauth Allowedrole={["2001"]} />}>
+        <Route element={<Requireauth Allowedrole={["2001" , "1997"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="users" element={<Users />} />
-            <Route path="users/:ID" element={<Updateuser />} />
-            <Route path="user/add" element={<Adduser />} />
+          
+          <Route element={<Requireauth Allowedrole={["2001"]} />}>
+            <Route path="users" element={<Users/>}/>
+            <Route path="users/:ID" element={<Updateuser/>}/>
+            <Route path="user/add" element={<Adduser/>}/>
+          </Route>
 
             <Route path="jobs" element={<Jobs />} />
             <Route path="jobs/:ID" element={<Updatejobs />} />
@@ -75,7 +78,7 @@ function App() {
 
             <Route path="categories" element={<Categeory1 />} />
             <Route path="addcategory" element={<Cat1 />} />
-            <Route path="categoeries/:ID" element={<Updatecat1 />} />
+            <Route path="categories/:ID" element={<Updatecat1 />} />
 
             <Route path="subcategories" element={<Subcategeories />} />
             <Route path="addsubcategory" element={<Addsubcategeories />} />
@@ -84,10 +87,9 @@ function App() {
             <Route path="courses" element={<Coursespage/>} />
             <Route path="addcourse" element={<AddCourse />} />
             <Route path="courses/:ID" element={<Updatecourse/>} />
-
           </Route>
-        </Route>
-      </Routes>
+      </Route>
+  </Routes>
     </>
   );
 }

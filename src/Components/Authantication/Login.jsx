@@ -45,7 +45,7 @@ export default function Login() {
       cookie.set("eng", token);
       // Navigate according to role
       const role = res.data.data.user.role;
-      const go = role === "2001" ? "/dashboard/users" : "/";
+      const go = role === "2001" ? "/dashboard/users" : (role === "1997"? "/dashboard/courses" :"/") ;
       window.location.pathname = `${go}`;
     } catch (err) {
       setloading(false);

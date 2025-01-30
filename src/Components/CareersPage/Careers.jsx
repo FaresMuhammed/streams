@@ -1,4 +1,4 @@
-import { Dropdown, DropdownItem, Modal, NavDropdown } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import Footer from "../HomePage/Footer/Footer";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -6,7 +6,6 @@ import Cookie from "cookie-universal";
 import axios from "axios";
 import parse from "html-react-parser";
 import Showskelton from "../Skelton/Skelton";
-import Skeleton from "react-loading-skeleton";
 
 export default function CareersPage() {
   const [show, setShow] = useState(false);
@@ -107,7 +106,7 @@ export default function CareersPage() {
 
             { loading ? (
                     <div style={{zIndex: '10'}}>
-                        <Showskelton height='100px' length='4' classes='col-12'/>
+                        <Showskelton height='70px' length='4' classes='col-12 mb-3'/>
                     </div>
                 ) 
                     : (ShowJobs)

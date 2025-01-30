@@ -55,6 +55,7 @@ export default function AddCourse() {
     category_id: "",
     sub_category_id: "",
     image: "",
+    price:""
   });
   const [Load, setLoad] = useState(false);
 
@@ -78,6 +79,8 @@ export default function AddCourse() {
     formData.append("category_id", Upadateform.category_id);
     formData.append("sub_category_id", Upadateform.sub_category_id);
     formData.append("image", Upadateform.image);
+    formData.append("price", Upadateform.price);
+
 
     try {
       const res = await axios.post(
@@ -161,6 +164,17 @@ export default function AddCourse() {
           />
         </Form.Group>
 
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Enter price"
+            name="price"
+            value={Upadateform.price}
+            onChange={Onchange}
+          />
+        </Form.Group>
+
           <Form.Label>Description</Form.Label>
                 <ReactQuill
                   theme="snow"
@@ -169,6 +183,8 @@ export default function AddCourse() {
                     setUpdateform({ ...Upadateform, description: value })
                   }
                 />
+
+
 
         <Form.Group className="mb-3">
           <Form.Label>Image </Form.Label>

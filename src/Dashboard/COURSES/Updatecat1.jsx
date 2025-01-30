@@ -26,12 +26,10 @@ export default function Updatecat1() {
       .get(`https://backend.slsog.com/api/categories/${ID}`, {
         headers: { Authorization: "Bearer " + token },
       })
-
       .then((data) => {
         seTitle(data.data.title);
         setLoad(false);
       });
-    // .catch(() => Nav('/dashboard/users/page/404' , {replace: true})) // if there isn't user it will be error and go to error page and delete the last page
   }, []);
 
   // Update function
@@ -43,7 +41,7 @@ export default function Updatecat1() {
       { title: Title },
       { headers: { Authorization: "Bearer " + token } }
     );
-    window.location.pathname = "/dashboard/categoery1";
+    window.location.pathname = "/dashboard/categories";
   }
 
   return (

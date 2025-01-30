@@ -60,7 +60,8 @@ export default function Subcategeories() {
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}
-        Search="name"
+        Api="sub-categories"
+        Search="title"
         loading={loading}
       />
     </div>

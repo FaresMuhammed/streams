@@ -6,7 +6,7 @@ import Cookie from "cookie-universal";
 export default function Jobs() {
   // Table's Header in users page
   const UsersHeader = [
-    { name: "ID", keyy: "id" },
+    // { name: "ID", keyy: "id" },
     { name: "NAME", keyy: "full_name" },
     { name: "COUNTRY", keyy: "country" },
     { name: "EMAIL", keyy: "email" },

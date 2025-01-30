@@ -24,7 +24,7 @@ export default function Tables(props) {
   async function Getsearch() {
     try {
       const res = await axios.post(
-        `https://backend.slsog.com/api/users/search?email=${Search} `,
+        `https://backend.slsog.com/api/${props.Api}/search?${props.Search}=${Search} `,
         null,
         {
           headers: { Authorization: "Bearer " + token },
@@ -87,12 +87,12 @@ export default function Tables(props) {
               TransformDate(item[item2.keyy])
             ) : item2.keyy === "description" ? (
               <div style={{ width: "", overflow: "hidden" }} className="col-12">
-                {item[item2.keyy].slice(0, 20) + "..."}
+                {item[item2.keyy]?.slice(0, 20) + "..."}
               </div>
             ) : item2.keyy === "category.job" ? (
               item["category"]
             ) : item2.keyy === "category" || item2.keyy === "sub_category" ? (
-              item[item2.keyy].title
+              item[item2.keyy]?.title
             ) : item[item2.keyy] === "1997" ? (
               "Admin"
             ) : item[item2.keyy] === "1996" ? (

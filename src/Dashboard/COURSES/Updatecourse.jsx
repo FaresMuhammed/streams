@@ -18,6 +18,8 @@ export default function Updatecourse() {
   const [description, setdescription] = useState("");
   const [sub_category_id, setsub_category_id] = useState("");
   const [category_id, setcategory_id] = useState("");
+  const [Price, setPrice] = useState("");
+
 
   useEffect(() => {
     axios
@@ -74,6 +76,7 @@ export default function Updatecourse() {
         setdescription(data.data.description);
         setcategory_id(data.data.category_id);
         setsub_category_id(data.data.sub_category_id);
+        setPrice(data.data.price);
         setLoad(false);
       });
   }, []);
@@ -89,6 +92,7 @@ export default function Updatecourse() {
     formData.append("description", description);
     formData.append("category_id", category_id);
     formData.append("sub_category_id", sub_category_id);
+    formData.append("price", Price);
     if (typeof image === "object") {
       formData.append("image", image);
     }
@@ -175,6 +179,16 @@ export default function Updatecourse() {
             type="file"
             onChange={(e) => setimage(e.target.value)}
             name="image"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Enter price"
+            value={Price}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </Form.Group>
 

@@ -43,8 +43,6 @@ export default function Coursespage() {
       .finally(() => setloading(false))
       .catch((err) => err);
   }, [Limit, Page]);
-  console.log(users);
-  
 
   // Delete function
   async function handleDelete(id) {
@@ -66,6 +64,7 @@ export default function Coursespage() {
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}
+        Api="courses"
         Search="name"
         loading={loading}
       />
