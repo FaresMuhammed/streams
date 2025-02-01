@@ -1,12 +1,9 @@
 import Footer from "../HomePage/Footer/Footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import Form from "react-bootstrap/Form";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../Loading/Loading";
-
 
 export default function Applynow() {
   const Ref = useRef();
@@ -15,22 +12,20 @@ export default function Applynow() {
   }, []);
 
   const navigate = useNavigate();
+  const { ID } = useParams();
+  const [loading, setloading] = useState(false);
+  const [Error, setError] = useState("");
 
-  // useStates
   const [Formm, setFormm] = useState({
+    job_id: ID,
     full_name: "",
     country: "",
     email: "",
     phone: "",
+    gpa: "",
     cv: "",
   });
 
-  const [Error, setError] = useState("");
-
-  const [loading, setloading] = useState(false);
-
-
-  // Functions
   function Handlechange(e) {
     setFormm({
       ...Formm,
@@ -48,23 +43,22 @@ export default function Applynow() {
     formData.append("email", Formm.email);
     formData.append("phone", Formm.phone);
     formData.append("cv", Formm.cv);
+    formData.append("job_id", Formm.job_id);
+    formData.append("gpa", Formm.gpa);
+
     try {
-      const res = await axios.post(
-        "https://backend.slsog.com/api/job-requests",
-        formData
-      );
+      await axios.post("https://backend.slsog.com/api/job-requests", formData);
       setloading(false);
       navigate("/projects");
     } catch (err) {
-      console.log(err);
+      setloading(false);
+      setError(err.response.data.message);
     }
   }
 
   return (
     <>
-
       {loading && <Loading />}
-
 
       <div className="d-flex flex-wrap" style={{ backgroundColor: "#091929" }}>
         <div
@@ -118,7 +112,6 @@ export default function Applynow() {
             </div>
 
             <div className="col-lg-6 col-12 mb-5 mt-md-5">
-
               <Form onSubmit={Handlesubmit}>
                 <div className="p-md-5 p-1">
                   <h4 className="mb-md-5 mb-5"> Apply now: </h4>
@@ -181,6 +174,23 @@ export default function Applynow() {
                   </Form.Group>
 
                   <Form.Group className="form-custom mb-5">
+                    <Form.Label>Your grade</Form.Label>
+                    <Form.Select
+                      name="gpa"
+                      value={Formm.gpa}
+                      onChange={Handlechange}
+                    >
+                      <option disabled value="">
+                        Select grade:
+                      </option>
+                      <option value="Excellent">Excellent</option>
+                      <option value="Very good">Very good</option>
+                      <option value="Good">Good</option>
+                      <option value="Fair">Fair</option>
+                    </Form.Select>
+                  </Form.Group>
+
+                  <Form.Group className="form-custom mb-3">
                     <label>CV: </label>
                     <Form.Control
                       className="p-3"
@@ -192,6 +202,12 @@ export default function Applynow() {
                       required
                     />
                   </Form.Group>
+
+                  {Error !== "" && (
+                    <div className="alert alert-danger" role="alert">
+                      {Error}
+                    </div>
+                  )}
 
                   <div className="center ">
                     <button className="btn btn-primary " type="submit">
@@ -205,9 +221,7 @@ export default function Applynow() {
         </div>
       </div>
       <div>
-        <Footer
-        // className={"color-white"}
-        />
+        <Footer />
       </div>
     </>
   );

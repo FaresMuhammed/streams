@@ -4,14 +4,13 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 
 export default function Categeory1() {
-  // Table's Header in users page
   const UsersHeader = [
     { name: "Title", keyy: "title" },
   ];
 
   const Title = "Categories Page";
 
-  const [users, setusers] = useState([]);
+  const [Categories, setCategories] = useState([]);
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -23,8 +22,6 @@ export default function Categeory1() {
   const cookie = Cookie();
   const token = cookie.get("eng");
 
-
-  // Useeffect to get all jobs
   useEffect(() => {
     setloading(true);
     axios
@@ -32,7 +29,7 @@ export default function Categeory1() {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => {
-        setusers(data.data.data);
+        setCategories(data.data.data);
         setTotal(data.data.total);
       })
       .finally(() => setloading(false))
@@ -44,7 +41,7 @@ export default function Categeory1() {
     await axios.delete(`https://backend.slsog.com/api/categories/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
-    setusers((previous) => previous.filter((item) => item.id !== id));
+    setCategories((previous) => previous.filter((item) => item.id !== id));
   }
 
   return (
@@ -55,7 +52,7 @@ export default function Categeory1() {
         Page={Page}
         ChoosedPage={setPage}
         Total={Total}
-        Data={users}
+        Data={Categories}
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}

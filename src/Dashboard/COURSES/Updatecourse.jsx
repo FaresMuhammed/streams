@@ -8,6 +8,14 @@ import Loading3 from "../Loading3/Loading3";
 import ReactQuill from "react-quill";
 
 export default function Updatecourse() {
+  const Nav = useNavigate();
+  const [Load, setLoad] = useState(false);
+  const [Error, setError] = useState("");
+  const {ID} = useParams()
+
+  const cookie = Cookie();
+  const token = cookie.get("eng");
+
   const [Categeories, setCategeories] = useState([]);
   const [Subcategeories, setSubcategeories] = useState([]);
 
@@ -20,7 +28,7 @@ export default function Updatecourse() {
   const [category_id, setcategory_id] = useState("");
   const [Price, setPrice] = useState("");
 
-
+  // Getting categories
   useEffect(() => {
     axios
       .get(`https://backend.slsog.com/api/categories`, {
@@ -36,6 +44,7 @@ export default function Updatecourse() {
     <option value={cat.id}>{cat.title}</option>
   ));
 
+  // Getting subcategories
   useEffect(() => {
     axios
       .get(`https://backend.slsog.com/api/sub-categories`, {
@@ -53,14 +62,6 @@ export default function Updatecourse() {
         <option value={subcat.id}>{subcat.title}</option>
       )
   );
-
-  const Nav = useNavigate();
-
-  const { ID } = useParams();
-  const [Load, setLoad] = useState(false);
-
-  const cookie = Cookie();
-  const token = cookie.get("eng");
 
   useEffect(() => {
     setLoad(true);
@@ -80,7 +81,6 @@ export default function Updatecourse() {
         setLoad(false);
       });
   }, []);
-  console.log(name);
 
   async function Handlesubmit(e) {
     e.preventDefault();
@@ -103,9 +103,10 @@ export default function Updatecourse() {
         { headers: { Authorization: "Bearer " + token } }
       );
       setLoad(false);
-      window.location.pathname = "/dashboard/courses";
-    } catch (err) {
-      console.log(err);
+      Nav("/dashboard/courses")
+    }catch (err) {
+      setLoad(false);
+      setError(err.response.data.message);
     }
   }
 
@@ -199,9 +200,14 @@ export default function Updatecourse() {
           onChange={setdescription}
         />
 
+        {Error !== "" && (
+          <div className="alert alert-danger mt-3" role="alert">
+            {Error}
+          </div>
+        )}
+
         <Button
-          disabled={discipline.length > 1 ? false : true}
-          className="d-flex "
+          className="d-flex mt-3"
           variant="primary"
           type="submit"
         >

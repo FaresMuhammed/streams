@@ -3,20 +3,21 @@ import { Button, Form } from "react-bootstrap";
 import Loading3 from "../Loading3/Loading3";
 import axios from "axios";
 import Cookie from "cookie-universal";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CAT1() {
-  const [value, setValue] = useState("");
 
   const cookie = Cookie();
   const token = cookie.get("eng");
+  const Navigate = useNavigate()
 
   // Usestates
   const [Upadateform, setUpdateform] = useState({
     title: "",
   });
   const [Load, setLoad] = useState(false);
+  const [Error, setError] = useState("");
 
   // Input function
   function Onchange(e) {
@@ -27,7 +28,7 @@ export default function CAT1() {
   async function Handlesubmit(e) {
     setLoad(true);
     e.preventDefault();
-    await axios.post(
+    try{ await axios.post(
       "https://backend.slsog.com/api/categories",
       {
         title: Upadateform.title,
@@ -35,10 +36,12 @@ export default function CAT1() {
       { headers: { Authorization: "Bearer " + token } }
     );
     setLoad(false);
-    window.location.pathname = "/dashboard/categories";
+    Navigate("/dashboard/categories")
+  }catch (err) {
+    setLoad(false);
+    setError(err.response.data.message);
   }
-
-  console.log(Upadateform);
+  }
 
   return (
     <>
@@ -55,6 +58,12 @@ export default function CAT1() {
             onChange={Onchange}
           />
         </Form.Group>
+
+        {Error !== "" && (
+          <div className="alert alert-danger" role="alert">
+            {Error}
+          </div>
+        )}
 
         <Button
           disabled={Upadateform.title.length > 1 ? false : true}

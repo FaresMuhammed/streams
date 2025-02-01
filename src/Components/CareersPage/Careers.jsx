@@ -1,6 +1,6 @@
 import { Modal } from "react-bootstrap";
 import Footer from "../HomePage/Footer/Footer";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Cookie from "cookie-universal";
 import axios from "axios";
@@ -8,6 +8,7 @@ import parse from "html-react-parser";
 import Showskelton from "../Skelton/Skelton";
 
 export default function CareersPage() {
+  const [ID, setID] = useState("");
   const [show, setShow] = useState(false);
 
   const [singleJob, setSingleJob] = useState([]);
@@ -15,6 +16,7 @@ export default function CareersPage() {
   const handleShow = (id) => {
     const filterJob = jobs?.filter((item) => item.id == Number(id));
     setSingleJob(filterJob);
+    setID(id);
     setShow(true);
   };
 
@@ -41,7 +43,7 @@ export default function CareersPage() {
     <div
       onClick={() => handleShow(job.id)}
       className=" w-100 "
-      style={{ textDecoration: "none" , lineBreak: 'anywhere'}}
+      style={{ textDecoration: "none", lineBreak: "anywhere" }}
     >
       <div
         className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv hv"
@@ -56,7 +58,6 @@ export default function CareersPage() {
   ));
 
   return (
-    
     <div className="d-flex mt-5" style={{ flexDirection: "column" }}>
       <div
         className="center flex-wrap p-md-5 p-3 mt-3"
@@ -67,7 +68,12 @@ export default function CareersPage() {
           src={
             "illustration-offshore-workers-image-xmentoys-112296-ezgif.com-webp-to-jpg-converter.jpg"
           }
-          style={{ position: "absolute", top: "0", zIndex: "-1" }}
+          style={{
+            position: "absolute",
+            top: "0",
+            zIndex: "-1",
+            objectFit: "cover",
+          }}
         />
         <div
           className="position-absolute top-0 start-0 bg-black w-100 "
@@ -104,14 +110,13 @@ export default function CareersPage() {
             </h1>
             <div className="col-12 w-100 mb-md-5 mb-3"></div>
 
-            { loading ? (
-                    <div style={{zIndex: '10'}}>
-                        <Showskelton height='70px' length='4' classes='col-12 mb-3'/>
-                    </div>
-                ) 
-                    : (ShowJobs)
-                }
-
+            {loading ? (
+              <div style={{ zIndex: "10" }}>
+                <Showskelton height="70px" length="4" classes="col-12 mb-3" />
+              </div>
+            ) : (
+              ShowJobs
+            )}
           </div>
         </div>
       </div>
@@ -127,8 +132,8 @@ export default function CareersPage() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title >
-            <h2 style={{ lineBreak: "anywhere" }} >{singleJob?.[0]?.title}</h2>
+          <Modal.Title>
+            <h2 style={{ lineBreak: "anywhere" }}>{singleJob?.[0]?.title}</h2>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -140,7 +145,7 @@ export default function CareersPage() {
               </div>
 
               <div className="col-12">
-                <Link to={"/applynow"}>
+                <Link to={`/applynow/${ID}`}>
                   <button className="btn btn-danger mt-3 col-12">
                     Apply now
                   </button>

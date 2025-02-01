@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-// import Loading from '......./Loading';
 import { useNavigate, useParams } from "react-router-dom";
 import Cookie from "cookie-universal";
 import axios from "axios";
-import Loading3 from "../Loading3/Loading3";
+import Loading from "../Loading/Loading";
+import Footer from "../HomePage/Footer/Footer";
 
-export default function Updateuser() {
+export default function Updatecurrentuser() {
   const Navigate = useNavigate()
 
   // To get id
@@ -17,13 +17,11 @@ export default function Updateuser() {
   const [Email, setEmail] = useState("");
   const [Phone, setPhone] = useState("");
   const [Company, setCompany] = useState("");
-  const [Role, setRole] = useState("");
   const [Password, setPassword] = useState("");
   const [PasswordConfrim, setPasswordConfrim] = useState("");
   // const [Id , setId] = useState('')
 
   const [Load, setLoad] = useState(false);
-  const [Error, setError] = useState("");
 
   const cookie = Cookie();
   const token = cookie.get("eng");
@@ -32,7 +30,7 @@ export default function Updateuser() {
   useEffect(() => {
     setLoad(true);
     axios
-      .get(`https://backend.slsog.com/api/users/${ID}`, {
+      .get(`https://backend.slsog.com/api/user`, {
         headers: { Authorization: "Bearer " + token },
       })
 
@@ -49,35 +47,29 @@ export default function Updateuser() {
   async function Handlesubmit(e) {
     setLoad(true);
     e.preventDefault();
-    try{await axios.post(
+    await axios.post(
       `https://backend.slsog.com/api/users/${ID}`,
       {
         name: Name,
         email: Email,
-        role: Role,
+        role: '1996',
         phone: Phone,
         company: Company,
         password: Password,
         password_confirmation: PasswordConfrim,
       },
       { headers: { Authorization: "Bearer " + token } }
-    )
-    setLoad(false)
-    Navigate("/dashboard/users")
-    } 
-    catch (err) {
-      setLoad(false);
-      setError(err.response.data.message);
-    }
+    );
+    Navigate("/profile")
   }
 
   return (
     <>
-      {Load && <Loading3 />}
+      {Load && <Loading />}
 
-      <Form onSubmit={Handlesubmit} className="bg-white w-100 mx-2 p-3">
-        <Form.Group className="mb-3" controlId="formBasicNameee">
-          <Form.Label>User Name</Form.Label>
+      <Form onSubmit={Handlesubmit} className="bg-white w-100 mx-2 p-3 mt-5">
+        <Form.Group className="mb-3 mt-5" controlId="formBasicNameee">
+          <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter name"
@@ -87,7 +79,7 @@ export default function Updateuser() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmailll">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -116,17 +108,6 @@ export default function Updateuser() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicRole">
-          <Form.Label>Role</Form.Label>
-          <Form.Select value={Role} onChange={(e) => setRole(e.target.value)}>
-            <option disabled value="">
-              Select Role
-            </option>
-            <option value="2001">Admin</option>
-            <option value="1996">User</option>
-          </Form.Select>
-        </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -147,14 +128,10 @@ export default function Updateuser() {
           />
         </Form.Group>
 
-
-        {Error !== "" && (
-          <div className="alert alert-danger" role="alert">
-            {Error}
-          </div>
-        )}
-
         <Button
+          disabled={
+            Name.length > 1 && Email.length > 1 ? false : true
+          }
           className="d-flex "
           variant="primary"
           type="submit"
@@ -162,6 +139,8 @@ export default function Updateuser() {
           Update
         </Button>
       </Form>
+
+      <Footer/>
     </>
   );
 }

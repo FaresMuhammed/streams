@@ -38,19 +38,24 @@ export default function Login() {
         password: Formm.password,
       });
       setloading(false);
-      console.log(res);
       const token = res.data.data.token;
-      console.log(token);
-
       cookie.set("eng", token);
       // Navigate according to role
       const role = res.data.data.user.role;
-      const go = role === "2001" ? "/dashboard/users" : (role === "1997"? "/dashboard/courses" :"/") ;
+      const go =
+        role === "2001"
+          ? "/dashboard/users"
+          : role === "1997"
+          ? "/dashboard/courses"
+          : "/";
       window.location.pathname = `${go}`;
     } catch (err) {
       setloading(false);
-      if (err.response.status === 422) {
-        setError(<div className="center mb-3"> Wrong email or password </div>);
+
+      if (err.response.status === 401) {
+        setError("Wrong email or password");
+      } else if (err.response.status === 422) {
+        setError(err.response.data.message);
       } else {
         setError("Internal Server Error");
       }
@@ -63,15 +68,21 @@ export default function Login() {
 
       <div
         className="d-flex flex-wrap"
-        style={{ backgroundColor: "#F7F7F7", height: "100vh"  , position: 'relative'}}
+        style={{
+          backgroundColor: "#F7F7F7",
+          height: "100vh",
+          position: "relative",
+        }}
       >
-        <Link to={'/'} className="home-btn">
+        <Link to={"/"} className="home-btn">
           <button className="p-1 btn btn-primary">
-              <FontAwesomeIcon icon={faArrowCircleLeft} style={{marginRight: '5px'}}/>
-              Home page
+            <FontAwesomeIcon
+              icon={faArrowCircleLeft}
+              style={{ marginRight: "5px" }}
+            />
+            Home page
           </button>
         </Link>
-
 
         <div className="center col-lg-4 col-12">
           <img
@@ -119,7 +130,11 @@ export default function Login() {
                   <Form.Label htmlFor="password">Password</Form.Label>
                 </Form.Group>
 
-                {Error !== "" && <span className="error ">{Error}</span>}
+                {Error !== "" && (
+                  <div className="alert alert-danger" role="alert">
+                    {Error}
+                  </div>
+                )}
 
                 <div className="center ">
                   <button className="btn btn-primary" type="submit">

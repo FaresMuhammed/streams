@@ -5,7 +5,7 @@ import { Form, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import PaginatedItems from "./Pagination/Pagination";
 import { useEffect, useState } from "react";
-import TransformDate from "./DateFunction/Date";
+import TransformDate from "../../Components/DateFunction/Date";
 import axios from "axios";
 import Cookie from "cookie-universal";
 
@@ -21,10 +21,15 @@ export default function Tables(props) {
   const [Search, setSearch] = useState("");
   const [SearchResult, setSearchResult] = useState("");
   const [Searching, setSearchig] = useState(false);
+  const [jobs, setJobs] = useState([]);
+  const [gpa, setGpa] = useState("");
+  const [job, setJob] = useState("");
   async function Getsearch() {
     try {
       const res = await axios.post(
-        `https://backend.slsog.com/api/${props.Api}/search?${props.Search}=${Search} `,
+        `https://backend.slsog.com/api/${props.Api}/search?${
+          props.Search
+        }=${Search}&job_title=${job}${gpa.length > 0 ? "&gpa=" + gpa : ""} `,
         null,
         {
           headers: { Authorization: "Bearer " + token },
@@ -46,9 +51,28 @@ export default function Tables(props) {
     }, 500);
 
     return () => clearTimeout(Debounce);
-  }, [Search]);
+  }, [Search, gpa, job]);
 
-  const FilteredData = Search.length > 0 ? SearchResult : props.Data;
+  useEffect(() => {
+    if (window.location.pathname === "/dashboard/job/jobrequests") {
+      axios
+        .get(`https://backend.slsog.com/api/jobs`, {
+          headers: { Authorization: "Bearer " + token },
+        })
+
+        .then((data) => {
+          setJobs(data?.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [window.location.pathname]);
+
+  const showJobs = jobs?.map((item, key) => (
+    <option key={key}>{item?.title}</option>
+  ));
+
+  const FilteredData =
+    Search.length > 0 || gpa !== "" || job !== "" ? SearchResult : props.Data;
   // Table's header
   const ShowHeader = props.Header.map((item) => <th>{item.name}</th>);
 
@@ -87,16 +111,22 @@ export default function Tables(props) {
               TransformDate(item[item2.keyy])
             ) : item2.keyy === "description" ? (
               <div style={{ width: "", overflow: "hidden" }} className="col-12">
-                {item[item2.keyy]?.slice(0, 20) + "..."}
+                {item[item2.keyy]?.slice(0, 15) + "..."}
               </div>
             ) : item2.keyy === "category.job" ? (
               item["category"]
-            ) : item2.keyy === "category" || item2.keyy === "sub_category" ? (
+            ) : item2.keyy === "category" ||
+              item2.keyy === "sub_category" ||
+              item2.keyy === "job" ? (
               item[item2.keyy]?.title
             ) : item[item2.keyy] === "1997" ? (
               "Admin"
             ) : item[item2.keyy] === "1996" ? (
               "User"
+            ) : item[item2.keyy] === true ? (
+              "True"
+            ) : item[item2.keyy] === false ? (
+              "False"
             ) : (
               item[item2.keyy]
             )}
@@ -104,48 +134,88 @@ export default function Tables(props) {
         )
       )}
 
-      <td>
-        {window.location.pathname !== "/dashboard/job/jobrequests" && (
-          <Link to={`${item.id}`} style={{ marginRight: "10px" }}>
-            <FontAwesomeIcon
-              fontSize={"19px"}
-              color="blue"
-              icon={faPenToSquare}
-            />
-          </Link>
-        )}
+      {window.location.pathname !== "/dashboard/payment" && (
+        <td>
+          {window.location.pathname !== "/dashboard/job/jobrequests" && (
+            <Link to={`${item.id}`} style={{ marginRight: "10px" }}>
+              <FontAwesomeIcon
+                fontSize={"19px"}
+                color="blue"
+                icon={faPenToSquare}
+              />
+            </Link>
+          )}
 
-        {Currentuser.name !== item.name && (
-          <FontAwesomeIcon
-            onClick={() => props.Delete(item.id)}
-            fontSize={"19px"}
-            color="red"
-            cursor={"pointer"}
-            icon={faTrash}
-          />
-        )}
-      </td>
+          {Currentuser.name !== item.name && (
+            <FontAwesomeIcon
+              onClick={() => props.Delete(item.id)}
+              fontSize={"19px"}
+              color="red"
+              cursor={"pointer"}
+              icon={faTrash}
+            />
+          )}
+        </td>
+      )}
     </tr>
   ));
 
   return (
     <div>
-      <div className="head">
-        <div>
-          <h2>{props.Title}</h2>
-        </div>
-        <div>
-          <Form.Control
-            className="my-2 search"
-            placeholder="Search"
-            aria-label="input-example"
-            type="search"
-            value={Search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setSearchig(true);
-            }} // to run loading while searching
-          />
+      <div className="head flex-wrap">
+        {/* <div className="col-md-4 col-12"> */}
+          {/* <h2>{props.Title}</h2> */}
+        {/* </div> */}
+        <div className="col-12 d-flex flex-wrap align-items-center gap-2 mb-3">
+
+          {window.location.pathname !== "/dashboard/payment" && (
+            <Form.Group className="col-lg-5 col-12">
+            <Form.Control
+              className="search "
+              placeholder="Search"
+              aria-label="input-example"
+              type="search"
+              value={Search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setSearchig(true);
+              }}
+            />              
+          </Form.Group>
+          )}
+
+{window.location.pathname === "/dashboard/job/jobrequests" && (
+            <>
+              <Form.Group className="col-lg-3 col-12">
+                <Form.Select
+                  name="gpa"
+                  className="py-2"
+                  onChange={(e) => setGpa(e.target.value)}
+                >
+                  <option disabled selected value="">
+                    Select grade:
+                  </option>
+                  <option value="Excellent">Excellent</option>
+                  <option value="Very good">Very good</option>
+                  <option value="Good">Good</option>
+                  <option value="Fair">Fair</option>
+                </Form.Select>
+              </Form.Group>
+
+              <Form.Group className="col-lg-3 col-12">
+                <Form.Select
+                  name="gpa"
+                  className="py-2"
+                  onChange={(e) => setJob(e.target.value)}
+                >
+                  <option disabled selected value="">
+                    Select Job:
+                  </option>
+                  {showJobs}
+                </Form.Select>
+              </Form.Group>
+            </>
+          )}
         </div>
       </div>
 
@@ -153,7 +223,9 @@ export default function Tables(props) {
         <thead>
           <tr>
             {ShowHeader}
-            <th>Action</th>
+            {window.location.pathname !== "/dashboard/payment" && (
+              <th>Action</th>
+            )}
           </tr>
         </thead>
 

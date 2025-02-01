@@ -3,9 +3,11 @@ import { Button, Form } from "react-bootstrap";
 import Loading3 from "../Loading3/Loading3";
 import axios from "axios";
 import Cookie from "cookie-universal";
-import Updateuser from "./UpdateUser";
+import { useNavigate } from "react-router-dom";
 
 export default function Adduser() {
+
+  const Navigate = useNavigate()
   const cookie = Cookie();
   const token = cookie.get("eng");
 
@@ -20,6 +22,7 @@ export default function Adduser() {
     PasswordConfirm: "",
   });
   const [Load, setLoad] = useState(false);
+  const [Error, setError] = useState("");
 
   // Input function
   function Onchange(e) {
@@ -28,9 +31,9 @@ export default function Adduser() {
 
   // Add function
   async function Handlesubmit(e) {
-    // setLoad(true)
+    setLoad(true)
     e.preventDefault();
-    await axios.post(
+    try{ await axios.post(
       "https://backend.slsog.com/api/users",
       {
         name: Upadateform.Name,
@@ -42,9 +45,14 @@ export default function Adduser() {
         role: Upadateform.Role,
       },
       { headers: { Authorization: "Bearer " + token } }
-    );
-    setLoad(false);
-    window.location.pathname = "/dashboard/users";
+    )
+    setLoad(false)
+    Navigate("/dashboard/users")
+  }
+    catch (err) {
+      setLoad(false);
+      setError(err.response.data.message);
+    }
   }
 
   return (
@@ -53,7 +61,7 @@ export default function Adduser() {
 
       <Form onSubmit={Handlesubmit} className="bg-white w-100 mx-2 p-3">
         <Form.Group className="mb-3" controlId="formBasicNameee">
-          <Form.Label>User Name</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Name"
@@ -64,7 +72,7 @@ export default function Adduser() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmailll">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -129,10 +137,17 @@ export default function Adduser() {
           />
         </Form.Group>
 
+        {Error !== "" && (
+          <div className="alert alert-danger" role="alert">
+            {Error}
+          </div>
+        )}
+
         <Button
           disabled={
             Upadateform.Name.length > 1 &&
             Upadateform.Email.length > 1 &&
+            Upadateform.Phone.length > 1 &&
             Upadateform.Password.length > 6
               ? false
               : true

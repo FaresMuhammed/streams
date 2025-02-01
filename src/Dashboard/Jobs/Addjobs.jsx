@@ -5,9 +5,11 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Addjob() {
-  const [value, setValue] = useState("");
+
+  const Navigate = useNavigate()
 
   const cookie = Cookie();
   const token = cookie.get("eng");
@@ -19,6 +21,7 @@ export default function Addjob() {
     description: "",
   });
   const [Load, setLoad] = useState(false);
+  const [Error, setError] = useState('');
 
   // Input function
   function Onchange(e) {
@@ -27,9 +30,9 @@ export default function Addjob() {
 
   // Add function
   async function Handlesubmit(e) {
-    // setLoad(true)
+    setLoad(true)
     e.preventDefault();
-    await axios.post(
+    try{ await axios.post(
       "https://backend.slsog.com/api/jobs",
       {
         title: Upadateform.title,
@@ -39,7 +42,11 @@ export default function Addjob() {
       { headers: { Authorization: "Bearer " + token } }
     );
     setLoad(false);
-    window.location.pathname = "/dashboard/jobs";
+    Navigate("/dashboard/jobs")
+  }catch (err) {
+    setLoad(false);
+    setError(err.response.data.message);
+  }
   }
 
   console.log(Upadateform);
@@ -79,6 +86,12 @@ export default function Addjob() {
             setUpdateform({ ...Upadateform, description: value })
           }
         />
+
+        {Error !== "" && (
+          <div className="alert alert-danger mt-3" role="alert">
+            {Error}
+          </div>
+        )}
 
         <Button
           disabled={

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import Loading from "../Loading/Loading";
 
 
 export default function Register() {
@@ -63,6 +64,7 @@ export default function Register() {
 
   return (
     <>
+          {loading && <Loading />}
     
     <div className='d-flex flex-wrap' style={{ backgroundColor: '#F7F7F7'  }}>
     <Link to={'/'} className="home-btn">

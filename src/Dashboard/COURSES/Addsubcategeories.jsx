@@ -5,10 +5,13 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Addsubcategeories() {
   const cookie = Cookie();
   const token = cookie.get("eng");
+  const Navigate = useNavigate()
+  const [Error, setError] = useState("");
 
   const [Categeories, setCategeories] = useState([]);
 
@@ -43,7 +46,7 @@ export default function Addsubcategeories() {
   async function Handlesubmit(e) {
     setLoad(true);
     e.preventDefault();
-    await axios.post(
+    try{ await axios.post(
       "https://backend.slsog.com/api/sub-categories",
       {
         title: Upadateform.title,
@@ -52,7 +55,11 @@ export default function Addsubcategeories() {
       { headers: { Authorization: "Bearer " + token } }
     );
     setLoad(false);
-    window.location.pathname = "/dashboard/subcategories";
+    Navigate("/dashboard/subcategories")
+  }catch (err) {
+    setLoad(false);
+    setError(err.response.data.message);
+  }
   }
 
   return (
@@ -84,6 +91,12 @@ export default function Addsubcategeories() {
             onChange={Onchange}
           />
         </Form.Group>
+
+        {Error !== "" && (
+          <div className="alert alert-danger" role="alert">
+            {Error}
+          </div>
+        )}
 
         <Button
           disabled={Upadateform.title.length > 1 ? false : true}

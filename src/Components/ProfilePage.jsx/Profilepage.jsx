@@ -1,222 +1,131 @@
-import 'package:flutter/material.dart';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Cookie from "cookie-universal";
+import Footer from "../HomePage/Footer/Footer";
+import Showskelton from "../Skelton/Skelton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import TransformDate from "../DateFunction/Date";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
-void main() => runApp(MyApp());
+export default function Profilepage() {
+  const [currentUser, setcurrentUser] = useState("");
+  const [Usercourses, setUsercourses] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-const PAGE_HEIGHT = 600.0;
-const PAGE_WIDTH = 300.0;
+  const cookie = Cookie();
+  const token = cookie.get("eng");
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: Colors.black,
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontSize: 52.0,
-            fontWeight: FontWeight.w500,
-          ),
-          bodyText1: TextStyle(fontSize: 18),
-        ),
-      ),
-      home: Scaffold(body: Center(child: ProfilePage())),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get("https://backend.slsog.com/api/user", {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((res) => setcurrentUser(res.data))
+      .finally(() => setLoading(false));
+  }, []);
 
-class ProfilePage extends StatefulWidget {
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get("https://backend.slsog.com/api/user/courses", {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((res) => setUsercourses(res.data.courses))
+      .finally(() => setLoading(false));
+  }, []);
 
-class _ProfilePageState extends State<ProfilePage> {
-  Map _profileData = {
-    'backgroundImageURL': "https://live.staticflickr.com/4656/39811498731_c9a466e4f0_b.jpg",
-    'profileImageURL': 'https://vignette.wikia.nocookie.net/pkmnshuffle/images/c/c8/Turtwig.png/revision/latest?cb=20170409020509',
-    'username': 'Rong',
-    'followers': 123,
-    'following': 45,
-    'posts': [
-      { 'id': 1, 'imageURL':  "https://live.staticflickr.com/4656/39811498731_c9a466e4f0_b.jpg", },
-      { 'id': 2, 'imageURL':  "https://live.staticflickr.com/917/42438929015_560baa3385_b.jpg", },
-      { 'id': 3, 'imageURL':  "https://live.staticflickr.com/919/42438772515_69a7df7a98_b.jpg", },
-      { 'id': 4, 'imageURL':  "https://live.staticflickr.com/1802/42625549874_c2f43b6958_b.jpg", },
-      { 'id': 5, 'imageURL':  "https://live.staticflickr.com/4718/38912808435_947e9139fc_b.jpg", },
-      { 'id': 6, 'imageURL':  "https://live.staticflickr.com/916/42438716915_df05e9ea84_b.jpg", },
-      { 'id': 7, 'imageURL': "https://live.staticflickr.com/913/42438942375_bdc45a9229_b.jpg", },
-      { 'id': 8, 'imageURL':     "https://live.staticflickr.com/1763/43293207732_78111fd46f_b.jpg",
-      },
-    ]
-  };
+  const Showcourses = Usercourses.map((course) => (
+    <div className="mb-4 ">
+      <div className="d-flex align-items-start gap-1 flex-wrap">
+          <img
+            src={`http://backend.slsog.com${course.image}`}
+            height={"120px"}
+            style={{ objectFit: "cover" }}
+            className="rounded col-md-4 col-5"
+            alt="img"
+          />
+          <div className="col-6">
+            <h6>{course.classification}</h6>
+            <p className="m-0 text-truncate mb-1">{course.name}</p>
+            <div className=" align-items-center gap-3">
+              <h5 className="m-0 text-primary mb-1">{course.price}EGP</h5>
+              <Link to={`/courses/${course.id}`}>
+                <button className="btn btn-danger">Learn more</button>
+              </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+  ))
+  
 
-  Widget profileMetadataCount(String key, int value) {
-    return Container(
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(value.toString(),
-                style: Theme.of(context).textTheme.headline6),
-            Text(key, style: TextStyle(fontSize: 12.0))
-          ]),
-    );
-  }
+  return (
+    <>
+      {loading ? (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "3px" }}>
+          <Showskelton height="400px" length="1" classes="col-12 p-5 mt-5 " />
+        </div>
+      ) : (
+        <div className="py-md-5 p-3 mt-5 d-flex flex-wrap center">
+          <div className="mt-4 p-3 border rounded col-lg-10 col-12 ">
+            <div className="">
+              <h2 className="mb-5">
+                <FontAwesomeIcon
+                  style={{ paddingRight: "5px" }}
+                  icon={faUserAlt}
+                  fontSize={"26px"}
+                />
+                Your informations
+              </h2>
+            </div>
 
+            <div className="d-flex flex-wrap">
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        width: PAGE_WIDTH,
-        height: PAGE_HEIGHT,
-        color: Colors.white,
-        child: CustomScrollView(slivers: [
-          SliverAppBar(
-              backgroundColor: Colors.white,
-              stretch: true,
-              expandedHeight: 250.0,
-              floating: false,
-              pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                collapseMode: CollapseMode.pin,
-                stretchModes: [
-                  StretchMode.zoomBackground,
-                  StretchMode.blurBackground,
-                  StretchMode.fadeTitle,
-                ],
-                title: Text(
-                  _profileData['username'],
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                centerTitle: true,
-                background: Stack(fit: StackFit.expand, children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Image.network(
-                      _profileData['backgroundImageURL'],
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(0.0, -1.0),
-                        end: Alignment(0.0, 0.0),
-                        colors: <Color>[
-                          Colors.white.withOpacity(0.0),
-                          Colors.white70,
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 80.0),
-                    alignment: Alignment.center,
-                    child: CircleAvatar(
-                      radius: 30.0,
-                      backgroundColor: Colors.white,
-                      backgroundImage: NetworkImage(
-                          _profileData['profileImageURL']),
-                    ),
-                  )
-                ]),
-              ),
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.edit),
-                  color: Colors.black,
-                  tooltip: 'Edit Profile',
-                  onPressed: () {/* ... */},
-                ),
-              ]),
-          SliverFixedExtentList(
-            itemExtent: 50.0,
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text(
-                    "A software person. Also likes to travel, crochet and engage with nature!",
-                    style: TextStyle(fontSize: 12.0),
-                    textAlign: TextAlign.center,
-                  ),
-                );
-              },
-              childCount: 1,
-            ),
-          ),
-          SliverGrid.count(
-            crossAxisCount: 3,
-            childAspectRatio: 1.2,
-            children: [
-              profileMetadataCount('posts', _profileData['posts'].length),
-              profileMetadataCount('followers', _profileData['followers']),
-              profileMetadataCount('following', _profileData['following'])
-            ]
-          ),
-          SliverGrid(
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200.0,
-              mainAxisSpacing: 5.0,
-              crossAxisSpacing: 5.0,
-              childAspectRatio: 1.0,
-            ),
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_) {
-                      return PostDetail(_profileData['posts'][index]['imageURL']);
-                    }));
-                  },
-                  child: Hero(
-                    tag: _profileData['posts'][index]['imageURL'],
-                    child: Image.network(
-                      _profileData['posts'][index]['imageURL'],
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                );
-              },
-              childCount: _profileData['posts'].length,
-            ),
-          ),
-        ]));
-  }
-}
+              <div className="d-flex flex-wrap  col-md-6 col-12">
+                <div className="col-12 gap-2 d-flex">
+                  <h5>Name:</h5>
+                  <p>{currentUser.name}</p>
+                </div>
+                <div className="col-12 gap-2 d-flex">
+                  <h5>Email:</h5>
+                  <p>{currentUser.email}</p>
+                </div>
+                <div className="col-12 gap-2 d-flex">
+                  <h5>Phone:</h5>
+                  <p>{currentUser.phone}</p>
+                </div>
+                <div className="col-12 gap-2 d-flex">
+                  <h5>Joined at:</h5>
+                  <p>{TransformDate(currentUser.created_at)}</p>
+                </div>
+                <div className="col-12 gap-2 d-flex">
+                  <h5>Company:</h5>
+                  <p>{currentUser.company !== null ? currentUser.company : 'none'}</p>
+                </div>
+              </div>
 
+              <div className="col-12">
+              <div className="col-12 gap-2 mb-2 d-flex">
+                <h5 className="mb-3">Courses:</h5>
+                <p>{Usercourses[0] == undefined && 'none'}</p>
+              </div>
+              {Usercourses[0] !== undefined && (Showcourses)}
+             </div>
 
-class PostDetail extends StatelessWidget {
-  final String url;
-  PostDetail(this.url);
+          </div>
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          width: PAGE_WIDTH,
-          height: PAGE_HEIGHT,
-          color: Colors.white,
-          child: Column(
-            children: [
-              GestureDetector(
-                child: Hero(
-                  tag: url,
-                  child: Image.network(url, fit: BoxFit.cover,),
-                ),
-                onTap: (){
-                  Navigator.pop(context);
-                },
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("This is my post!"),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+            <Link to={`/update/${currentUser.id}`}>
+              <Button className="btn">Update</Button>
+            </Link>
+
+          </div>
+
+        </div>
+      )}
+      <Footer />
+    </>
+  );
 }

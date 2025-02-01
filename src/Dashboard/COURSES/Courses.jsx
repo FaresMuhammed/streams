@@ -4,7 +4,6 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 
 export default function Coursespage() {
-  // Table's Header in users page
   const UsersHeader = [
     { name: "Classification", keyy: "classification" },
     { name: "Discipline", keyy: "discipline" },
@@ -16,7 +15,7 @@ export default function Coursespage() {
   ];
 
   const Title = "Courses Page";
-  const [users, setusers] = useState([]);
+  const [Courses, setCourses] = useState([]);
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -28,16 +27,14 @@ export default function Coursespage() {
   const cookie = Cookie();
   const token = cookie.get("eng");
 
-  // Useeffect to get all jobs
   useEffect(() => {
     setloading(true);
     axios
       .get(`https://backend.slsog.com/api/courses?page=${Page}&limit=${Limit}`, {
         headers: { Authorization: "Bearer " + token },
       })
-      // get(`/${USERS}?limit=${Limit}&page=${Page}`)
       .then((data) => {
-        setusers(data.data.data);
+        setCourses(data.data.data);
         setTotal(data.data.total);
       })
       .finally(() => setloading(false))
@@ -49,7 +46,7 @@ export default function Coursespage() {
     await axios.delete(`https://backend.slsog.com/api/courses/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
-    setusers((previous) => previous.filter((item) => item.id !== id));
+    setCourses((previous) => previous.filter((item) => item.id !== id));
   }
 
   return (
@@ -60,7 +57,7 @@ export default function Coursespage() {
         Page={Page}
         ChoosedPage={setPage}
         Total={Total}
-        Data={users}
+        Data={Courses}
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}

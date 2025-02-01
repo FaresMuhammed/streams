@@ -7,8 +7,19 @@ import axios from "axios";
 import Loading3 from "../Loading3/Loading3";
 
 export default function Updatesubcategory() {
-  const [Categeories, setCategeories] = useState([]);
+  const Nav = useNavigate();
+  const { ID } = useParams();
 
+  const [Categeories, setCategeories] = useState([]);
+  const [Title, seTitle] = useState("");
+  const [Category_id, setCategory_id] = useState("");
+  const [Load, setLoad] = useState(false);
+  const [Error, setError] = useState("");
+
+  const cookie = Cookie();
+  const token = cookie.get("eng");
+
+  // Getting categories
   useEffect(() => {
     axios
       .get(`https://backend.slsog.com/api/categories`, {
@@ -24,46 +35,35 @@ export default function Updatesubcategory() {
     <option value={cat.id}>{cat.title}</option>
   ));
 
-  const Nav = useNavigate();
-
-  // To get id
-  const { ID } = useParams();
-
-  // Usestates for inputs
-  const [Title, seTitle] = useState("");
-  const [Category_id, setCategory_id] = useState("");
-
-  const [Load, setLoad] = useState(false);
-
-  const cookie = Cookie();
-  const token = cookie.get("eng");
-
-  // To get user data and put it in the inputs
+  // Getting subcategories
   useEffect(() => {
     setLoad(true);
     axios
       .get(`https://backend.slsog.com/api/sub-categories/${ID}`, {
         headers: { Authorization: "Bearer " + token },
       })
-
       .then((data) => {
         seTitle(data.data.title);
         setLoad(false);
       });
   }, []);
-  console.log(Title);
 
   // Update function
   async function Handlesubmit(e) {
     setLoad(true);
     e.preventDefault();
-    await axios.post(
+    try{await axios.post(
       `https://backend.slsog.com/api/sub-categories/${ID}`,
       { title: Title, category_id: Category_id },
       { headers: { Authorization: "Bearer " + token } }
-    );
-    window.location.pathname = "/dashboard/subcategories";
+    )
+    setLoad(false)
+    Nav("/dashboard/subcategories")
+  }catch (err) {
+    setLoad(false);
+    setError(err.response.data.message);
   }
+}
 
   return (
     <>
@@ -93,6 +93,12 @@ export default function Updatesubcategory() {
             onChange={(e) => seTitle(e.target.value)}
           />
         </Form.Group>
+
+        {Error !== "" && (
+          <div className="alert alert-danger" role="alert">
+            {Error}
+          </div>
+        )}
 
         <Button
           disabled={Title.length > 1 ? false : true}

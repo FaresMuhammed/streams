@@ -2,7 +2,7 @@ import "./Courses.css";
 import Footer from "../HomePage/Footer/Footer";
 import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import Showskelton from "../Skelton/Skelton";
@@ -21,17 +21,38 @@ export default function Courses() {
   const [Courses, setCourses] = useState([]);
   const [Updatecourses, setUpdatecourses] = useState([]);
 
+  const [id, setId] = useState("");
+
+  const ref = useRef(null);
 
   // getting categories
+
   useEffect(() => {
     axios
       .get(`https://backend.slsog.com/api/categories`)
       .then((data) => {
         setCategeories(data.data);
+        if (data.data.length > 0) {
+          const firstCategoryId = data.data[0].id;
+          setId(firstCategoryId);
+          Showsubcategories(firstCategoryId); // Update subcategories
+        }
       })
-      .finally(() => setloading(false))
-      .catch((err) => err);
+      .catch((err) => console.error(err))
+      .finally(() => {
+        setloading(false);
+      });
   }, []);
+
+  useEffect(() => {
+    if (Subcategeories.length > 0) {
+      const firstSubCategory = Subcategeories.filter(
+        (sub) => sub.category_id == id
+      );
+
+      setUpdateubCategories(firstSubCategory);
+    }
+  }, [Subcategeories, id]);
 
   // getting subcategories
   useEffect(() => {
@@ -57,61 +78,63 @@ export default function Courses() {
 
   // showing categories
   const Show = Categeories.map((cat) => (
-      <div 
-        onClick={() => Showsubcategories(cat.id)}
-        className="rounded cat col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
-      >
-        <h5>{cat.title}</h5>
-      </div>
+    <div
+      ref={ref}
+      onClick={() => Showsubcategories(cat.id)}
+      className={`rounded cat col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1 ${
+        id === cat.id && "acctive"
+      }`}
+    >
+      <h5>{cat.title}</h5>
+    </div>
   ));
 
   // showing subcategories
   const Showsubcategories = (id) => {
+    setId(id);
     const filterJob = Subcategeories?.filter((item) => item.category_id == id);
     setUpdateubCategories(filterJob);
   };
 
   const Show2 = UpdateubCategories.map((subcat) => (
-      <button
-        onClick={() => handleShow(subcat.id)}
-        className="btn btn-danger m-2 rounded col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
-      >
-        {subcat.title}
-      </button>
+    <button
+      onClick={() => handleShow(subcat.id)}
+      className="btn btn-danger m-2 rounded col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
+    >
+      {subcat.title}
+    </button>
   ));
 
   // showing courses
   const handleShow = (id) => {
-    setShow(true)
-    const filterCourses = Courses?.filter((item) => item.sub_category_id == id );
+    setShow(true);
+    const filterCourses = Courses?.filter((item) => item.sub_category_id == id);
     setUpdatecourses(filterCourses);
   };
 
   const Show3 = Updatecourses.map((course) => (
     <div className="mb-4">
-    <div className="d-flex align-items-start gap-2 flex-wrap">
-      <img
-        src={`http://backend.slsog.com${course.image}`}
-        height={"100px"}
-        style={{ objectFit: "cover" }}
-        className="rounded col-sm-3 col-12"
-        alt="img"
-      />
-      <div className="col-sm-6 col-12">
-        <h6>{course.name}</h6>
-        <p className="m-0 text-truncate mb-2">
-          {course.classification}
-        </p>
-        <div className="d-flex align-items-center gap-3">
-          <h5 className="m-0 text-primary col-5">{course.price}EGP</h5>
-          <Link to={`/courses/${course.id}`}>
-            <button className="btn btn-danger">Learn more</button>
-          </Link>
+      <div className="d-flex align-items-start gap-2 flex-wrap">
+        <img
+          src={`http://backend.slsog.com${course.image}`}
+          height={"120px"}
+          style={{ objectFit: "cover" }}
+          className="rounded col-sm-3 col-12"
+          alt="img"
+        />
+        <div className="col-sm-6 col-12">
+          <h6>{course.name}</h6>
+          <p className="m-0 text-truncate mb-1">{course.classification}</p>
+          <div className=" align-items-center gap-3">
+            <h5 className="m-0 text-primary mb-1">{course.price}EGP</h5>
+            <Link to={`/courses/${course.id}`}>
+              <button className="btn btn-danger">Learn more</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-));
+  ));
 
   return (
     <>
@@ -156,19 +179,27 @@ export default function Courses() {
           </div>
         </div>
 
-      <div className="py-5">
-        <div className="d-flex justify-content-center flex-wrap gap-2 mb-5">
-            { loading ? (
-              <div style={{display: 'flex' , flexWrap: 'wrap' , gap: '3px'}}>
-                <Showskelton height='40px' width='100px' length='3'  />
+        <div className="py-5">
+          <div className="d-flex justify-content-center flex-wrap gap-2 mb-5">
+            <h2 className="p-2" style={{ border: "2px solid black" }}>
+              ON SITE COURSES
+            </h2>
+          </div>
+          <div className="d-flex justify-content-center flex-wrap gap-2 mb-4">
+            {loading ? (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "3px" }}>
+                <Showskelton height="40px" width="100px" length="3" />
               </div>
-            ) 
-              : (Show)
-            }
-            </div>
+            ) : (
+              Show
+            )}
+          </div>
 
-          <div className="d-flex justify-content-center flex-wrap mb-5 " style={{lineBreak: 'anywhere'}}>
-              {Show2}
+          <div
+            className="d-flex justify-content-center flex-wrap mb-5 "
+            style={{ lineBreak: "anywhere" }}
+          >
+            {Show2}
           </div>
         </div>
 
@@ -183,14 +214,14 @@ export default function Courses() {
             <Modal.Title>Courses</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          { loading2 ? (
+            {loading2 ? (
               <div>
-                <Showskelton height='80px' length='3'  />
+                <Showskelton height="80px" length="3" />
               </div>
-            ) 
-              : (Show3)
-            }          
-            </Modal.Body>
+            ) : (
+              Show3
+            )}
+          </Modal.Body>
         </Modal>
 
         <Footer />

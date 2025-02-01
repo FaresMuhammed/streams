@@ -4,7 +4,6 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 
 export default function Subcategeories() {
-  // Table's Header in users page
   const UsersHeader = [
     { name: "Category", keyy: "category" },
     { name: "Subcategory", keyy: "title" },
@@ -12,7 +11,7 @@ export default function Subcategeories() {
 
   const Title = "Subcategories Page";
 
-  const [users, setusers] = useState([]);
+  const [Subcategories, setSubcategories] = useState([]);
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -24,8 +23,6 @@ export default function Subcategeories() {
   const cookie = Cookie();
   const token = cookie.get("eng");
 
-
-  // Useeffect to get all jobs
   useEffect(() => {
     setloading(true);
     axios
@@ -33,7 +30,7 @@ export default function Subcategeories() {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => {
-        setusers(data.data.data);
+        setSubcategories(data.data.data);
         setTotal(data.data.total);
       })
       .finally(() => setloading(false))
@@ -45,7 +42,7 @@ export default function Subcategeories() {
     await axios.delete(`https://backend.slsog.com/api/sub-categories/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
-    setusers((previous) => previous.filter((item) => item.id !== id));
+    setSubcategories((previous) => previous.filter((item) => item.id !== id));
   }
 
   return (
@@ -56,7 +53,7 @@ export default function Subcategeories() {
         Page={Page}
         ChoosedPage={setPage}
         Total={Total}
-        Data={users}
+        Data={Subcategories}
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}

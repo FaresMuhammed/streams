@@ -8,7 +8,7 @@ import Loading3 from "../Loading3/Loading3";
 import ReactQuill from "react-quill";
 
 export default function Updatejobs() {
-  const Nav = useNavigate();
+  const Navigate = useNavigate()
 
   // To get id
   const { ID } = useParams();
@@ -19,6 +19,7 @@ export default function Updatejobs() {
   const [Description, setDescription] = useState("");
 
   const [Load, setLoad] = useState(false);
+  const [Error, setError] = useState('');
 
   const cookie = Cookie();
   const token = cookie.get("eng");
@@ -37,20 +38,23 @@ export default function Updatejobs() {
         setDescription(data.data.description);
         setLoad(false);
       });
-    // .catch(() => Nav('/dashboard/users/page/404' , {replace: true})) // if there isn't user it will be error and go to error page and delete the last page
   }, []);
 
   // Update function
   async function Handlesubmit(e) {
     setLoad(true);
     e.preventDefault();
-    await axios.post(
+    try{await axios.post(
       `https://backend.slsog.com/api/jobs/${ID}`,
       { title: Title, category: Categeory, description: Description },
       { headers: { Authorization: "Bearer " + token } }
     );
-    window.location.pathname = "/dashboard/jobs";
-  }
+    setLoad(false);
+    Navigate("/dashboard/jobs")
+  }catch (err) {
+    setLoad(false);
+    setError(err.response.data.message);
+  }}
 
   return (
     <>
@@ -83,6 +87,11 @@ export default function Updatejobs() {
           value={Description}
           onChange={setDescription}
         />
+        {Error !== "" && (
+          <div className="alert alert-danger mt-3" role="alert">
+            {Error}
+          </div>
+        )}
 
         <Button
           disabled={
@@ -90,7 +99,7 @@ export default function Updatejobs() {
               ? false
               : true
           }
-          className="d-flex "
+          className="d-flex mt-3"
           variant="primary"
           type="submit"
         >

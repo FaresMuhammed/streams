@@ -10,14 +10,13 @@ export default function Jobs() {
     { name: "Title", keyy: "title" },
     { name: "Categeory", keyy: "category.job" },
     { name: "Description", keyy: "description" },
-    { name: "Craeted at", keyy: "created_at" },
-    { name: "Last update", keyy: "updated_at" },
+    // { name: "Craeted at", keyy: "created_at" },
+    // { name: "Last update", keyy: "updated_at" },
   ];
 
   const Title = "Jobs Page";
 
-  const [users, setusers] = useState([]);
-  const [currentUser, setcurrentUser] = useState("");
+  const [Jobs, setJobs] = useState([]);
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -36,9 +35,8 @@ export default function Jobs() {
       .get(`https://backend.slsog.com/api/jobs?page=${Page}&limit=${Limit}`, {
         headers: { Authorization: "Bearer " + token },
       })
-      // get(`/${USERS}?limit=${Limit}&page=${Page}`)
       .then((data) => {
-        setusers(data.data.data);
+        setJobs(data.data.data);
         setTotal(data.data.total);
       })
       .finally(() => setloading(false))
@@ -50,7 +48,7 @@ export default function Jobs() {
     await axios.delete(`https://backend.slsog.com/api/jobs/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
-    setusers((previous) => previous.filter((item) => item.id !== id));
+    setJobs((previous) => previous.filter((item) => item.id !== id));
   }
 
   return (
@@ -61,9 +59,8 @@ export default function Jobs() {
         Page={Page}
         ChoosedPage={setPage}
         Total={Total}
-        Data={users}
+        Data={Jobs}
         Header={UsersHeader}
-        currentUser={currentUser}
         Delete={handleDelete}
         Title={Title}
         Api="jobs"

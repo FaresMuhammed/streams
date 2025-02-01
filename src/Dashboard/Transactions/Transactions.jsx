@@ -3,23 +3,20 @@ import Tables from "../Table/Tables";
 import axios from "axios";
 import Cookie from "cookie-universal";
 
-export default function Jobs() {
+export default function Transactions() {
   // Table's Header in users page
-  const UsersHeader = [
-    // { name: "ID", keyy: "id" },
-    { name: "NAME", keyy: "full_name" },
-    { name: "COUNTRY", keyy: "country" },
-    { name: "EMAIL", keyy: "email" },
-    { name: "PHONE", keyy: "phone" },
-    { name: "Job", keyy: "job" },
-    { name: "CV", keyy: "cv" },
-    { name: "Grade", keyy: "gpa" },
+  const TransactionsHeader = [
+    { name: "Name", keyy: "first_name" },
+    { name: "Email", keyy: "email" },
+    { name: "Phone", keyy: "phone_number" },
+    { name: "Success", keyy: "success" },
+    { name: "Amount(EGP)", keyy: "amount_cents" },
     { name: "Received at", keyy: "created_at" },
   ];
 
-  const Title = "Job requests page";
+  const Title = "Payments page";
 
-  const [Jobrequests, setJobrequests] = useState([]);
+  const [Payments, setPayments] = useState([]);
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -36,26 +33,18 @@ export default function Jobs() {
     setloading(true);
     axios
       .get(
-        `https://backend.slsog.com/api/job-requests?page=${Page}&limit=${Limit}`,
+        `https://backend.slsog.com/api/paymob/transactions`,
         {
           headers: { Authorization: "Bearer " + token },
         }
       )
       .then((data) => {
-        setJobrequests(data.data.data);
+        setPayments(data.data);
         setTotal(data.data.total);
       })
       .finally(() => setloading(false))
       .catch((err) => err);
   }, [Limit, Page]);
-
-  // Delete function
-  async function handleDelete(id) {
-    await axios.delete(`https://backend.slsog.com/api/job-requests/${id}`, {
-      headers: { Authorization: "Bearer " + token },
-    });
-    setJobrequests((previous) => previous.filter((item) => item.id !== id));
-  }
 
   return (
     <div className=" w-100 p-2 shadow-sm">
@@ -65,12 +54,9 @@ export default function Jobs() {
         Page={Page}
         ChoosedPage={setPage}
         Total={Total}
-        Data={Jobrequests}
-        Header={UsersHeader}
-        Delete={handleDelete}
+        Data={Payments}
+        Header={TransactionsHeader}
         Title={Title}
-        Api="job-requests"
-        Search="full_name"
         loading={loading}
       />
     </div>

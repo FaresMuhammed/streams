@@ -34,20 +34,31 @@ import Updatesubcategory from "./Dashboard/COURSES/Updatesubcategory";
 import AddCourse from "./Dashboard/COURSES/Addcourse";
 import Coursespage from "./Dashboard/COURSES/Courses";
 import Updatecourse from "./Dashboard/COURSES/Updatecourse";
+import Payment from "./Components/CoursesPage/Payment";
+import Profilepage from "./Components/ProfilePage.jsx/Profilepage";
+import Updatecurrentuser from "./Components/ProfilePage.jsx/Updatecurrentuser";
+import Transactions from "./Dashboard/Transactions/Transactions";
 
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo();
+  }, []);
   return (
     <>
       <Routes>
         {/* Puplic routes */}
         <Route element={<Website />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/profile" element={<Profilepage />} />
+          <Route path="/update/:ID" element={<Updatecurrentuser />} />
           <Route path="/applynow" element={<Applynow />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:ID" element={<SingleCourse />} />
+          <Route path="/coursespayment/:ID" element={<Payment />} />
           <Route path="/projects" element={<CareersPage />} />
-          <Route path="/applynow" element={<Applynow />} />
+          <Route path="/applynow/:ID" element={<Applynow />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/artificalleft" element={<Artifical />} />
@@ -62,14 +73,13 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
 
-        <Route element={<Requireauth Allowedrole={["2001" , "1997"]} />}>
+        <Route element={<Requireauth Allowedrole={["2001", "1997"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
-          
-          <Route element={<Requireauth Allowedrole={["2001"]} />}>
-            <Route path="users" element={<Users/>}/>
-            <Route path="users/:ID" element={<Updateuser/>}/>
-            <Route path="user/add" element={<Adduser/>}/>
-          </Route>
+            <Route element={<Requireauth Allowedrole={["2001"]} />}>
+              <Route path="users" element={<Users />} />
+              <Route path="users/:ID" element={<Updateuser />} />
+              <Route path="user/add" element={<Adduser />} />
+            </Route>
 
             <Route path="jobs" element={<Jobs />} />
             <Route path="jobs/:ID" element={<Updatejobs />} />
@@ -84,12 +94,15 @@ function App() {
             <Route path="addsubcategory" element={<Addsubcategeories />} />
             <Route path="subcategories/:ID" element={<Updatesubcategory />} />
 
-            <Route path="courses" element={<Coursespage/>} />
+            <Route path="courses" element={<Coursespage />} />
             <Route path="addcourse" element={<AddCourse />} />
-            <Route path="courses/:ID" element={<Updatecourse/>} />
+            <Route path="courses/:ID" element={<Updatecourse />} />
+
+            <Route path="payment" element={<Transactions />} />
+
           </Route>
-      </Route>
-  </Routes>
+        </Route>
+      </Routes>
     </>
   );
 }

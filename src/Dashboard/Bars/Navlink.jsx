@@ -5,6 +5,7 @@ import {
   faPersonChalkboard,
   faReceipt,
   faMessage,
+  faMoneyCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Links = [
@@ -78,6 +79,12 @@ export const Links = [
     name: "Job requests",
     path: "/dashboard/job/jobrequests",
     icon: faMessage,
+    role: ["2001" , "1997"],
+  },
+  {
+    name: "Payment",
+    path: "/dashboard/payment",
+    icon: faMoneyCheck,
     role: ["2001" , "1997"],
   },
 ];

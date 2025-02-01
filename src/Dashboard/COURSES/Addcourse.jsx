@@ -5,14 +5,17 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
+import { useNavigate } from "react-router-dom";
 
 export default function AddCourse() {
   const cookie = Cookie();
   const token = cookie.get("eng");
+  const Navigate = useNavigate()
 
   const [Categeories, setCategeories] = useState([]);
   const [Subcategeories, setSubcategeories] = useState([]);
   const [id, setId] = useState();
+  const [Error, setError] = useState("");
 
   useEffect(() => {
     axios
@@ -81,7 +84,6 @@ export default function AddCourse() {
     formData.append("image", Upadateform.image);
     formData.append("price", Upadateform.price);
 
-
     try {
       const res = await axios.post(
         "https://backend.slsog.com/api/courses",
@@ -89,9 +91,10 @@ export default function AddCourse() {
         { headers: { Authorization: "Bearer " + token } }
       );
       setLoad(false);
-      window.location.pathname = "/dashboard/courses";
-    } catch (err) {
-      console.log(err);
+      Navigate("/dashboard/courses")
+    }catch (err) {
+      setLoad(false);
+      setError(err.response.data.message);
     }
   }
 
@@ -176,15 +179,13 @@ export default function AddCourse() {
         </Form.Group>
 
           <Form.Label>Description</Form.Label>
-                <ReactQuill
-                  theme="snow"
-                  value={Upadateform.description}
-                  onChange={(value) =>
-                    setUpdateform({ ...Upadateform, description: value })
-                  }
-                />
-
-
+            <ReactQuill
+              theme="snow"
+              value={Upadateform.description}
+              onChange={(value) =>
+              setUpdateform({ ...Upadateform, description: value })
+              }
+            />
 
         <Form.Group className="mb-3">
           <Form.Label>Image </Form.Label>
@@ -196,6 +197,12 @@ export default function AddCourse() {
             required
           />
         </Form.Group>
+
+        {Error !== "" && (
+          <div className="alert alert-danger" role="alert">
+            {Error}
+          </div>
+        )}
 
         <Button
           disabled={
