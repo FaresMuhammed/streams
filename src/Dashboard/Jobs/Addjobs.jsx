@@ -49,8 +49,6 @@ export default function Addjob() {
   }
   }
 
-  console.log(Upadateform);
-
   return (
     <>
       {Load && <Loading3 />}

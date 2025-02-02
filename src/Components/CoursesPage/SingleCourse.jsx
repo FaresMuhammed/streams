@@ -128,7 +128,7 @@ export default function SingleCourse() {
                     </div> */}
               {/* {parse(Course.description)} */}
 
-              <h6 style={{ lineBreak: "anywhere" }} className="col-12">
+              <h6 style={{ lineBreak: "anywhere" , textAlign: 'justify'}} className="col-12">
                 {parse(Course?.description || "")}
               </h6>
             </div>

@@ -77,7 +77,7 @@ export default function Courses() {
   // console.log(Courses);
 
   // showing categories
-  const Show = Categeories.map((cat) => (
+  const Show = Categeories.map((cat , key) => (
     <div
       ref={ref}
       onClick={() => Showsubcategories(cat.id)}
@@ -85,7 +85,7 @@ export default function Courses() {
         id === cat.id && "acctive"
       }`}
     >
-      <h5>{cat.title}</h5>
+      <h5 key={key}>{cat.title}</h5>
     </div>
   ));
 
@@ -99,7 +99,7 @@ export default function Courses() {
   const Show2 = UpdateubCategories.map((subcat) => (
     <button
       onClick={() => handleShow(subcat.id)}
-      className="btn btn-danger m-2 rounded col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
+      className="btn btn-danger m-1 rounded col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1"
     >
       {subcat.title}
     </button>

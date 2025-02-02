@@ -37,6 +37,11 @@ export default function ContactUs() {
       });
       setLoad(false);
       Navigate("/contactus");
+      Upadateform.name = ''
+      Upadateform.email = '' ,
+      Upadateform.country = '',
+      Upadateform.phone = '',
+      Upadateform.message = ''
     } catch (err) {
       setLoad(false);
       setError(err.response.data.message);
@@ -120,7 +125,6 @@ export default function ContactUs() {
 
                   <Form.Group className="form-custom mb-5">
                     <label>Phone number:</label>
-
                     <Form.Control
                       className="p-3"
                       id="phone"
@@ -134,7 +138,6 @@ export default function ContactUs() {
 
                   <Form.Group className="form-custom mb-3">
                     <label>Your message:</label>
-
                     <Form.Control
                       className="p-3"
                       id="message"
@@ -151,8 +154,8 @@ export default function ContactUs() {
                       {Error}
                     </div>
                   )}
-                  <div className="center ">
-                    <button className="btn btn-primary " type="submit">
+                  <div className="">
+                    <button className="btn btn-primary col-12" type="submit">
                       Send message
                     </button>
                   </div>

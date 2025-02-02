@@ -40,6 +40,7 @@ import Updatecurrentuser from "./Components/ProfilePage.jsx/Updatecurrentuser";
 import Transactions from "./Dashboard/Transactions/Transactions";
 
 import { useEffect } from "react";
+import Wrapper from "./Components/Scroll";
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ function App() {
   }, []);
   return (
     <>
+    <Wrapper>
       <Routes>
         {/* Puplic routes */}
         <Route element={<Website />}>
@@ -103,6 +105,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      </Wrapper>
     </>
   );
 }
