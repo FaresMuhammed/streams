@@ -95,7 +95,7 @@
   transform: translateX(100%);
   display: inline-block;
   animation: scroll 30s linear infinite;
-  animation-delay: 12.5s;
+  animation-delay: 15s;
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
   -ms-transform: translateX(100%);
@@ -123,11 +123,11 @@
 
 @keyframes scroll {
   0% {
-    transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%);
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
   }
   100% {
     transform: translateX(-100%);
