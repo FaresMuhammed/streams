@@ -1,7 +1,6 @@
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Cookie from  'cookie-universal'
 import { useEffect, useState } from "react";
-// import Loading from "../../../Componants/Loading/Loading";
 import axios from "axios";
 import Loading from "../Components/Loading/Loading";
 import Error403 from "./Error403/Error403";

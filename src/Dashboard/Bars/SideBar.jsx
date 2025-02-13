@@ -26,7 +26,6 @@ export default function Sidebar() {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => setUserRole(data.data.role));
-    // .catch( () => Navigate( '/login' , {replace: true}))
   }, []);
 
   return (

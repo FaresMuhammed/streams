@@ -11,7 +11,6 @@ export default function Courses() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
 
   const [loading, setloading] = useState(true);
   const [loading2, setloading2] = useState(true);
@@ -74,7 +73,6 @@ export default function Courses() {
       .finally(() => setloading2(false))
       .catch((err) => err);
   }, []);
-  // console.log(Courses);
 
   // showing categories
   const Show = Categeories.map((cat , key) => (

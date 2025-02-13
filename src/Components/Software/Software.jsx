@@ -20,7 +20,6 @@ export default function Software() {
                         src={"WhatsApp Image 2025-01-13 at 10.57.17_1e83157f.jpg"}
                             style={{
                             objectFit: "cover",
-                            // height: '500px'
                         }}
                     />
                 </div>
@@ -39,7 +38,6 @@ export default function Software() {
                         src={"Introducing_WV_Allez (2).jpg"}
                             style={{
                             objectFit: "cover",
-                            // height: '300px'
                         }}
                     />
 
@@ -62,7 +60,6 @@ export default function Software() {
                         src={"1506097082-fd6b03607788541e45ff5289d9eed2865f4e4890fdeb930caaacd1ee054431be-d_1280.jpg"}
                             style={{
                             objectFit: "cover",
-                            // height: '300px'
                         }}
                     />
 
@@ -83,13 +80,10 @@ export default function Software() {
                         src={"WhatsApp Image 2025-01-13 at 10.57.32_66d6d248.jpg"}
                             style={{
                             objectFit: "cover",
-                            // height: '300px'
                         }}
                     />
-
             </div>
             </div>
-
 
             <div className=" flex-wrap p-3 p-md-5 col-12 border-bottom" style={{ color: "#EDEDED" }}>
                 <div className="ps">
@@ -105,7 +99,6 @@ export default function Software() {
                         src={"WhatsApp Image 2025-01-13 at 12.21.34_4328126c.jpg"}
                             style={{
                             objectFit: "cover",
-                            // height: '500px'
                         }}
                     />
 

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-// import Loading from '......./Loading';
 import { useNavigate, useParams } from "react-router-dom";
 import Cookie from "cookie-universal";
 import axios from "axios";

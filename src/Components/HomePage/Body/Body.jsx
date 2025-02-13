@@ -11,17 +11,9 @@ export default function Body() {
   const sfref = useRef(null);
   const secondRef = useRef(null);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     secondRef.current.scrollIntoView();
-  //   });
-  // }, []);
-
   useEffect(() => {
     ref.current.play();
   }, []);
-
-  // console.log(sfref.current.offsetTop);
 
   return (
     <>
@@ -64,7 +56,6 @@ export default function Body() {
           className=" col-lg-4 col-12 border roww"
           style={{
             display: "flex",
-            // flexDirection: "column",
             alignItems: "center",
           }}
         >
@@ -150,22 +141,6 @@ export default function Body() {
 
         <div className="col-lg-4 col-md-6 col-12 border ">
           <div className=" border-bottom">
-            {/* 
-<div className="p-md-5 p-4 col-12">
-              <img
-                className="mb-2"
-                style={{ width: "12%" }}
-                src={"Consultaion.jpg"}
-              />
-              <h5 className="mb-4">Consultation</h5>
-              <p className=" py-2 con">
-                We provide tailored solutions to help clients overcome complex
-                subsurface challenges, improve asset value, and ensure
-                sustainable reservoir management.
-              </p>
-            </div>
-          </div> */}
-
             <div className=" border-bottom ">
               <div className="p-md-4 p-3 col-12 d-flex gap-4 center">
                 <div
@@ -220,19 +195,6 @@ export default function Body() {
               </p>
             </div>
           </div>
-          {/* <div className="p-md-5 p-4 col-12">
-            <img
-              className="mb-2"
-              style={{ width: "12%" }}
-              src={"./Opertation.png"}
-            />
-            <h5 className="mb-4">Operations</h5>
-            <p>
-              Streamlines provides extensive production services aimed at
-              delivering precise data to enhance well
-              productivity and efficiency.
-            </p>
-          </div> */}
         </div>
       </div>
 
@@ -242,31 +204,6 @@ export default function Body() {
         className="d-flex flex-wrap p-3 center"
         style={{ marginTop: "-70px" }}
       >
-        {/* <div className="col-md-4 col-12 mt-5 py-5 p-3 res">
-          <div className=" mt-3 ">
-            <div>
-              <h2 className="mb-5">STORIES</h2>
-            </div>
-
-            <div className="mb-4">
-              <h6>Project Spotlight:</h6>
-              <p>Offshore Shukeir Oil CO. (OSOCO), Egypt </p>
-            </div>
-
-            <div className="mb-4">
-              <h6>Year Completed:</h6>
-              <p>2023</p>
-            </div>
-
-            <div>
-              <h6>Title:</h6>
-              <p>
-                Production Optimization, reservoir Modelling, and Gas Lift
-                Design
-              </p>
-            </div>
-          </div>
-        </div> */}
 
         <div
           className=" col-12 py-5 p-3 mt-5"
@@ -308,10 +245,6 @@ export default function Body() {
               marginBottom: "-50px",
             }}
           >
-            {/* <p className="fw-bold mt-5" style={{fontSize:'22px'}}>
-                Eng. Tarek Abdel Raouf <br />
-                Operations General Manager
-              </p> */}
           </div>
         </div>
       </div>

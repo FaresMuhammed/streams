@@ -3,7 +3,6 @@ import { Button, Form } from "react-bootstrap";
 import Loading3 from "../Loading3/Loading3";
 import axios from "axios";
 import Cookie from "cookie-universal";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 

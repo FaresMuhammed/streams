@@ -131,7 +131,6 @@ export default function Register() {
                 value={Formm.password}
                 onChange={Handlechange}
                 required
-                // minLength='6'
                 />
               </Form.Group>
 
@@ -142,10 +141,8 @@ export default function Register() {
                 value={Formm.password_confirmation}
                 onChange={Handlechange}
                 required
-                // minLength='6'
                 />
               </Form.Group>
-
 
               {Error !== '' && <span>{Error}</span>}
                 <div className="center ">

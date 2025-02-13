@@ -3,9 +3,6 @@ import Footer from "../HomePage/Footer/Footer";
 export default function AboutUs() {
   return (
     <div>
-        {/* <div className="py-5 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
-</div> */}
-
       <div className="py-lg-2 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
         <div className="d-flex flex-wrap mt-5" >
           <div className=" col-lg-7 col-12 ">
@@ -34,12 +31,6 @@ export default function AboutUs() {
                   <p className="fw-bold p-1 center">  Operations </p>
                 </div>
               </div>
-              {/* <p className="mb-1 fw-bold">
-              <br/>
-                 <br/>
-                <br/>
-                <br/>
-              </p> */}
           </div>
         </div>
         <div className="col-lg-5 col-12 d-flex align-items-center justify-content-center">
@@ -81,14 +72,6 @@ export default function AboutUs() {
                   <p className="fw-bold p-1 center">  Accounting Team </p>
                 </div>
               </div>
-              {/* <p className="mb-1 fw-bold">
-                •	Growth Manager<br/>
-                •	General Manager<br/>
-                •	Service Manager<br/>
-                •	Technical Team<br/>
-                •	Support & HR Team<br/>
-                •	Accounting Team<br/>
-              </p> */}
           </div>
         </div>
         <div className="col-lg-5 col-12 d-flex align-items-center justify-content-center">
@@ -96,14 +79,9 @@ export default function AboutUs() {
         </div>
       </div>
       </div>
-
-
-
-
       <div className="p-lg-5 py-lg-3"
         style={{  display: 'flex' , flexDirection: 'column'}}
       >
-
       <div className="col-12 p-4">
           <div className="p-3" style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
           
@@ -124,7 +102,6 @@ export default function AboutUs() {
           </div>
           </div>
 
-
         <div className="col-12 p-4">
           <div className="p-3" style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
           <div
@@ -140,10 +117,6 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
-
-
-          
-
 
         <div className="col-12 p-4">
           <div className="p-3" style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>

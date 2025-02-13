@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -51,11 +51,6 @@ export default function Swiperr() {
       </div>
 
       <Swiper
-        // navigation={{
-        //   nextEl: "image-swiper-button-next",
-        //   prevEl: ".image-swiper-button-prev",
-        //   disabledClass: "swiper-button-disabled",
-        // }}
         slidesPerView={1}
         breakpoints={{ 768: { slidesPerView: 2 } }}
         spaceBetween={25}

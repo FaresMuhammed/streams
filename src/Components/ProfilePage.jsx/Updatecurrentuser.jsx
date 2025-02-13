@@ -19,7 +19,6 @@ export default function Updatecurrentuser() {
   const [Company, setCompany] = useState("");
   const [Password, setPassword] = useState("");
   const [PasswordConfrim, setPasswordConfrim] = useState("");
-  // const [Id , setId] = useState('')
 
   const [Load, setLoad] = useState(false);
 
@@ -33,7 +32,6 @@ export default function Updatecurrentuser() {
       .get(`https://backend.slsog.com/api/user`, {
         headers: { Authorization: "Bearer " + token },
       })
-
       .then((data) => {
         setName(data.data.name);
         setEmail(data.data.email);

@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import Loading3 from "../Loading/Loading2";
 import axios from "axios";
 import Cookie from "cookie-universal";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "../HomePage/Footer/Footer";
 import Loading from "../Loading/Loading";
 
 export default function Adduser() {
-  const Nav = useNavigate();
 
   const { ID } = useParams();
   const [Course, setCourse] = useState("");

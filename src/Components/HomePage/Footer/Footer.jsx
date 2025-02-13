@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { facebook, fastForward, linkedin } from "fontawesome";
 
 export default function Footer(props) {
   return (
@@ -21,9 +19,7 @@ export default function Footer(props) {
           9235/8 Adly El-Melegy
           Al Abageyah, El Mokattam, Cairo Governorate, 11571 , Egypt
         </p>
-        {/* <p className={` ${props.className}`} style={{ fontSize: "14px" }}> */}
         <iframe className="w-100"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.2727696282406!2d31.308242872327753!3d30.00707970779725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x879c433d660a811d%3A0x37188bdbf0cc48be!2sStreamlines!5e1!3m2!1sar!2seg!4v1734550968040!5m2!1sar!2seg" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        {/* </p>/ */}
       </div>
 
 

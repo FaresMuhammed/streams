@@ -15,15 +15,12 @@
     background: #fff;
     border-radius: 50%;
     position: relative;
-    /* animation: roll 1s ease-in-out infinite alternate; */
   }
   .loader:after{
-    /* content:""; */
     position: absolute;
     inset: 5px;
     border-radius: 50%;
     border: 5px solid ;
-    /* border-color: #297fff transparent; */
   }
   @keyframes roll {
     0% {

@@ -41,8 +41,6 @@ export default function Header(props) {
   }, [lastScrollY]);
 
   const [currentUser, setcurrentUser] = useState("");
-  const [ID, setID] = useState("");
-
 
   // Useeffect to get current user
   const cookie = Cookie();

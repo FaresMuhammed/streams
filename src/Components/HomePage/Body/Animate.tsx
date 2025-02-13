@@ -4,14 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import {
   KeyframeOptions,
   animate,
-  px,
-  useIsomorphicLayoutEffect,
 } from "framer-motion";
-// import { useRef } from "react";
 const Length = window.innerWidth;
 console.log();
-// if (Length = 300) {
-
 type AnimatedCounterProps = {
   from: number;
   to: number;
@@ -55,11 +50,8 @@ const AnimatedCounter = ({
         onUpdate(value) {
           element.textContent = value.toFixed(0);
         },
-        // }
       });
     }
-
-    // window.removeEventListener('scroll')
   }, [ref, runCounter]);
   return <span ref={ref} />;
 };

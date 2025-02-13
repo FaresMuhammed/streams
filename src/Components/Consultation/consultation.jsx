@@ -39,7 +39,6 @@ export default function Consultation() {
       </div>
       </div>
 
-
       <div className="py-lg-2 p-4  d-flex flex-wrap gap-md-4 border-bottom">
         <div className="d-flex flex-wrap " >
           <div className=" col-lg-6 col-12 ">
