@@ -76,7 +76,9 @@ export default function SingleCourse() {
               <div className="d-flex align-items-center col-lg-4 col-12  gap-2 ">
                 <h2 className="m-0 text-danger">{Course.price}EGP</h2>
                 {courses.find((item) => item.id == ID) ? (
-                  <button disabled className="btn btn-danger">BOOKED</button>
+                  <button disabled className="btn btn-danger">
+                    BOOKED
+                  </button>
                 ) : (
                   <Link
                     to={currentUser ? `/coursespayment/${Course.id}` : "/login"}
@@ -95,13 +97,8 @@ export default function SingleCourse() {
               alt="img"
             />
 
-            <div
-              className="d-flex flex-wrap gap-5 center"
-              style={{ lineBreak: "anywhere" }}
-            >
-              <h6 style={{ lineBreak: "anywhere" , textAlign: 'justify'}} className="col-12">
-                {parse(Course?.description || "")}
-              </h6>
+            <div className="d-flex flex-wrap gap-5 center">
+              <h6 className="col-12">{parse(Course?.description || "")}</h6>
             </div>
           </div>
         </div>
