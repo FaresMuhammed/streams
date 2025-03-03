@@ -14,6 +14,37 @@ import Cookie from "cookie-universal";
 import Loading2 from "../../Loading/Loading2";
 
 export default function Header(props) {
+
+
+    const [visibleItems, setVisibleItems] = useState([]);
+  
+    useEffect(() => {
+      const items = Array.from(document.querySelectorAll('.nav-item'));
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          setVisibleItems(prev => [...prev, index]);
+        }, index * 500); // Delay each item animation
+      });
+    }, []);
+  
+    // return (
+    //   <div className="">
+    //     <header className="">
+    //       <nav className="nav">
+    //         <div className={`nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>Home</div>
+    //         <div className={`nav-item ${visibleItems.includes(1) ? 'visible' : ''}`}>About</div>
+    //         <div className={`nav-item ${visibleItems.includes(2) ? 'visible' : ''}`}>Services</div>
+    //         <div className={`nav-item ${visibleItems.includes(3) ? 'visible' : ''}`}>Contact</div>
+    //       </nav>
+    //     </header>
+    //   </div>
+    // );
+  
+  
+  
+  
+
+
   const [showSlider, setShowslider] = useState(false);
 
   const [show, setShow] = useState(true);
@@ -80,6 +111,10 @@ export default function Header(props) {
             <h5>ABOUT US</h5>
           </NavLink>
 
+          <NavLink to={"/courses"} className="Link2">
+            <h5>TRAINING</h5>
+          </NavLink>
+
           <Dropdown style={{ marginLeft: "-12px", marginTop: "35px" }}>
             <NavLink >
               <Dropdown.Toggle
@@ -95,15 +130,6 @@ export default function Header(props) {
               </Dropdown.Toggle>
             </NavLink>
             <Dropdown.Menu>
-              <Dropdown.Item className="col-12">
-                <NavLink
-                  to={"/courses"}
-                  style={{ textDecoration: "none", color: "#2D2727"}}
-                  
-                >
-                  <div className="col-12">TRAINING</div> 
-                </NavLink>
-              </Dropdown.Item>
               <Dropdown.Item>
                 <NavLink
                   to={"/software"}
@@ -195,19 +221,22 @@ export default function Header(props) {
 
             <div className="d-flex h-00">
               <div className="d-flex align-items-center gap-5 ">
-                <div className="gap-5 none ">
-                  <div className="d-flex align-items-center">
-                    <NavLink to={"/"} className="Link topbar">
+                <div className="gap-5 none header">
+                  <div className="d-flex align-items-center ">
+                    <NavLink to={"/"} className={`Link topbar nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>
                       HOME
                     </NavLink>
 
-                    <NavLink to={"/aboutus"} className="Link topbar">
+                    <NavLink to={"/aboutus"} className={`Link topbar nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>
                       ABOUT US
                     </NavLink>
 
+                    <NavLink to={"/courses"} className={`Link topbar nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>
+                      TRAINING
+                    </NavLink>
 
-                    <Dropdown >
-                      <NavLink className="Link topbar" >
+                    <Dropdown  className={`Link topbar nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>
+                      <NavLink >
                         <Dropdown.Toggle
                           variant="transparent"
                           style={{
@@ -223,19 +252,10 @@ export default function Header(props) {
 
                         <Dropdown.Item>
                           <NavLink
-                            to={"/courses"}
-                            style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px'}}
-                          >
-                            <div className="col-12" style={{marginTop: '-20px'}}>Training</div> 
-                          </NavLink>
-                        </Dropdown.Item>
-
-                        <Dropdown.Item>
-                          <NavLink
                             to={"/software"}
                             style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px'}}
                           >
-                            <div className="col-12" style={{marginTop: '-20px'}}>Software</div> 
+                            <div className="col-12" style={{marginTop: '-10px' }}>Software</div> 
                           </NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
@@ -243,15 +263,15 @@ export default function Header(props) {
                             to={"/consultation"}
                             style={{ textDecoration: "none", color: "#2D2727" , marginLeft:'5px' , width: '100%'}}
                           >
-                            <div className="col-12" style={{marginTop: '-20px'}}>Consultation</div> 
-
+                            <div className="col-12" style={{marginTop: '-15px' , marginBottom:''}}>Consultation</div> 
                           </NavLink>
                         </Dropdown.Item>
 
                       {['end'].map(
                         (direction) => (
+                          <div style={{marginTop: '10px'}}>
                           <DropdownButton
-                            style={{marginLeft: '3px'}}
+                            style={{marginLeft: '3px' }}
                             as={ButtonGroup}
                             key={direction}
                             id={`dropdown-button-drop-${direction}`}
@@ -286,15 +306,19 @@ export default function Header(props) {
                                 </NavLink>
                             </Dropdown.Item>
                           </DropdownButton>
+                          
+                          </div>
                         ),
                       )}
                       </Dropdown.Menu>
+                      
                     </Dropdown>
+                    
 
-                    <NavLink to={"/projects"} className="Link topbar">
+                    <NavLink to={"/projects"}  className={`Link topbar nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>
                       CAREERS
                     </NavLink>
-                    <NavLink to={"/contactus"} className="Link topbar">
+                    <NavLink to={"/contactus"}  className={`Link topbar nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>
                       CONTACT US
                     </NavLink>
                   </div>

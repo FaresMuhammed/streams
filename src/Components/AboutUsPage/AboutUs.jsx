@@ -17,8 +17,8 @@ export default function AboutUs() {
                 <p className="mb-5">Our expert team combines industry knowledge with production enhancement acumen to deliver tailored solutions that drive success for our clients.<br/></p>
               </p>
 
-              <div className="col-12 flex-wrap gap-3" style={{display: 'flex' , justifyContent: 'space-between'}}>
-                <div className="col-md-5 col-12"  style={{backgroundColor: '#EAEAEA' , borderRadius: '5px' , height: '36px'}}>
+              {/* <div className="col-12 flex-wrap gap-3" style={{display: 'flex' , justifyContent: 'space-between'}}> */}
+                {/* <div className="col-md-5 col-12"  style={{backgroundColor: '#EAEAEA' , borderRadius: '5px' , height: '36px'}}>
                   <p className="fw-bold p-1 center">   Training </p>
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
@@ -29,7 +29,14 @@ export default function AboutUs() {
                 </div>
                 <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
                   <p className="fw-bold p-1 center">  Operations </p>
-                </div>
+                </div> */}
+              {/* </div> */}
+
+              <div style={{ display: 'flex' , flexDirection: 'column' , alignItems: 'flex-start'}}>
+                  <p className="fw-bold center"> ● Training </p>
+                  <p className="fw-bold center"> ● Software </p>
+                  <p className="fw-bold center"> ● Consultation </p>
+                  <p className="fw-bold center"> ● Operations </p>
               </div>
           </div>
         </div>
@@ -54,23 +61,12 @@ export default function AboutUs() {
               <p className="mb-2">Together, we assist our clients in successfully managing multidisciplinary studies, field development, and field optimization. We focus on providing clients with solutions that maximize value in the rapidly evolving oil and gas sectors.<br/>              </p>
               </p>
 
-              
-              <div className="col-12 flex-wrap gap-3" style={{display: 'flex' , justifyContent: 'space-between'}}>
-                <div className="col-md-5 col-12"  style={{backgroundColor: '#EAEAEA' , borderRadius: '5px' , height: '36px'}}>
-                  <p className="fw-bold p-1 center ">   Growth Manager </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center"> General Manager </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center"> 	Service Manage </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center">	Support & HR Team </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center">  Accounting Team </p>
-                </div>
+              <div style={{ display: 'flex' , flexDirection: 'column' , alignItems: 'flex-start'}}>
+                  <p className="fw-bold center"> ● Growth Manager </p>
+                  <p className="fw-bold center"> ● General Manager </p>
+                  <p className="fw-bold center"> ● Service Manage </p>
+                  <p className="fw-bold center"> ● Support & HR Team </p>
+                  <p className="fw-bold center"> ● Accounting Team </p>
               </div>
           </div>
         </div>

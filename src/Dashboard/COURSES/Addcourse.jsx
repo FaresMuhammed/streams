@@ -58,7 +58,10 @@ export default function AddCourse() {
     category_id: "",
     sub_category_id: "",
     image: "",
-    price:""
+    price:"",
+    time:"",
+    location:"",
+    instructor:""
   });
   const [Load, setLoad] = useState(false);
 
@@ -83,6 +86,9 @@ export default function AddCourse() {
     formData.append("sub_category_id", Upadateform.sub_category_id);
     formData.append("image", Upadateform.image);
     formData.append("price", Upadateform.price);
+    formData.append("time", Upadateform.time);
+    formData.append("location", Upadateform.location);
+    formData.append("instructor", Upadateform.instructor);
 
     try {
       const res = await axios.post(
@@ -163,6 +169,39 @@ export default function AddCourse() {
             placeholder="Enter course name"
             name="name"
             value={Upadateform.name}
+            onChange={Onchange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Instructor</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter instructor"
+            name="instructor"
+            value={Upadateform.instructor}
+            onChange={Onchange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Time</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter time"
+            name="time"
+            value={Upadateform.time}
+            onChange={Onchange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Location</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter location"
+            name="location"
+            value={Upadateform.location}
             onChange={Onchange}
           />
         </Form.Group>

@@ -5,6 +5,14 @@ import axios from "axios";
 import parse from "html-react-parser";
 import Cookie from "cookie-universal";
 import Showskelton from "../Skelton/Skelton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBook,
+  faClock,
+  faHeart,
+  faLocationDot,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleCourse() {
   const { ID } = useParams();
@@ -13,6 +21,8 @@ export default function SingleCourse() {
   const [loading, setloading] = useState(true);
 
   const [currentUser, setcurrentUser] = useState(""); // to get current user
+
+  const [isFav, setIsFav] = useState(true);
 
   // Useeffect to get current user
   const cookie = Cookie();
@@ -26,6 +36,8 @@ export default function SingleCourse() {
       })
       .then((res) => setcurrentUser(res.data.name));
   }, []);
+  console.log(currentUser);
+  
 
   useEffect(() => {
     axios
@@ -51,6 +63,46 @@ export default function SingleCourse() {
       .catch((err) => err);
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`https://backend.slsog.com/api/users/wishlist`, {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((data) => {
+        const fav = data.data.wishlist?.filter((item) => item.id == ID);
+        if (fav.length > 0) setIsFav(false);
+      })
+      .catch((err) => err);
+  }, []);
+
+  async function Favourite() {
+    {currentUser ? (
+      Addtofavourite() ,
+      setIsFav(false)
+    ) : 
+    ( 
+      // <Link to={'/login'} target="_blank"> </Link>
+      window.location.pathname = '/login' 
+    ) 
+    }
+  }
+
+  async function Addtofavourite() {
+  await axios.post(
+  `https://backend.slsog.com/api/courses/wishlist/add/${ID}`,
+  null,
+  { headers: { Authorization: "Bearer " + token } }
+)  }
+
+  async function handleDelete(id) {
+    await axios.delete(
+      `https://backend.slsog.com/api/courses/wishlist/remove/${id}`,
+      {
+        headers: { Authorization: "Bearer " + token },
+      }
+    );
+  }
+
   return (
     <>
       {loading ? (
@@ -59,7 +111,7 @@ export default function SingleCourse() {
         </div>
       ) : (
         <div className="py-md-5 p-4 mt-5 d-flex flex-wrap gap-md-4 center">
-          <div className="mt-5 p-md-5 p-3 border rounded col-lg-10 col-12 ">
+          <div className="mt-3 p-3 border rounded col-lg-10 col-12 ">
             <div className="d-flex">
               <h5 className="mb-4">{Course.classification}</h5>
               <h6 className="mt-1" style={{ color: "#7A7A7A" }}>
@@ -73,32 +125,106 @@ export default function SingleCourse() {
               <div className=" col-lg-6 col-12 gap-3">
                 <h2 className="col-12">{Course.name}</h2>
               </div>
-              <div className="d-flex align-items-center col-lg-4 col-12  gap-2 ">
-                <h2 className="m-0 text-danger">{Course.price}EGP</h2>
-                {courses.find((item) => item.id == ID) ? (
-                  <button disabled className="btn btn-danger">
-                    BOOKED
-                  </button>
-                ) : (
-                  <Link
-                    to={currentUser ? `/coursespayment/${Course.id}` : "/login"}
-                    target="_blank"
-                  >
-                    <button className="btn btn-danger">BOOK NOW</button>
-                  </Link>
-                )}
+            </div>
+
+            <div className="col-12 d-flex flex-wrap mt-3">
+              <div className="col-lg-4 col-12 mb-3">
+                <div>
+                  <h5 style={{ color: "#8A8A9A" }}>
+                    <FontAwesomeIcon icon={faUser} /> INSRTUCTOR{" "}
+                  </h5>
+                  <h5> {Course.instructor} </h5>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-12 mb-3">
+                <div>
+                  <h5 style={{ color: "#8A8A9A" }}>
+                    <FontAwesomeIcon icon={faLocationDot} /> LOCATION{" "}
+                  </h5>
+                  <h5> {Course.location} </h5>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-12 mb-3">
+                <div>
+                  <h5 style={{ color: "#8A8A9A" }}>
+                    <FontAwesomeIcon icon={faClock} /> TIME{" "}
+                  </h5>
+                  <h5> {Course.time} </h5>
+                </div>
               </div>
             </div>
 
-            <img
-              src={`http://backend.slsog.com${Course.image}`}
-              style={{ objectFit: "cover" }}
-              className="rounded col-12 mt-4 mb-4"
-              alt="img"
-            />
+            <div className="d-flex align-items-center col-lg-4 col-12  gap-2 ">
+              <h2 className="m-0 text-danger">{Course.price}EGP</h2>
+              {courses.find((item) => item.id == ID) ? (
+                <button disabled className="btn btn-danger">
+                  BOOKED
+                </button>
+              ) : (
+                <Link
+                  to={currentUser ? `/coursespayment/${Course.id}` : "/login"}
+                  target="_blank"
+                >
+                  <button className="btn btn-danger">BOOK NOW</button>
+                </Link>
+              )}
+            </div>
 
-            <div className="d-flex flex-wrap gap-5 center">
-              <h6 className="col-12">{parse(Course?.description || "")}</h6>
+            <div style={{ position: "relative" }}>
+              <img
+                src={`http://backend.slsog.com${Course.image}`}
+                style={{ objectFit: "cover" }}
+                className="rounded col-12 mt-3"
+                alt="img"
+              />
+
+              { }
+
+              {isFav ? (
+                <FontAwesomeIcon
+                  onClick={() => {
+                    Favourite();
+                  }}
+                  style={{
+                    position: "absolute",
+                    top: "55px",
+                    right: "38px",
+                    fontSize: "40px",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                  icon={faHeart}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  onClick={() => {
+                    handleDelete(ID);
+                    setIsFav(true);
+                  }}
+                  style={{
+                    position: "absolute",
+                    top: "55px",
+                    right: "38px",
+                    fontSize: "40px",
+                    color: "red",
+                    cursor: "pointer",
+                  }}
+                  icon={faHeart}
+                />
+              )}
+            </div>
+
+            <div className="mt-4">
+              <div className="d-flex align-items-center mb-1 gap-2">
+                <h5 style={{ color: "#8A8A9A" }}>
+                  <FontAwesomeIcon icon={faBook} /> COURSE FEATURES{" "}
+                </h5>
+              </div>
+              <h6 style={{ marginTop: "" }}>
+                {parse(Course?.description || "")}
+              </h6>
             </div>
           </div>
         </div>

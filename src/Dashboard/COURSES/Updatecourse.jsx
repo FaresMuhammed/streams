@@ -25,7 +25,11 @@ export default function Updatecourse() {
   const [description, setdescription] = useState("");
   const [sub_category_id, setsub_category_id] = useState("");
   const [category_id, setcategory_id] = useState("");
+  const [instructor, setinstructor] = useState("");
+  const [location, setlocation] = useState("");
+  const [time, settime] = useState("");
   const [Price, setPrice] = useState("");
+
 
   // Getting categories
   useEffect(() => {
@@ -77,6 +81,9 @@ export default function Updatecourse() {
         setcategory_id(data.data.category_id);
         setsub_category_id(data.data.sub_category_id);
         setPrice(data.data.price);
+        setinstructor(data.data.instructor);
+        settime(data.data.time);
+        setlocation(data.data.location);
         setLoad(false);
       });
   }, []);
@@ -91,6 +98,9 @@ export default function Updatecourse() {
     formData.append("description", description);
     formData.append("category_id", category_id);
     formData.append("sub_category_id", sub_category_id);
+    formData.append("instructor", instructor);
+    formData.append("location", location);
+    formData.append("time", time);
     formData.append("price", Price);
     if (typeof image === "object") {
       formData.append("image", image);
@@ -179,6 +189,36 @@ export default function Updatecourse() {
             type="file"
             onChange={(e) => setimage(e.target.value)}
             name="image"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Instructor</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter instructor"
+            value={instructor}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Time</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter time"
+            value={time}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNameee">
+          <Form.Label>Location</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter location"
+            value={location}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </Form.Group>
 
