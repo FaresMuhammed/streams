@@ -19,6 +19,7 @@ export default function Addjob() {
     title: "",
     category: "",
     description: "",
+    type: ""
   });
   const [Load, setLoad] = useState(false);
   const [Error, setError] = useState('');
@@ -38,6 +39,7 @@ export default function Addjob() {
         title: Upadateform.title,
         category: Upadateform.category,
         description: Upadateform.description,
+        type: Upadateform.type,
       },
       { headers: { Authorization: "Bearer " + token } }
     );
@@ -54,6 +56,22 @@ export default function Addjob() {
       {Load && <Loading3 />}
 
       <Form onSubmit={Handlesubmit} className="bg-white w-100 mx-2 p-3">
+        
+                <Form.Group className="mb-3" controlId="formBasicRole">
+                  <Form.Label>Type</Form.Label>
+                  <Form.Select
+                    name="type"
+                    value={Upadateform.type}
+                    onChange={Onchange}
+                  >
+                    <option disabled value="">
+                      Select Job type
+                    </option>
+                      <option value='all'>All</option>
+                      <option value='instructor'>Instructors</option>
+                    </Form.Select>
+                </Form.Group>
+        
         <Form.Group className="mb-3" controlId="formBasicNameee">
           <Form.Label>Title</Form.Label>
           <Form.Control

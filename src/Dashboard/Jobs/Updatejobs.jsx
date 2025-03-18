@@ -17,6 +17,7 @@ export default function Updatejobs() {
   const [Title, seTitle] = useState("");
   const [Categeory, setCategeory] = useState("");
   const [Description, setDescription] = useState("");
+  const [Type, setType] = useState("");
 
   const [Load, setLoad] = useState(false);
   const [Error, setError] = useState('');
@@ -36,6 +37,7 @@ export default function Updatejobs() {
         seTitle(data.data.title);
         setCategeory(data.data.category);
         setDescription(data.data.description);
+        setType(data.data.type);
         setLoad(false);
       });
   }, []);
@@ -46,7 +48,7 @@ export default function Updatejobs() {
     e.preventDefault();
     try{await axios.post(
       `https://backend.slsog.com/api/jobs/${ID}`,
-      { title: Title, category: Categeory, description: Description },
+      { title: Title, category: Categeory, description: Description , type: Type},
       { headers: { Authorization: "Bearer " + token } }
     );
     setLoad(false);
@@ -61,6 +63,22 @@ export default function Updatejobs() {
       {Load && <Loading3 />}
 
       <Form onSubmit={Handlesubmit} className="bg-white w-100 mx-2 p-3">
+      
+          <Form.Group className="mb-3" controlId="formBasicRole">
+                  <Form.Label>Type</Form.Label>
+                  <Form.Select
+                    name="type"
+                    value={Type}
+                    onChange={(e) => setType(e.target.value)}
+                    >
+                    <option disabled value="">
+                      Select job type
+                    </option>
+                      <option value='all'>All</option>
+                      <option value='instructor'>Instructor</option>
+                    </Form.Select>
+                </Form.Group>
+       
         <Form.Group className="mb-3" controlId="formBasicNameee">
           <Form.Label>Title</Form.Label>
           <Form.Control

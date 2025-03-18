@@ -7,11 +7,10 @@ import Cookie from "cookie-universal";
 import Showskelton from "../Skelton/Skelton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBook,
   faClock,
   faHeart,
   faLocationDot,
-  faUser,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleCourse() {
@@ -103,6 +102,30 @@ export default function SingleCourse() {
     );
   }
 
+
+    const [activeTab, setActiveTab] = useState('Description');
+  
+    const renderContent = () => {
+      switch (activeTab) {
+        case 'Description':
+          return  <> 
+           <div style={{textAlign: 'left'}}>
+              <h6>
+                {parse(Course?.description || "")}
+              </h6>
+            </div>
+            </>
+        case 'Location':
+          return  <div> <FontAwesomeIcon icon={faLocationDot} /> {Course.location}</div>;
+        case 'Duration':
+          return  <div> <FontAwesomeIcon icon={faClock} /> {Course.time}</div>;
+        case 'Price':
+          return  <div> <FontAwesomeIcon icon={faUserCircle} /> {Course.instructor}</div>;
+        default:
+          return '';
+      }
+    }
+
   return (
     <>
       {loading ? (
@@ -118,6 +141,8 @@ export default function SingleCourse() {
                 ({Course.discipline})
               </h6>
             </div>
+
+
             <div
               className="d-flex flex-wrap gap-lg-5 gap-3"
               style={{ display: "flex", justifyContent: "space-between" }}
@@ -125,8 +150,24 @@ export default function SingleCourse() {
               <div className=" col-lg-6 col-12 gap-3">
                 <h2 className="col-12">{Course.name}</h2>
               </div>
-            </div>
 
+              <div className="d-flex align-items-center col-lg-4 gap-2 ">
+              <h2 className="m-0 text-danger">{Course.price}EGP</h2>
+              {courses.find((item) => item.id == ID) ? (
+                <button disabled className="btn btn-danger">
+                  BOOKED
+                </button>
+              ) : (
+                <Link
+                  to={currentUser ? `/coursespayment/${Course.id}` : "/login"}
+                  target="_blank"
+                >
+                  <button className="btn btn-danger ">BOOK NOW</button>
+                </Link>
+              )}
+            </div>
+            </div>
+{/* 
             <div className="col-12 d-flex flex-wrap mt-3">
               <div className="col-lg-4 col-12 mb-3">
                 <div>
@@ -153,24 +194,10 @@ export default function SingleCourse() {
                   </h5>
                   <h5> {Course.time} </h5>
                 </div>
-              </div>
-            </div>
+              </div> 
+            </div>*/}
 
-            <div className="d-flex align-items-center col-lg-4 col-12  gap-2 ">
-              <h2 className="m-0 text-danger">{Course.price}EGP</h2>
-              {courses.find((item) => item.id == ID) ? (
-                <button disabled className="btn btn-danger">
-                  BOOKED
-                </button>
-              ) : (
-                <Link
-                  to={currentUser ? `/coursespayment/${Course.id}` : "/login"}
-                  target="_blank"
-                >
-                  <button className="btn btn-danger">BOOK NOW</button>
-                </Link>
-              )}
-            </div>
+
 
             <div style={{ position: "relative" }}>
               <img
@@ -180,8 +207,6 @@ export default function SingleCourse() {
                 alt="img"
               />
 
-              { }
-
               {isFav ? (
                 <FontAwesomeIcon
                   onClick={() => {
@@ -189,9 +214,9 @@ export default function SingleCourse() {
                   }}
                   style={{
                     position: "absolute",
-                    top: "55px",
-                    right: "38px",
-                    fontSize: "40px",
+                    top: "45px",
+                    right: "30px",
+                    fontSize: "35px",
                     color: "white",
                     cursor: "pointer",
                   }}
@@ -205,9 +230,9 @@ export default function SingleCourse() {
                   }}
                   style={{
                     position: "absolute",
-                    top: "55px",
-                    right: "38px",
-                    fontSize: "40px",
+                    top: "45px",
+                    right: "30px",
+                    fontSize: "35px",
                     color: "red",
                     cursor: "pointer",
                   }}
@@ -216,7 +241,7 @@ export default function SingleCourse() {
               )}
             </div>
 
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <div className="d-flex align-items-center mb-1 gap-2">
                 <h5 style={{ color: "#8A8A9A" }}>
                   <FontAwesomeIcon icon={faBook} /> COURSE FEATURES{" "}
@@ -225,7 +250,22 @@ export default function SingleCourse() {
               <h6 style={{ marginTop: "" }}>
                 {parse(Course?.description || "")}
               </h6>
+            </div> */}
+
+
+        <div className="component">
+              <div className="tabs" style={{display: 'flex' , flexDirection: 'column'}}>
+                <div className="d-flex gap-1" style={{justifyContent: 'space-between'}}>
+                <p className={`divcource p-1 col-3 ${activeTab ===  'Description' && "active1" }`} onClick={() => setActiveTab('Description')}> DESCRIPTION</ p>
+                <p className={`divcource p-1 col-3 ${activeTab ===  'Price' && "active1" }`} onClick={() => setActiveTab('Price')}> INSTRUCTOR</p >
+                <p className={`divcource p-1 col-3 ${activeTab ===  'Location' && "active1" }`} onClick={() => setActiveTab('Location')}>LOCATION</p >
+                <p className={`divcource p-1 col-3 ${activeTab ===  'Duration' && "active1" }`}  onClick={() => setActiveTab('Duration')}>TIME</p >
+                </div>
+                <div className="tab-content">{renderContent()}</div>
+
+              </div>
             </div>
+
           </div>
         </div>
       )}

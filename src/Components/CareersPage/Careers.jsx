@@ -11,6 +11,9 @@ export default function CareersPage() {
   const [ID, setID] = useState("");
   const [show, setShow] = useState(false);
 
+  const [Type, setType] = useState("");
+
+
   const [singleJob, setSingleJob] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = (id) => {
@@ -34,12 +37,16 @@ export default function CareersPage() {
       })
       .then((data) => {
         setjobs(data.data);
+        setType(data.data);
       })
       .finally(() => setloading(false))
       .catch((err) => err);
   }, []);
+  console.log(Type);
+  
 
   const ShowJobs = jobs.map((job) => (
+    job.type === 'all' ? (
     <div
       onClick={() => handleShow(job.id)}
       className=" w-100 "
@@ -55,6 +62,27 @@ export default function CareersPage() {
         </h4>
       </div>
     </div>
+    ) : ('')
+  ));
+
+  const ShowInstructorJobs = jobs.map((job) => (
+    job.type === 'instructor' ? (
+    <div
+      onClick={() => handleShow(job.id)}
+      className=" w-100 "
+      style={{ textDecoration: "none", lineBreak: "anywhere" }}
+    >
+      <div
+        className="col-12 mt-md-5 mb-3 p-md-4 p-2 hv hv"
+        style={{ backgroundColor: "white", borderRadius: "13px" }}
+      >
+        <h6 style={{ color: "#277EC3" }}>{job.title}</h6>
+        <h4 style={{ color: "black" }} className="apply-h3">
+          {job.category}
+        </h4>
+      </div>
+    </div>
+    ) : ('')
   ));
 
   return (
@@ -117,8 +145,25 @@ export default function CareersPage() {
             ) : (
               ShowJobs
             )}
+
+            <h1 className="mb-lg-5 mb-3 " style={{ fontSize: "60px" }}>
+              Are you an instructor ?
+            </h1>
+            <div className="col-12 w-100 mb-md-5 mb-3"></div>
+
+            {loading ? (
+              <div style={{ zIndex: "10" }}>
+                <Showskelton height="70px" length="4" classes="col-12 mb-3" />
+              </div>
+            ) : (
+              ShowInstructorJobs
+            )}
           </div>
+
         </div>
+
+
+
       </div>
 
       <Modal
