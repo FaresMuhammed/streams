@@ -133,8 +133,9 @@ export default function SingleCourse() {
           <Showskelton height="400px" length="1" classes="col-12 p-5 mt-5 " />
         </div>
       ) : (
-        <div className="py-md-5 p-4 mt-5 d-flex flex-wrap gap-md-4 center">
-          <div className="mt-3 p-3 border rounded col-lg-10 col-12 ">
+        <div className="py-md-5 p-4 mt-5 d-flex gap-2 flex-wrap center" style={{alignItems: 'start'}}>
+
+          <div className="p-3 mt-3 border rounded col-lg-8 col-12 " style={{width: '' , height: ''}}>
             <div className="d-flex">
               <h5 className="mb-4">{Course.classification}</h5>
               <h6 className="mt-1" style={{ color: "#7A7A7A" }}>
@@ -147,11 +148,11 @@ export default function SingleCourse() {
               className="d-flex flex-wrap gap-lg-5 gap-3"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <div className=" col-lg-6 col-12 gap-3">
-                <h2 className="col-12">{Course.name}</h2>
+              <div className=" col-lg-5 col-12 gap-3">
+                <h3 className="col-12">{Course.name}</h3>
               </div>
 
-              <div className="d-flex align-items-center col-lg-4 gap-2 ">
+              <div className="d-flex align-items-center col-lg-6 gap-2 " style={{justifyContent: 'flex-end'}}>
               <h2 className="m-0 text-danger">{Course.price}EGP</h2>
               {courses.find((item) => item.id == ID) ? (
                 <button disabled className="btn btn-danger">
@@ -254,7 +255,7 @@ export default function SingleCourse() {
 
 
         <div className="component">
-              <div className="tabs" style={{display: 'flex' , flexDirection: 'column'}}>
+              <div className="tabs " style={{display: 'flex' , flexDirection: 'column'}}>
                 <div className="d-flex gap-1" style={{justifyContent: 'space-between'}}>
                 <p className={`divcource p-1 col-3 ${activeTab ===  'Description' && "active1" }`} onClick={() => setActiveTab('Description')}> DESCRIPTION</ p>
                 <p className={`divcource p-1 col-3 ${activeTab ===  'Price' && "active1" }`} onClick={() => setActiveTab('Price')}> INSTRUCTOR</p >
@@ -267,6 +268,28 @@ export default function SingleCourse() {
             </div>
 
           </div>
+
+
+          <div className="col-lg-3 col-12 mt-3 p-3 border" style={{height: '100vh'}}>
+                <div className="mb-5">
+                    <h4 className="mb-4">ALL COURSES</h4>
+                    <p className="mb-2">Information Technology</p>
+                    <p className="mb-2">Operations & Production</p>
+                    <p className="mb-2">Process Engineering</p>
+                    <p className="mb-2">Project Management</p>
+                    <p className="mb-2">Project Academy</p>
+                    <p className="mb-2">Passive Income</p>
+                    <p className="mb-2">Teaching Online</p>
+                </div>
+                <div>
+                    <h4 className="mb-4">Latest Courses</h4>
+                    <p className="mb-3">Development Geology School I</p>
+                       
+                    <p className="mb-3">Advanced Process Automation & Machine Learning Using Python Develop-</p>                       
+
+                    <p className="mb-1">Process Automation & Machine Learning Using Python Applied To Develop</p>                       
+                </div>
+            </div>
         </div>
       )}
       <Footer />
