@@ -3,22 +3,17 @@ import Tables from "../Table/Tables";
 import axios from "axios";
 import Cookie from "cookie-universal";
 
-export default function Users() {
-  // Table's Header in users page
+export default function Certificates() {
   const UsersHeader = [
-    { name: "User name", keyy: "name" },
-    { name: "Email", keyy: "email" },
-    { name: "Phone", keyy: "phone" },
-    { name: "Company", keyy: "company" },
-    { name: "Role", keyy: "role" },
-    // { name: "Created at", keyy: "created_at" },
-    // { name: "Last Login", keyy: "updated_at" },
+    { name: "User", keyy: "user" },
+    { name: "Course", keyy: "course" },
+    { name: "Certificate", keyy: "certificate" },
+
   ];
 
-  const Title = "Users Page";
+  const Title = "Certificates Page";
 
-  // Table's data in users page
-  const [users, setusers] = useState([]);
+  const [Data, setData] = useState([]);
 
   // Paginate
   const [Page, setPage] = useState(1);
@@ -30,29 +25,26 @@ export default function Users() {
   const cookie = Cookie();
   const token = cookie.get("eng");
 
-  // Useeffect to get all users
   useEffect(() => {
     setloading(true);
     axios
-      .get(`https://backend.slsog.com/api/users?page=${Page}&limit=${Limit}`, {
+      .get(`https://backend.slsog.com/api/certificates?page=${Page}&limit=${Limit}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((data) => {
-        setusers(data.data.data);
+        setData(data.data.data);
         setTotal(data.data.total);
       })
       .finally(() => setloading(false))
       .catch((err) => err);
   }, [Limit, Page]);
-  console.log(users);
-  
 
   // Delete function
   async function handleDelete(id) {
-    await axios.delete(`https://backend.slsog.com/api/users/${id}`, {
+    await axios.delete(`https://backend.slsog.com/api/certificates/${id}`, {
       headers: { Authorization: "Bearer " + token },
     });
-    setusers((previous) => previous.filter((item) => item.id !== id));
+    setData((previous) => previous.filter((item) => item.id !== id));
   }
 
   return (
@@ -63,12 +55,12 @@ export default function Users() {
         Page={Page}
         ChoosedPage={setPage}
         Total={Total}
-        Data={users}
+        Data={Data}
         Header={UsersHeader}
         Delete={handleDelete}
         Title={Title}
-        Api="users"
-        Search="email"
+        Api="certificates"
+        Search="user_id"
         loading={loading}
       />
     </div>

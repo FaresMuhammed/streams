@@ -76,6 +76,18 @@ export const Links = [
     role: ["2001" , "1997"],
   },
   {
+    name: "Add certificate",
+    path: "/dashboard/addcertificate",
+    icon: faPlus,
+    role: ["2001" , "1997"],
+  },
+  {
+    name: "Certificates",
+    path: "/dashboard/certificates",
+    icon: faReceipt,
+    role: ["2001" , "1997"],
+  },
+  {
     name: "Job requests",
     path: "/dashboard/job/jobrequests",
     icon: faMessage,

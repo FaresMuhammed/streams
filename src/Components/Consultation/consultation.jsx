@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "../HomePage/Footer/Footer";
-import { arrowAltFromLeft } from "fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Consultation() {

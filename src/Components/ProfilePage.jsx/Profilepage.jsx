@@ -14,6 +14,9 @@ export default function Profilepage() {
   const [Fav, setFav] = useState([]);
   const [Usercourses, setUsercourses] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [Id, setId] = useState([]);
+  const [Certificate, setCertificate] = useState([]);
+
 
   const cookie = Cookie();
   const token = cookie.get("eng");
@@ -24,9 +27,22 @@ export default function Profilepage() {
       .get("https://backend.slsog.com/api/user", {
         headers: { Authorization: "Bearer " + token },
       })
+      // .then((res) => setId(res.data.id))
       .then((res) => setcurrentUser(res.data))
       .finally(() => setLoading(false));
   }, []);
+  console.log(currentUser);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get("https://backend.slsog.com/api/user", {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((res) => setId(res.data.id))
+      .finally(() => setLoading(false));
+  }, []);
+  console.log(Id);
   
   useEffect(() => {
     axios
@@ -39,7 +55,6 @@ export default function Profilepage() {
       .catch((err) => err);
   }, []);
   console.log(Fav);
-  
 
   useEffect(() => {
     setLoading(true);
@@ -50,6 +65,18 @@ export default function Profilepage() {
       .then((res) => setUsercourses(res.data.courses))
       .finally(() => setLoading(false));
   }, []);
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   axios
+  //     .get(`https://backend.slsog.com/api/certificates/${Id}`, {
+  //       headers: { Authorization: "Bearer " + token },
+  //     })
+  //     .then((res) => setCertificate(res.data.data))
+  //     .finally(() => setLoading(false));
+  // }, []);
+  // console.log(Certificate);
+  
 
   const Showcourses = Usercourses.map((course) => (
     <div className="mb-4 ">

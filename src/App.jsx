@@ -38,6 +38,8 @@ import Payment from "./Components/CoursesPage/Payment";
 import Profilepage from "./Components/ProfilePage.jsx/Profilepage";
 import Updatecurrentuser from "./Components/ProfilePage.jsx/Updatecurrentuser";
 import Transactions from "./Dashboard/Transactions/Transactions";
+import AddCertificate from "./Dashboard/COURSES/AddCertificate";
+import Certificates from "./Dashboard/COURSES/Certificates";
 
 import { useEffect } from "react";
 import Wrapper from "./Components/Scroll";
@@ -99,6 +101,9 @@ function App() {
             <Route path="courses" element={<Coursespage />} />
             <Route path="addcourse" element={<AddCourse />} />
             <Route path="courses/:ID" element={<Updatecourse />} />
+
+            <Route path="addcertificate" element={<AddCertificate />} />
+            <Route path="certificates" element={<Certificates />} />
 
             <Route path="payment" element={<Transactions />} />
 

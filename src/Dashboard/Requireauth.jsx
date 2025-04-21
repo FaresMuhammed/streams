@@ -18,7 +18,6 @@ export default function Requireauth({Allowedrole}) {
     const [ User , setUser ] = useState('')
 
     useEffect ( () => {
-        
         axios.get("https://backend.slsog.com/api/user", {
             headers: { Authorization: "Bearer " + token },
         })

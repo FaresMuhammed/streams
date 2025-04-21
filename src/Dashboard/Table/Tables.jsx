@@ -107,7 +107,13 @@ export default function Tables(props) {
                 width="80px"
                 src={`http://backend.slsog.com${item[item2.keyy]}`}
               />
-            ) : item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
+            ):
+            item2.keyy === "certificate" ? (
+              <img
+                width="80px"
+                src={`http://backend.slsog.com${item[item2.keyy]}`}
+              /> 
+            ): item2.keyy === "created_at" || item2.keyy === "updated_at" ? (
               TransformDate(item[item2.keyy])
             ) : item2.keyy === "description" ? (
               <div style={{ width: "", overflow: "hidden" }} className="col-12">
@@ -119,7 +125,15 @@ export default function Tables(props) {
               item2.keyy === "sub_category" ||
               item2.keyy === "job" ? (
               item[item2.keyy]?.title
-            ) : item[item2.keyy] === "1997" ? (
+            ) 
+            :item2.keyy === "course" ? (
+              item[item2.keyy]?.classification
+            )
+            :item2.keyy === "user" ? (
+              item[item2.keyy]?.name
+            )
+
+             : item[item2.keyy] === "1997" ? (
               "Admin"
             ) : item[item2.keyy] === "1996" ? (
               "User"
@@ -136,7 +150,7 @@ export default function Tables(props) {
 
       {window.location.pathname !== "/dashboard/payment" && (
         <td>
-          {window.location.pathname !== "/dashboard/job/jobrequests" && (
+          {window.location.pathname !== "/dashboard/job/jobrequests" && window.location.pathname !== "/dashboard/certificates" && (
             <Link to={`${item.id}`} style={{ marginRight: "10px" }}>
               <FontAwesomeIcon
                 fontSize={"19px"}
@@ -168,7 +182,7 @@ export default function Tables(props) {
         {/* </div> */}
         <div className="col-12 d-flex flex-wrap align-items-center gap-2 mb-3">
 
-          {window.location.pathname !== "/dashboard/payment" && (
+          {window.location.pathname !== "/dashboard/payment" && window.location.pathname !== "/dashboard/certificates" && (
             <Form.Group className="col-lg-5 col-12">
             <Form.Control
               className="search "
