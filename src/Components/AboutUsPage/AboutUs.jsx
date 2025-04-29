@@ -1,134 +1,129 @@
 import Footer from "../HomePage/Footer/Footer";
+import "./Aboutus.css";
 
 export default function AboutUs() {
   return (
     <div>
-      <div className="py-lg-2 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
-        <div className="d-flex flex-wrap mt-5" >
-          <div className=" col-lg-7 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5 mb-5">
+      <div className="d-flex mb-5" style={{ flexDirection: "column" , marginTop: '20px'}}>
+        <div
+          className="d-flex mt-5 flex-wrap center"
+          style={{ position: "relative", color: "#EDEDED" , alignItems: 'center'  }}
+        >
+          <img
+            className="img11 blurr w-100"
+            src={"inner-block-picture01.jpg"}
+            style={{
+              position: "absolute",
+              top: "0",
+              zIndex: "1",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            className="position-absolute top-0 start-0 bg-black w-100"
+            style={{ zIndex: "1", opacity: "0.4", height: "100%" , marginTop: '20px'}}
+          >
+          </div>
 
-              <h2 className="mb-4">
-                SERVICES
-              </h2>
-              <p className="mb-4">
-                <p className="mb-2">Training and Expert Oil and Gas Solutions by Streamlines Energy Enterprise.<br/></p>
-                <p className="mb-2">At Streamlines Energy we focus and offer extensive technical training courses by expertise instructors of oil & gas sectors.  In addition to Specialized field development studies, field optimization studies, testing and operations services.<br/></p>
-                <p className="mb-5">Our expert team combines industry knowledge with production enhancement acumen to deliver tailored solutions that drive success for our clients.<br/></p>
-              </p>
+          <div className=" d-flex flex-wrap mt-5 mb-5 m-md-5 m-3 p-3 " style={{ zIndex: "10" }}>
+            <div className="mt-5 m-3  " style={{ display: 'flex' , flexDirection: 'column' , justifyContent: 'flex-start' , zIndex: "10" }}>
+              <h1 className="mt-5 mb-5" style={{ fontSize: "65px" }}>
+                About Us
+              </h1>
+            </div>
+            </div>
+        </div>
+        </div>
 
-              {/* <div className="col-12 flex-wrap gap-3" style={{display: 'flex' , justifyContent: 'space-between'}}> */}
-                {/* <div className="col-md-5 col-12"  style={{backgroundColor: '#EAEAEA' , borderRadius: '5px' , height: '36px'}}>
-                  <p className="fw-bold p-1 center">   Training </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center">  Software </p>
-                </div>
-                <div className="col-md-5 col-12 " style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center" > 	Consultation </p>
-                </div>
-                <div className="col-md-5 col-12" style={{backgroundColor: '#EAEAEA' , borderRadius: '5px', height: '36px'}}>
-                  <p className="fw-bold p-1 center">  Operations </p>
-                </div> */}
-              {/* </div> */}
+        <div className="mt-5 p-5 center flex-wrap gap-3">
+            <div className=" col-12 col-lg-3" style={{flexDirection: 'column' }}>
+              <h6 style={{color: '#2D87E1' , textAlign: 'start'}}>_________  Our journey</h6>
+              <h1 className="mb-4" style={{ fontSize:'48px'}}>Our story started with a simple idea</h1>
+              <p style={{color: '#4E4E4E' , fontSize: '17px'}}>Over the years, we have grown from a small team of consultants to a leading consulting firm, serving clients across industries and geographies.</p>
+            </div>
 
-              <div style={{ display: 'flex' , flexDirection: 'column' , alignItems: 'flex-start'}}>
-                  <p className="fw-bold center"> ● Training </p>
-                  <p className="fw-bold center"> ● Software </p>
-                  <p className="fw-bold center"> ● Consultation </p>
-                  <p className="fw-bold center"> ● Operations </p>
+            <div className=" col-12 col-lg-8">
+              <div className="center gap-2">
+                <img className="img1 col-6" style={{height: '200px' , objectFit: 'cover'}} src={"qoEo7LvB2AJpLlj4XbxxKSr4do.jpg"}/>
+                <img className="img1 col-6" style={{height: '200px' , objectFit: 'cover'}} src={"NTsWqEzpbW2qr5GHmGwX3pJIF3U.jpg"}/>
               </div>
-          </div>
-        </div>
-        <div className="col-lg-5 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"Oil-and-Gas-istock-jpg-ezgif.com-webp-to-jpg-converter.jpg"}/>
-        </div>
-      </div>
-      </div>
-
-      <div className=" py-lg-2 p p-4 d-flex flex-wrap gap-md-4 border-bottom">
-        <div className="d-flex flex-wrap" >
-          <div className=" col-lg-7 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5 mb-5">
-
-              <h2 className="mb-4">
-              OUR TEAM
-              </h2>
-              <p className="mb-5">
-              <p className="mb-2">With more than 40 years of combined experience in oil and gas chain from leading companies, we focus on providing clients with solutions that maximize value in a rapidly evolving oil & gas sector.<br/>              </p>
-              <p className="mb-2">Our extensive network allows us to identify and execute the best opportunities for training, field development, field study, field optimization, testing, and operations.<br/>              </p>
-              <p className="mb-2">Our professional team consists of experienced managers, technical specialists, and instructors from reputable local engineering partners.<br/>              </p>
-              <p className="mb-2">Together, we assist our clients in successfully managing multidisciplinary studies, field development, and field optimization. We focus on providing clients with solutions that maximize value in the rapidly evolving oil and gas sectors.<br/>              </p>
-              </p>
-
-              <div style={{ display: 'flex' , flexDirection: 'column' , alignItems: 'flex-start'}}>
-                  <p className="fw-bold center"> ● Growth Manager </p>
-                  <p className="fw-bold center"> ● General Manager </p>
-                  <p className="fw-bold center"> ● Service Manage </p>
-                  <p className="fw-bold center"> ● Support & HR Team </p>
-                  <p className="fw-bold center"> ● Accounting Team </p>
+              <div className="center gap-2">
+                <img className="img1 col-6" style={{height: '200px' , objectFit: 'cover'}}  src={"pwOCQ86eV6uTDBY7fWUfJB09WU.jpg"}/>
+                <img className="img1 col-6" style={{height: '200px' , objectFit: 'cover'}}  src={"doDcjWgaNg5KHRfsgggkyFT0Pg.jpg"}/>
               </div>
-          </div>
-        </div>
-        <div className="col-lg-5 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"Our Team.jpg "} />
-        </div>
-      </div>
-      </div>
-      <div className="p-lg-5 py-lg-3"
-        style={{  display: 'flex' , flexDirection: 'column'}}
-      >
-      <div className="col-12 p-4">
-          <div className="p-3" style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
-          
-          <div
-              className="d-flex align-items-center"
-            >
-              <h4 style={{ color: '#092140' , width: '150px' , fontWeight: 'bold'}} className=" p-1">
-              ABOUT US
-              </h4>
             </div>
-            <p className="mb-4">
-                We are your Trusted Partner in the Oil and Gas Industry.<br/>              
-                Our unique approach combines corporate Training, operational, and technical expertise across various oil/gas sectors.<br/>
-                Gas Industry
-                Streamlines Energy is a service and supportive company focused on oil and gas sectors. We specialize in Training, Software Modelling, Field Development and Field Optimization Study, Testing and operations.
-                i am so cooked, baked, toasted, deep fried, air fried, grilled and burnt.
-              </p>
-          </div>
+        </div>
+
+        <div className="mt-5 p-5 center flex-wrap gap-2" style={{backgroundColor: '#F2F2F2'}}>
+            
+          <div className="col-lg-6 col-10 mb-5">
+            <img className="img1" style={{ objectFit: 'cover' , height: '100%'}} src={"XOgTNGhNhIIdGFoazkqqnG9QmE.jpg"}/>
           </div>
 
-        <div className="col-12 p-4">
-          <div className="p-3" style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
-          <div
-              className="d-flex align-items-center"
-            >
-              <h4 style={{ color: '#092140' , width: '150px' , fontWeight: 'bold' }} className=" p-1 ">
-              VISION
-              </h4>
-            </div>
-            <p>
-              Leading sustainable Training, Studies, Modelling & field operation support services. 
-              Development the way to get started is to quit talking and begin doing.
-            </p>
+          <div className="col-lg-5 col-12  mt-5 d-flex" style={{flexDirection:'column' , alignItems: 'center'}}>
+            <h4 className="mb-4">Our values</h4>
+            <p className="mb-5" style={{color: '#5D5D5D'}}>At the heart of Consulting are our core values – integrity, excellence, collaboration, and innovation. These values guide everything we do, from the way we interact with clients and colleagues to the solutions we deliver.</p>
+            <h4 className="mb-4">Our approach</h4>
+            <p className="" style={{color: '#5D5D5D'}}>We believe in taking the time to understand our clients' needs, challenges, and objectives, and developing solutions that deliver tangible results. We work hand-in-hand with our clients every step of the way to ensure success.</p>
           </div>
         </div>
 
-        <div className="col-12 p-4">
-          <div className="p-3" style={{backgroundColor: '#EAEAEA' , borderRadius: '15px'}}>
+
+        <div className="d-flex" style={{ flexDirection: "column"}}>
+        <div
+          className="d-flex flex-wrap center"
+          style={{ position: "relative", color: "#EDEDED" , alignItems: 'center' }}
+        >
+          <img
+            className="img11 blurr w-100"
+            src={"images (2).jpg"}
+            style={{
+              position: "absolute",
+              // top: "0",
+              zIndex: "1",
+              objectFit: "cover",
+            }}
+          />
           <div
-              className="d-flex align-items-center"
-            >
-              <h4 style={{ color: '#092140' , width: '150px' , fontWeight: 'bold'}} className=" p-1">
-              MISSION
-              </h4>
-            </div>
-            <p>
-            Evolve our business to add value to our people, customers, and shareholders by following the highest safety, technological, and operational standards.
-            </p>
-          </div>
+            className="position-absolute top-0 start-0 bg-black w-100"
+            style={{ zIndex: "1", opacity: "0.4", height: "100%" , marginTop: '10px'}}
+          >
           </div>
 
+          <div className=" d-flex flex-wrap mt-5 mb-5 m-md-5 m-3 p-3 col-12" style={{ zIndex: "10" , justifyContent: 'space-around' }}>
+            {/* <div className="mt-5 m-3 p-5" style={{ display: 'flex' , justifyContent: '' , zIndex: "10" }}> */}
+              
+              <div className="center col-md-3 col-5" style={{flexDirection:'column'}}>
+                <h1 style={{ fontSize: "65px" }}>
+                  20
+                </h1>
+                <p style={{color:'#B7B8B8'}}>Years of activity</p>
+              </div>
+
+              <div className="center col-md-3 col-5" style={{flexDirection:'column'}}>
+                <h1 style={{ fontSize: "65px" }}>
+                  10k
+                </h1>
+                <p style={{color:'#B7B8B8'}}>Happy customers</p>
+              </div>
+
+              <div className="center col-md-3 col-5" style={{flexDirection:'column'}}>
+                <h1 style={{ fontSize: "65px" }}>
+                  5
+                </h1>
+                <p style={{color:'#B7B8B8'}}>Awards won</p>
+              </div>
+
+              <div className="center col-md-3 col-5" style={{flexDirection:'column'}}>
+                <h1 style={{ fontSize: "65px" }}>
+                87
+                </h1>
+                <p style={{color:'#B7B8B8'}}>Employees</p>
+              </div>
+
+            {/* </div> */}
+            </div>
+        </div>
         </div>
 
       <Footer className={"color-white"}/>

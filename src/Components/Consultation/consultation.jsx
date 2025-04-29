@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "../HomePage/Footer/Footer";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import "./consultation.css";
 
 export default function Consultation() {
-
   const onButtonClick = () => {
     const pdfUrl = "Streamlines-Consultation-and-Integrated-Solutions-Services-CISS.pdf";
     const link = document.createElement("a");
@@ -14,102 +14,83 @@ export default function Consultation() {
     document.body.removeChild(link);
 };
 
-
   return (
-    <div>
-      <div className="py-lg-2 p-4 mt-5 d-flex flex-wrap gap-md-4 border-bottom">
-        <div className="d-flex flex-wrap mt-5" >
-          <div className=" col-lg-6 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5 mb-5">
+    <div className="" style={{ backgroundColor: '#FAFAFA'}}>
 
-              <h2 className="mb-4">
-              Why Choose Streamlines?
-              </h2>
-              <p className="mb-4">
-                <p className="mb-2">Global Expertise: Serving energy companies worldwide with a proven track record.                <br/></p>
-                <p className="mb-2">Innovative Technology: Utilizing cutting-edge tools and best practices to tackle complex challenges.                <br/></p>
-                <p className="mb-5">Integrated Solutions: A holistic approach that optimizes the entire value chain.<br/></p>
-              </p>
+      <div className="d-flex " style={{ flexDirection: "column" , marginTop: '20px'}}>
+        <div
+          className="d-flex mt-5 flex-wrap "
+          style={{ position: "relative", color: "#EDEDED" , alignItems: 'center' }}
+        >
+          <img
+            className="img11 blurr w-100"
+            src={"wallpaper-625623_640.png"}
+            style={{
+              position: "absolute",
+              top: "0",
+              zIndex: "1",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            className="position-absolute top-0 start-0 bg-black w-100 "
+            style={{ zIndex: "5", opacity: "0.3", height: "100%" , marginTop: '20px'}}
+          >
+          </div>
+
+          <div className=" d-flex flex-wrap mt-5 mb-5 col-md-5 col-6 m-md-5 m-3 p-3  shadoww" style={{ zIndex: "10" }}>
+            <div className="mt-5 m-3  " style={{ display: 'flex' , flexDirection: 'column' , justifyContent: 'flex-start' , zIndex: "10" }}>
+              <p>Consulting services</p>
+              <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
+              Consulting Services
+              </h1>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div className="center mt-5 p-2 mb-5" style={{flexDirection: 'column' ,  backgroundColor: '#FAFAFA' }}>
+          <div style={{width: '90%'}}>
+            <h5 className="fw-bold mb-5" style={{color:'#00B140' ,  textAlign: 'center' }}>Our Service </h5>
+            <h2 className="fw-bold mb-5" style={{  textAlign: 'center'  }}>The Work We Do </h2>
+            <h3 className=" mb-5" style={{ textAlign: 'center' }}>Sustainable Success: Tailored Consulting Services for Optimal Business Growth </h3>
+            <p style={{textAlign: 'center' , color: '#756161'}}>With the primary objective to achieve sustainability, LOGIC Consulting service offerings are designed and developed with the aim of tailoring solutions that fit the needs of your business to sky-rocket its success. LOGIC Consulting develops strategic solutions that flourish your business’ growth and sustains its success and applies up-to-date management techniques, complemented by our teams’ cumulative expertise, and merged with our fresh talent’s ingenious creativity to consistently produce day-to-day optimized services for our clients.</p>
+            <h1 className="mb-3" style={{ textAlign: 'center' }}>Driving Excellence in Strategy, Transformation, and Sustainability in the MENA Region</h1>
+            <h4 style={{textAlign: 'center'}}>Our Expertise and Services </h4>
+            <p style={{textAlign: 'center' , color: '#756161'}}>Our management consulting services are intended to address the most urgent concerns and maximize potential for organizations in the MENA region, which includes Egypt, Saudi Arabia, and the United Arab Emirates. We specialize in strategy, governance, family business, marketing, organization development, transformation, mergers and acquisitions, and sustainability across a wide range of sectors.</p>
+            <p style={{textAlign: 'center' , color: '#756161'}}>What distinguishes us is our holistic approach: we go beyond individual solutions to provide comprehensive value across all aspects of your company. By breaking down silos and streamlining the whole system, we generate a multiplier effect that promotes long-term development and increases impact.</p>
+            <p style={{textAlign: 'center' , color: '#756161'}}>Partner with us to transform your dreams into reality, enabling your company to dominate in the competitive GCC and MENA markets.</p>
           </div>
         </div>
-        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.37.59_0573c1cf.jpg"}/>
-        </div>
-      </div>
-      </div>
+        
+        <div className="mt-5 mb-5" >
+          <div className="center gap-3 flex-wrap col-12">
+            <div className=" col-5 col-lg-2 shadow  p-md-3 p-1 divvv" style={{position: 'relative'}}>
+              <h5 style={{textAlign: 'center'}} className="center mb-3 mt-5 fw-bold">Strategy Consulting</h5>
+              <p className="mb-5 b1" style={{textAlign: 'center' , color: ''}}>Leveraging extensive expertise, we excel in shaping strategies that unlock full economic potential</p>
+              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+            </div>
 
-      <div className="py-lg-2 p-4  d-flex flex-wrap gap-md-4 border-bottom">
-        <div className="d-flex flex-wrap " >
-          <div className=" col-lg-6 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5 mb-5">
+            <div className="col-5 col-lg-2 shadow  p-md-3 p-1 divvv" style={{position: 'relative'}}>
+              <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
+              <p style={{textAlign: 'center' , color: ''}} className="mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
+              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+            </div>
 
-              <h2 className="mb-4">
-              What We Offer
-              <h5>End-to-End Services Across the Asset Lifecycle:
-              </h5>
-              </h2>
-              <p className="mb-4">
-                <p className="mb-2">Upstream: Exploration and reservoir management.                <br/></p>
-                <p className="mb-2">Midstream: Operational efficiency and optimization.                <br/></p>
-                <p className="mb-5">Downstream: Production and software solutions.<br/></p>
-              </p>
+            <div className="col-5 col-lg-2  shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
+              <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
+              <p style={{textAlign: 'center' , color: ''}} className=" mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
+              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+            </div>
+
+            <div className="col-5 col-lg-2 shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
+              <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
+              <p style={{textAlign: 'center' , color: ''}} className="mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
+              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+            </div>
           </div>
         </div>
-        <div className=" col-lg-4 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1 " style={{borderRadius: '30px'}} src={"WhatsApp Image 2025-01-16 at 10.14.38_6110b8b7.jpg"}/>
-        </div>
-      </div>
-      </div>
 
-      <div className="py-lg-2 p-4 d-flex flex-wrap gap-md-4 border-bottom">
-        <div className="d-flex flex-wrap" >
-          <div className=" col-lg-6 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5 mb-5">
-
-              <h2 className="mb-4">
-              Key Benefits
-              </h2>
-              <p className="mb-4">
-                <p className="mb-2">Tailored Strategies: Customized solutions to align with your strategic goals.                <br/></p>
-                <p className="mb-2">Sustainable Results: Delivering both immediate performance gains and long-term success.               <br/></p>
-                <p className="mb-5">Innovative Methods: Continuous adaptation to emerging trends in energy.                <br/></p>
-              </p>
-          </div>
-        </div>
-        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.38.00_0d2fd132.jpg"}/>
-        </div>
-      </div>
-      </div>
-
-      <div className="py-lg-2 p-4 d-flex flex-wrap gap-md-4 mb-5">
-        <div className="d-flex flex-wrap" >
-          <div className=" col-lg-6 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5 mb-5">
-              <h2 className="mb-4">
-              Our Approach
-              </h2>
-              <p className="mb-4">
-                <p className="mb-2">Comprehensive Insights: Addressing interconnected technical, operational, and business challenges.                <br/></p>
-                <p className="mb-2">Operational Excellence: Identifying optimization opportunities at every stage.                <br/></p>
-                <p className="mb-5">Client-Centric Focus: Deep understanding of unique industry challenges and needs.                <br/></p>
-              </p>
-          </div>
-        </div>
-        <div className="col-lg-4 col-12 d-flex align-items-center justify-content-center">
-          <img className="img1" src={"WhatsApp Image 2025-01-15 at 09.38.00_7d38156d.jpg"}/>
-        </div>
-      </div>
-      </div>
-
-
-      <div className="py-lg-0 p-4 d-flex flex-wrap gap-md-4">
-          <div className=" col-lg-6 col-12 ">
-            <div className="p-lg-5 p-1 py-md-5">
-              <button className="btn btn-primary" onClick={onButtonClick}>Learn more <FontAwesomeIcon icon={faArrowRight}/></button>
-        </div>
-        </div>
-        </div>
 
 
       <Footer className={"color-white"}/>
