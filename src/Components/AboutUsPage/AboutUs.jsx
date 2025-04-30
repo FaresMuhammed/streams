@@ -60,7 +60,7 @@ export default function AboutUs() {
             <img className="img1" style={{ objectFit: 'cover' , height: '100%'}} src={"XOgTNGhNhIIdGFoazkqqnG9QmE.jpg"}/>
           </div>
 
-          <div className="col-lg-5 col-12  mt-5 d-flex" style={{flexDirection:'column' , alignItems: 'center'}}>
+          <div className="col-lg-5 col-12 mt-5 d-flex" style={{flexDirection:'column' , alignItems: 'center'}}>
             <h4 className="mb-4">Our values</h4>
             <p className="mb-5" style={{color: '#5D5D5D'}}>At the heart of Consulting are our core values – integrity, excellence, collaboration, and innovation. These values guide everything we do, from the way we interact with clients and colleagues to the solutions we deliver.</p>
             <h4 className="mb-4">Our approach</h4>

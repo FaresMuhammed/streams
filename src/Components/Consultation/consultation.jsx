@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "../HomePage/Footer/Footer";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./consultation.css";
+import { Link } from "react-router-dom";
 
 export default function Consultation() {
   const onButtonClick = () => {
@@ -92,6 +93,43 @@ export default function Consultation() {
         </div>
 
 
+
+        <div className="d-flex " style={{ flexDirection: "column" , marginTop: '20px'}}>
+        <div
+          className="d-flex flex-wrap center"
+          style={{ position: "relative", color: "#EDEDED" , alignItems: 'center'  }}
+        >
+          <img
+            className="img11 blurr w-100"
+            src={"61djTEUpiDL._AC_UF1000,1000_QL80_.jpg"}
+            style={{
+              position: "absolute",
+              top: "0",
+              zIndex: "1",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            className="position-absolute top-0 start-0 bg-black w-100"
+            style={{ zIndex: "1", opacity: "0.4", height: "100%" , marginTop: '20px'}}
+          >
+          </div>
+
+          <div className=" d-flex flex-wrap mt-5 mb-5 m-md-5 m-3 p-3 " style={{ zIndex: "10" }}>
+            <div className="mt-5 m-3" style={{ display: 'flex' , flexDirection: 'column' , justifyContent: 'flex-start' , zIndex: "10" }}>
+              <h2 style={{textAlign: 'center'}} className="mt-5 mb-5 fw-bold">
+                What lies ahead for your organization?
+              </h2>
+              <h5 className="mb-5" style={{textAlign: 'center'}}>The answer lies in partnering with us to unlock new horizons, embrace growth, and thrive in the dynamic world.</h5>
+              <Link to={"/contactus"} className="center">
+                <button className="btn btn-primary">
+                  Contact us
+                </button>
+              </Link>
+            </div>
+            </div>
+        </div>
+        </div>
 
       <Footer className={"color-white"}/>
     </div>
