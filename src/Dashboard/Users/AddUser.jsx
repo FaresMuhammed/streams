@@ -110,8 +110,8 @@ export default function Adduser() {
             <option disabled value="">
               Select Role
             </option>
-            <option value="1997">Admin</option>
-            <option value="1996">User</option>
+            <option value="1996">Admin</option>
+            <option value="1997">User</option>
           </Form.Select>
         </Form.Group>
 

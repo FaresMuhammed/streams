@@ -133,9 +133,9 @@ export default function Tables(props) {
               item[item2.keyy]?.name
             )
 
-             : item[item2.keyy] === "1997" ? (
+             : item[item2.keyy] === "1996" ? (
               "Admin"
-            ) : item[item2.keyy] === "1996" ? (
+            ) : item[item2.keyy] === "1997" ? (
               "User"
             ) : item[item2.keyy] === true ? (
               "True"

@@ -77,7 +77,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
 
-        <Route element={<Requireauth Allowedrole={["2001", "1997"]} />}>
+        <Route element={<Requireauth Allowedrole={["2001", "1996"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
             <Route element={<Requireauth Allowedrole={["2001"]} />}>
               <Route path="users" element={<Users />} />
