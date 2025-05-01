@@ -45,7 +45,7 @@ export default function Login() {
       const go =
         role === "2001"
           ? "/dashboard/users"
-          : role === "1997"
+          : role === "1996"
           ? "/dashboard/courses"
           : "/";
       window.location.pathname = `${go}`;

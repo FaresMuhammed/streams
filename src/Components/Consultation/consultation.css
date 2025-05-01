@@ -1,0 +1,41 @@
+.shadoww{
+    background-color: #61867C;   
+     
+    height: 300px;
+}
+.b1{
+    /* color: #756161; */
+}
+.divvv{
+    background-color: #ffffff;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.divvv:hover{
+    color: white;
+    background-color: #034638;
+}
+
+@media (max-width: 1000px) {
+    .divvv{
+        height: 320px;
+    }
+    .shadoww{
+        opacity: ;
+}    
+}
+@media (min-width: 1000px) {
+    .divvv{
+        height: 400px;
+    }
+}
+
+/* 
+@media (max-width: 100px) {
+    .divvv{
+        height: 400px;
+    }
+} */

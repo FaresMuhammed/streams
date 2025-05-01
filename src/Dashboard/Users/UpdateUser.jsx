@@ -122,8 +122,8 @@ export default function Updateuser() {
             <option disabled value="">
               Select Role
             </option>
-            <option value="2001">Admin</option>
-            <option value="1996">User</option>
+            <option value="1997">User</option>
+            <option value="1996">Admin</option>
           </Form.Select>
         </Form.Group>
 
