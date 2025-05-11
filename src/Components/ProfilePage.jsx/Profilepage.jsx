@@ -135,7 +135,7 @@ export default function Profilepage() {
           <Showskelton height="400px" length="1" classes="col-12 p-5 mt-5 " />
         </div>
       ) : (
-        <div className="col-12 mt-5 p-3">
+        <div className="col-12 mt-5 p-3 bodyy">
 
           <div className="col-12 col-lg-4 mt-5 p-4" >
             
