@@ -51,8 +51,8 @@ export default function Swiperr() {
       </div>
 
       <Swiper
-        slidesPerView={2}
-        breakpoints={{ 768: { slidesPerView: 3 }  , 968: {slidesPerView: 4} } }
+        slidesPerView={1}
+        breakpoints={{ 768: { slidesPerView: 3 }  , 968: {slidesPerView: 3} } }
         spaceBetween={15}
         centeredSlides={true}
         loop

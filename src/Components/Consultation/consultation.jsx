@@ -42,7 +42,7 @@ export default function Consultation() {
           <div className=" d-flex flex-wrap mt-5 mb-5 col-md-5 col-6 m-md-5 m-3 p-3  shadoww" style={{ zIndex: "10" }}>
             <div className="mt-5 m-3  " style={{ display: 'flex' , flexDirection: 'column' , justifyContent: 'flex-start' , zIndex: "10" }}>
               <p>Consulting services</p>
-              <h1 className="mb-lg-5 mb-3" style={{ fontSize: "35px" }}>
+              <h1 className="mb-lg-5 mb-3" style={{ fontSize: "32px" }}>
               Consulting Services
               </h1>
             </div>
@@ -66,28 +66,40 @@ export default function Consultation() {
         
         <div className="mt-5 mb-5" >
           <div className="center gap-3 flex-wrap col-12">
-            <div className=" col-5 col-lg-2 shadow  p-md-3 p-1 divvv" style={{position: 'relative'}}>
+            <div className=" col-5 col-lg-3 shadow  p-md-3 p-1 divvv" style={{position: 'relative'}}>
               <h5 style={{textAlign: 'center'}} className="center mb-3 mt-5 fw-bold">Strategy Consulting</h5>
               <p className="mb-5 b1" style={{textAlign: 'center' , color: ''}}>Leveraging extensive expertise, we excel in shaping strategies that unlock full economic potential</p>
-              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+              <Link to={"/consultation/strategy"} className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </Link>
             </div>
 
-            <div className="col-5 col-lg-2 shadow  p-md-3 p-1 divvv" style={{position: 'relative'}}>
+            <div className="col-5 col-lg-3 shadow  p-md-3 p-1 divvv" style={{position: 'relative'}}>
               <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
               <p style={{textAlign: 'center' , color: ''}} className="mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
-              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+              <Link to={"/consultation/2"} className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </Link>
             </div>
 
-            <div className="col-5 col-lg-2  shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
+            <div className="col-5 col-lg-3  shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
               <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
               <p style={{textAlign: 'center' , color: ''}} className=" mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
-              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+              <Link to={"/consultation/3"} className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </Link>
             </div>
 
-            <div className="col-5 col-lg-2 shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
+            <div className="col-5 col-lg-3 shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
               <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
               <p style={{textAlign: 'center' , color: ''}} className="mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
-              <div className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </div>
+              <Link to={"/consultation/4"} className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </Link>
+            </div>
+
+            <div className="col-5 col-lg-3 shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
+              <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
+              <p style={{textAlign: 'center' , color: ''}} className="mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
+              <Link to={"/consultation/5"} className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </Link>
+            </div>
+
+            <div className="col-5 col-lg-3 shadow p-md-3 p-1 divvv" style={{position: 'relative'}}>
+              <h5 style={{textAlign: 'center' }} className="center mb-3 mt-5 fw-bold">Corporate & Family Governance</h5>
+              <p style={{textAlign: 'center' , color: ''}} className="mb-5 b1">Cultivating governance for business prosperity and family unity.</p>
+              <Link to={"/consultation/6"} className="center"><h6 style={{ textAlign: 'center' , color: '#00B140' , position: 'absolute' , bottom: "40px"}} className="">READ MORE <FontAwesomeIcon icon={faArrowRight}/></h6> </Link>
             </div>
           </div>
         </div>

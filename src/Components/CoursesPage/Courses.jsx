@@ -75,17 +75,22 @@ export default function Courses() {
   }, []);
 
   // showing categories
+  // <div className="center col-8">
+
   const Show = Categeories.map((cat , key) => (
-    <div
+
+    <button
       ref={ref}
       onClick={() => Showsubcategories(cat.id)}
-      className={`rounded cat col-sm-5 col-md-3 col-lg-2 col-11 center mb-2 py-1 ${
+      className={` cat center mb-2 p-1 ${
         id === cat.id && "acctive"
       }`}
     >
-      <h5 key={key}>{cat.title}</h5>
-    </div>
+    {cat.title}
+    </button>
   ));
+  // </div>
+
 
   // showing subcategories
   const Showsubcategories = (id) => {
@@ -153,7 +158,7 @@ export default function Courses() {
           />
           <div
             className="position-absolute top-0 start-0 bg-black w-100 "
-            style={{ zIndex: "5", opacity: "0.3", height: "100%" }}
+            style={{ zIndex: "5", opacity: "0.3", height: "105%" }}
           ></div>
 
           <div className=" d-flex flex-wrap mt-5" style={{ zIndex: "10" }}>
@@ -189,7 +194,11 @@ export default function Courses() {
                 <Showskelton height="40px" width="100px" length="3" />
               </div>
             ) : (
-              Show
+              <div className="center gap-2 flex-wrap">
+
+              {Show}
+              </div>
+
             )}
           </div>
 
