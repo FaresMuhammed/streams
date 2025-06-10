@@ -168,37 +168,6 @@ export default function SingleCourse() {
               )}
             </div>
             </div>
-{/* 
-            <div className="col-12 d-flex flex-wrap mt-3">
-              <div className="col-lg-4 col-12 mb-3">
-                <div>
-                  <h5 style={{ color: "#8A8A9A" }}>
-                    <FontAwesomeIcon icon={faUser} /> INSRTUCTOR{" "}
-                  </h5>
-                  <h5> {Course.instructor} </h5>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-12 mb-3">
-                <div>
-                  <h5 style={{ color: "#8A8A9A" }}>
-                    <FontAwesomeIcon icon={faLocationDot} /> LOCATION{" "}
-                  </h5>
-                  <h5> {Course.location} </h5>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-12 mb-3">
-                <div>
-                  <h5 style={{ color: "#8A8A9A" }}>
-                    <FontAwesomeIcon icon={faClock} /> TIME{" "}
-                  </h5>
-                  <h5> {Course.time} </h5>
-                </div>
-              </div> 
-            </div>*/}
-
-
 
             <div style={{ position: "relative" }}>
               <img

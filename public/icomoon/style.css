@@ -37,3 +37,15 @@
   content: "\e902";
   color: #1877f2;
 }
+
+.icon-drivers-license:before {
+  content: "\e901";
+}
+.icon-id-card:before {
+  content: "\e901";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+    color: #1877f2;
+
+}

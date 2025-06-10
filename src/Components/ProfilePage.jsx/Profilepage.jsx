@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import Footer from "../HomePage/Footer/Footer";
 import Showskelton from "../Skelton/Skelton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faPhone, faReceipt, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faAdd, faBook, faCamera, faPhone, faReceipt, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import TransformDate from "../DateFunction/Date";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "./Profile.css";
-import image from "../../IMAGES/gpi-TsdsFGiGNvogMnditwzUVJl3GxiSuJZ90Af_Z9A_plaintext_638369453273943522.jpg";
+import image from "../../IMAGES/depositphotos_639712656-stock-illustration-add-profile-picture-icon-vector.jpg";
 
 export default function Profilepage() {
   const [currentUser, setcurrentUser] = useState("");
@@ -68,17 +68,34 @@ export default function Profilepage() {
       .finally(() => setLoading(false));
   }, []);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   axios
-  //     .get(`https://backend.slsog.com/api/certificates/${Id}`, {
-  //       headers: { Authorization: "Bearer " + token },
-  //     })
-  //     .then((res) => setCertificate(res.data.data))
-  //     .finally(() => setLoading(false));
-  // }, []);
-  // console.log(Certificate);
-  
+
+  const Openimages = useRef(null)
+    const [Upadateform, setUpdateform] = useState({
+    profile_image: "",
+  });
+
+  function Onchange(e) {
+    setUpdateform({
+      ...Upadateform,
+      [e.target.name]:
+        e.target.name === "profile_image" ? e.target.files[0] : e.target.value,
+    });
+  }
+    async function Handlesubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("profile_image", Upadateform.profile_image);
+    try {
+      const res = await axios.post(
+        `https://backend.slsog.com/api/users/${Id}/upload-image`,
+        formData,
+        { headers: { Authorization: "Bearer " + token } }
+      );
+    }catch (err) {
+      console.log(err);
+    }
+  }
 
   const Showcourses = Usercourses.map((course) => (
     <div className="mb-4 ">
@@ -139,19 +156,70 @@ export default function Profilepage() {
 
           <div className="col-12 col-lg-4 mt-5 p-4" >
             
-            <div className="center rounded mb-2" style={{flexDirection: 'column' , backgroundColor: 'white'}}>
-              <img
-                src={image}
-                className="center mb-3"
-                style={{ objectFit: "cover" , width: '150px' , height:'150px' , borderRadius:'50%'}}
-                // className="rounded col-md-4 col-5"
-                alt="img"
-              />
-              <h4 style={{color:'grey'}}>{currentUser.name}</h4>
+            <div className="center rounded mb-2 " style={{flexDirection: 'column' , backgroundColor: 'white'}}>
+              <div className="col-7">
+                {currentUser.profile_image === null ? (
+
+                  Upadateform.profile_image === '' ? (
+                    <div>
+                      <Form.Group className="center mb-3" style={{ objectFit: "cover" , width: '150px' , height:'150px' , borderRadius:'50%' , backgroundColor:'#F8F9FA'}}>
+                        <Form.Control
+                          hidden
+                          ref={Openimages}
+                          id="profile_image"
+                          type="file"
+                          onChange={Onchange}
+                          name="profile_image"
+                          required
+                        />
+                        <div onClick={() => Openimages.current.click()} className="center" style={{flexDirection:'column' , cursor:'pointer'}}>
+                          <img src={image} style={{ objectFit: "cover" , width: '150px' , height:'150px'}}>
+                          </img>
+                          {/* <p>Add profile photo</p> */}
+                        </div>
+                      </Form.Group>
+                    </div>
+                  ) : (
+                  <Form onSubmit={Handlesubmit}>
+                    <div>
+                      <img
+                        src={URL.createObjectURL(Upadateform.profile_image)}
+                        className="center "
+                        style={{ objectFit: "cover" , width: '150px' , height:'150px' , borderRadius:'50%'}}
+                        // className="rounded col-md-4 col-5"
+                        alt="img"
+                      />
+
+                    <div className="center mb-3">
+                      <Button
+                        className="center mt-3 rounded btn btn-primary"
+                        type="submit"
+                      >
+                        Add photo
+                      </Button> 
+                    </div>
+                  </div>
+                  </Form>
+                  )
+                  
+                  ) : ( 
+                  <div style={{ position:'relative'}}
+  >                <img
+                    src={`http://backend.slsog.com/storage/${currentUser.profile_image}`}
+                    className="center mb-3"
+                    style={{ objectFit: "cover" , width: '150px' , height:'150px' , borderRadius:'50%' , position:'relative'}}
+                  />
+                    {/* <FontAwesomeIcon icon={faCamera} className="p-2" style={{position:'absolute' , fontSize:'17px' , color:'grey' , backgroundColor:'rgb(243, 237, 237)' , borderRadius:'50%' ,bottom:'14px' , right:'15px' }}/> */}
+                  </div>
+
+                  )}
+                <h4 style={{color:'grey'}}>{currentUser.name}</h4>
             </div>
+          </div>
+
 
             <div className="col-12 center mb-2">
-              <div className="col-4 m-.5" style={{}}>
+              <div className="col-4 m-.5">
                 <div className="center col-11 rounded" style={{flexDirection:'column' , backgroundColor: 'white'}}>
                   <FontAwesomeIcon color="blue" className="mt-3 mb-3" style={{backgroundColor:'#E5ECFD' , padding:'10px' , borderRadius: '50%' , fontSize:"25px"}} icon={faBook}/>
                   <p>6</p>
