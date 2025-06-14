@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 import Website from "./Components/Website.";
 import HomePage from "./Components/HomePage/HomePage";
@@ -40,9 +41,13 @@ import Updatecurrentuser from "./Components/ProfilePage.jsx/Updatecurrentuser";
 import Transactions from "./Dashboard/Transactions/Transactions";
 import AddCertificate from "./Dashboard/COURSES/AddCertificate";
 import Certificates from "./Dashboard/COURSES/Certificates";
-
-import { useEffect } from "react";
 import Wrapper from "./Components/Scroll";
+import Strategy from "./Components/Consultation/Startegy";
+import Consultation2 from "./Components/Consultation/Consultation2";
+import Consultation3 from "./Components/Consultation/consultation3";
+import Consultation4 from "./Components/Consultation/consultation4";
+import Consultation5 from "./Components/Consultation/consultation5";
+import Consultation6 from "./Components/Consultation/consultation6";
 
 function App() {
   useEffect(() => {
@@ -70,6 +75,13 @@ function App() {
           <Route path="/testing" element={<Testing />} />
           <Route path="/software" element={<Software />} />
           <Route path="/consultation" element={<Consultation />} />
+          <Route path="/consultation/strategy" element={<Strategy />} />
+          <Route path="/consultation/2" element={<Consultation2 />} />
+          <Route path="/consultation/3" element={<Consultation3 />} />
+          <Route path="/consultation/4" element={<Consultation4 />} />
+          <Route path="/consultation/5" element={<Consultation5 />} />
+          <Route path="/consultation/6" element={<Consultation6 />} />
+
         </Route>
 
         <Route element={<RequireLogin />}>

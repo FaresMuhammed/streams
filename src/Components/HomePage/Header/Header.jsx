@@ -26,24 +26,6 @@ export default function Header(props) {
         }, index * 500); // Delay each item animation
       });
     }, []);
-  
-    // return (
-    //   <div className="">
-    //     <header className="">
-    //       <nav className="nav">
-    //         <div className={`nav-item ${visibleItems.includes(0) ? 'visible' : ''}`}>Home</div>
-    //         <div className={`nav-item ${visibleItems.includes(1) ? 'visible' : ''}`}>About</div>
-    //         <div className={`nav-item ${visibleItems.includes(2) ? 'visible' : ''}`}>Services</div>
-    //         <div className={`nav-item ${visibleItems.includes(3) ? 'visible' : ''}`}>Contact</div>
-    //       </nav>
-    //     </header>
-    //   </div>
-    // );
-  
-  
-  
-  
-
 
   const [showSlider, setShowslider] = useState(false);
 
