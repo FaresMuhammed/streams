@@ -164,7 +164,7 @@ export default function Profilepage() {
       </div>
     </div>
   ));
-  console.log(loading);
+
   return (
     <>
       {loading ? (
@@ -249,11 +249,13 @@ export default function Profilepage() {
                   >
                     <img
                       src={`https://backend.slsog.com/storage/${currentUser.profile_image}`}
+                      className="mb-3 mt-4"
                       style={{
                         objectFit: "cover",
-                        width: "150px",
-                        height: "150px",
+                        width: "140px",
+                        height: "140px",
                         borderRadius: "50%",
+    
                       }}
                       alt="Profile"
                       onClick={() => Openimages.current.click()}

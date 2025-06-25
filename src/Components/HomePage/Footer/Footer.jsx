@@ -28,7 +28,7 @@ export default function Footer(props) {
         style={{ display: "flex", flexDirection: "column" }}
       >
         <h6
-          className={`mb-5  Link22  ${props.className}`}
+          className={`mb-5 Link22  ${props.className}`}
           style={{fontSize: "18px" }}
         >
           SOCIALS
@@ -79,13 +79,59 @@ export default function Footer(props) {
           INQUIRIES
         </h6>
 
-        <Link
+        {/* <Link
           to={"/contactus"}
-          className={`mb-5 py-4 ln ${props.className}`}
+          className={`mb-0 py-4 ln ${props.className}`}
           style={{ fontSize: "14px" , color:'white' }}
         >
           Become a subcontractor
         </Link>
+
+                <Link
+          to={"/contactus"}
+          className={`mb-0 py-4 ln ${props.className}`}
+          style={{ fontSize: "14px" , color:'white' }}
+        >
+          Become a subcontractor
+        </Link>
+
+                <Link
+          to={"/contactus"}
+          className={`py-4 ln ${props.className}`}
+          style={{ fontSize: "14px" , color:'white' }}
+        >
+          Become a subcontractor
+        </Link> */}
+
+        <Link to={'/contactus'} target="_blank"
+          className={` mb-0 py-4 ln ${props.className}`}
+          style={{ fontSize: "14px" , textDecoration: 'none' ,  color:'white' }}>
+            <div className="d-flex gap-2">
+              <p>Become a subcontractor</p>
+            </div>
+        </Link>
+        <Link to={'/privacy-policy'}
+          className={` mb-0  py-4 ln ${props.className}`}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
+        >
+            <div className="d-flex gap-2">
+              <p>Privacy and policy</p>
+            </div>         
+        </Link>
+
+        <Link to={'/refund-returns-policy'}
+          className={` mb-0  py-4 ln ${props.className}`}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' }}
+        >
+        <div 
+          className={` mb-0  py-4 ln ${props.className}`}
+          style={{ fontSize: "14px"  , textDecoration: 'none' ,  color:'white' ,  marginTop: '-30px'}}
+        >
+            <div className="d-flex gap-2">
+              <p>Refund and returns policy</p>
+            </div>        
+          </div>
+          </Link>
       </div>
     </div>
   );

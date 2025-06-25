@@ -48,6 +48,8 @@ import Consultation3 from "./Components/Consultation/consultation3";
 import Consultation4 from "./Components/Consultation/consultation4";
 import Consultation5 from "./Components/Consultation/consultation5";
 import Consultation6 from "./Components/Consultation/consultation6";
+import Privacy from "./Components/HomePage/Footer/Privacy";
+import Refund from "./Components/HomePage/Footer/Refund";
 
 function App() {
   useEffect(() => {
@@ -81,7 +83,8 @@ function App() {
           <Route path="/consultation/4" element={<Consultation4 />} />
           <Route path="/consultation/5" element={<Consultation5 />} />
           <Route path="/consultation/6" element={<Consultation6 />} />
-
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/refund-returns-policy" element={<Refund />} />
         </Route>
 
         <Route element={<RequireLogin />}>
