@@ -172,13 +172,13 @@ export default function Profilepage() {
           <Showskelton height="400px" length="1" classes="col-12 p-5 mt-5 " />
         </div>
       ) : (
-        <div className="col-12 mt-5 p-3 bodyy">
-          <div className="col-12 col-lg-4 mt-5 p-4">
+        <div className="col-12 mt-5 p-3 center bodyy" style={{flexWrap: 'wrap'}}>
+          <div className="col-12 col-lg-4 mt-5 p-4 ">
             <div
-              className="center rounded mb-2"
+              className="center rounded mb-2 "
               style={{ flexDirection: "column", backgroundColor: "white" }}
             >
-              <div className="col-7">
+              <div className="col-6 center" style={{flexDirection: 'column'}}>
                 {uploading ? (
                   <div
                     className="center"
@@ -286,7 +286,7 @@ export default function Profilepage() {
                   </div>
                 )}
 
-                <h4 style={{ color: "grey" }}>{currentUser?.name}</h4>
+                <h5 style={{ color: "grey" }}>{currentUser?.name}</h5>
               </div>
             </div>
 
@@ -360,10 +360,26 @@ export default function Profilepage() {
             </div>
           </div>
 
-          <div
-            className="col-8 mt-5 rounded"
-            style={{ backgroundColor: "white" }}
-          ></div>
+          <div className="col-12 col-lg-7 mt-5 p-4"  style={{ backgroundColor: "white" }}>
+
+                <div className="col-12">
+                 <div className="col-12 gap-2 mb-2 d-flex">
+                   <h5 className="mb-3" style={{ color: "#8A8A9A" }}>FAVOURITS:</h5>
+                 <h5>{Fav[0] == undefined && 'none'}</h5>
+               </div>
+                 {Fav[0] !== undefined && (Showfav)}
+                </div>
+
+                              <div className="col-12">
+                 <div className="col-12 gap-2 mb-2 d-flex">
+                   <h5 className="mb-3" style={{ color: "#8A8A9A" }}>COURSES:</h5>
+                   <h5>{Usercourses[0] == undefined && 'none'}</h5>
+                 </div>
+                 {Usercourses[0] !== undefined && (Showcourses)}
+                </div>
+          </div>
+
+
         </div>
         //   <div className="py-md-5 p-3 mt-5 d-flex flex-wrap center">
         //     <div className="mt-4 p-3 border rounded col-lg-10 col-12 ">
